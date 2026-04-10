@@ -69,7 +69,7 @@ portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── globals.css            # Global styles & Tailwind directives
-│   │   ├── layout.tsx             # Root layout — metadata, cursor, navbar
+│   │   ├── layout.tsx             # Root layout — cursor, navbar
 │   │   ├── page.tsx               # Single-page assembly of all sections
 │   │   └── [...slug]/page.tsx     # Catch-all route (fallback)
 │   ├── components/

@@ -111,7 +111,7 @@ export function Avatar3D() {
       </div>
       <div className="absolute top-5 right-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] text-right pointer-events-none uppercase tracking-widest">
         <div>FE_DEV</div>
-        <div>5+_YRS</div>
+        <div>6+_YRS</div>
       </div>
       <div className="absolute bottom-5 left-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] pointer-events-none uppercase tracking-widest">
         <div>BTech·MSc</div>

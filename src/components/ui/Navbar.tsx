@@ -73,7 +73,7 @@ export function Navbar() {
 
         {/* CTA */}
         <a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1Vfyi1AoZkVdJEN9dMkSMDIAChpkvtKLU/view?usp=sharing"
           target="_blank"
           className="hidden md:flex items-center gap-2 px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-sm"
         >

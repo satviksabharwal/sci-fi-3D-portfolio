@@ -8,9 +8,10 @@ export function CustomCursor() {
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    let ringX = 0, ringY = 0;
-    let dotX = 0, dotY = 0;
-    let mouseX = 0, mouseY = 0;
+    let ringX = 0,
+      ringY = 0;
+    let mouseX = 0,
+      mouseY = 0;
     let rafId: number;
 
     const onMove = (e: MouseEvent) => {
@@ -35,18 +36,20 @@ export function CustomCursor() {
     const onEnter = () => setHovering(true);
     const onLeave = () => setHovering(false);
 
-    window.addEventListener("mousemove", onMove);
-    document
-      .querySelectorAll("a, button, [data-hover]")
-      .forEach((el) => {
-        el.addEventListener("mouseenter", onEnter);
-        el.addEventListener("mouseleave", onLeave);
-      });
+    globalThis.addEventListener("mousemove", onMove);
+    document.querySelectorAll("a, button, [data-hover]").forEach((el) => {
+      el.addEventListener("mouseenter", onEnter);
+      el.addEventListener("mouseleave", onLeave);
+    });
 
     rafId = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("mousemove", onMove);
+      globalThis.removeEventListener("mousemove", onMove);
+      document.querySelectorAll("a, button, [data-hover]").forEach((el) => {
+        el.removeEventListener("mouseenter", onEnter);
+        el.removeEventListener("mouseleave", onLeave);
+      });
       cancelAnimationFrame(rafId);
     };
   }, []);
