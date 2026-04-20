@@ -24,7 +24,7 @@ export function SectionWrapper({
   const { ref, inView } = useScrollReveal();
 
   return (
-    <section id={id} className={cn("py-28 px-6 grid-bg", className)}>
+    <section id={id} className={cn("py-16 md:py-28 px-6 grid-bg", className)}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}

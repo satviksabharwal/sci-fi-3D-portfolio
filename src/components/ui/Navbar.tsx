@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
@@ -33,7 +33,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 select-none group">
           {/* S monogram badge */}
@@ -142,48 +142,51 @@ export function Navbar() {
   );
 }
 
-export const Logo = () => (
-  <svg
-    width="26"
-    height="26"
-    viewBox="0 0 26 26"
-    fill="none"
-    aria-hidden="true"
-    className="transition-transform duration-300 group-hover:scale-110"
-  >
-    <defs>
-      <linearGradient
-        id="logo-g"
-        x1="0"
-        y1="0"
-        x2="26"
-        y2="26"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#00f5c4" />
-        <stop offset="0.5" stopColor="#7c3aed" />
-        <stop offset="1" stopColor="#f472b6" />
-      </linearGradient>
-    </defs>
-    <rect
-      x="0.75"
-      y="0.75"
-      width="24.5"
-      height="24.5"
-      rx="5.25"
-      stroke="url(#logo-g)"
-      strokeWidth="1.5"
-    />
-    <text
-      x="13"
-      y="18.5"
-      textAnchor="middle"
-      fontFamily="Syne, sans-serif"
-      fontWeight="800"
-      fontSize="16"
-      fill="url(#logo-g)"
+export const Logo = () => {
+  const gradientId = useId();
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 26 26"
+      fill="none"
+      aria-hidden="true"
+      className="transition-transform duration-300 group-hover:scale-110"
     >
-      S
-    </text>
-  </svg>
-);
+      <defs>
+        <linearGradient
+          id={gradientId}
+          x1="0"
+          y1="0"
+          x2="26"
+          y2="26"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#00f5c4" />
+          <stop offset="0.5" stopColor="#7c3aed" />
+          <stop offset="1" stopColor="#f472b6" />
+        </linearGradient>
+      </defs>
+      <rect
+        x="0.75"
+        y="0.75"
+        width="24.5"
+        height="24.5"
+        rx="5.25"
+        stroke={`url(#${gradientId})`}
+        strokeWidth="1.5"
+      />
+      <text
+        x="13"
+        y="18.5"
+        textAnchor="middle"
+        fontFamily="Syne, sans-serif"
+        fontWeight="800"
+        fontSize="16"
+        fill={`url(#${gradientId})`}
+      >
+        S
+      </text>
+    </svg>
+  );
+};

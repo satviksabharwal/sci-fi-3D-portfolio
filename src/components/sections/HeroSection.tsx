@@ -51,7 +51,7 @@ export function HeroSection() {
               <span className="block text-white/20 text-xl mb-2 font-body font-light tracking-widest uppercase">
                 Hi, I'm
               </span>
-              <span className="block text-5xl md:text-6xl xl:text-7xl gradient-text">
+              <span className="block text-4xl md:text-6xl xl:text-7xl gradient-text">
                 {PERSONAL.name}
               </span>
             </h1>
@@ -149,10 +149,10 @@ export function HeroSection() {
           />
 
           {/* Corner brackets */}
-          <div className="absolute top-0 left-16 w-6 h-6 border-t border-l border-accent-cyan/40" />
-          <div className="absolute top-0 right-16 w-6 h-6 border-t border-r border-accent-cyan/40" />
-          <div className="absolute bottom-4 left-16 w-6 h-6 border-b border-l border-accent-cyan/40" />
-          <div className="absolute bottom-4 right-16 w-6 h-6 border-b border-r border-accent-cyan/40" />
+          <div className="hidden md:block absolute top-0 left-16 w-6 h-6 border-t border-l border-accent-cyan/40" />
+          <div className="hidden md:block absolute top-0 right-16 w-6 h-6 border-t border-r border-accent-cyan/40" />
+          <div className="hidden md:block absolute bottom-4 left-16 w-6 h-6 border-b border-l border-accent-cyan/40" />
+          <div className="hidden md:block absolute bottom-4 right-16 w-6 h-6 border-b border-r border-accent-cyan/40" />
 
           <Avatar3D />
 
