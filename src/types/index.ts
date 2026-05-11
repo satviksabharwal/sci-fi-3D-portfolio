@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
   title: string;
-  description: string;
+  descriptionKey: string;
   tech: string[];
   link?: string;
   github?: string;
@@ -14,7 +14,7 @@ export interface Experience {
   role: string;
   company: string;
   period: string;
-  description: string[];
+  descriptionNamespace: string;
   tech: string[];
   current?: boolean;
 }

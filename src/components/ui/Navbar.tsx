@@ -2,19 +2,22 @@
 
 import { useEffect, useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations("common");
+
+  const LINKS = [
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.projects"), href: "#projects" },
+    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,10 +39,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 select-none group">
-          {/* S monogram badge */}
           <Logo />
-
-          {/* Name */}
           <span className="font-display font-black text-base tracking-tight leading-none">
             <span className="gradient-text">Satvik</span>
             <span className="text-white/20 mx-1.5">·</span>
@@ -71,22 +71,25 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="https://drive.google.com/file/d/1Vfyi1AoZkVdJEN9dMkSMDIAChpkvtKLU/view?usp=sharing"
-          target="_blank"
-          className="hidden md:flex items-center gap-2 px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-sm"
-        >
-          <span>Resume</span>
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path
-              d="M1 9L9 1M9 1H3M9 1V7"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
-        </a>
+        {/* Right side: language switcher + Resume CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitcher />
+          <a
+            href="https://drive.google.com/file/d/1Vfyi1AoZkVdJEN9dMkSMDIAChpkvtKLU/view?usp=sharing"
+            target="_blank"
+            className="flex items-center gap-2 px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-sm"
+          >
+            <span>{t("nav.resume")}</span>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path
+                d="M1 9L9 1M9 1H3M9 1V7"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </a>
+        </div>
 
         {/* Mobile menu toggle */}
         <button
@@ -134,11 +137,50 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
+              <li className="px-6 py-3">
+                <LanguageSwitcher />
+              </li>
             </ul>
           </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
+  );
+}
+
+function LanguageSwitcher() {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const switchTo = (next: "en" | "de") => {
+    router.replace(pathname, { locale: next });
+  };
+
+  return (
+    <div className="flex items-center gap-1.5 text-xs font-mono tracking-widest">
+      <button
+        onClick={() => switchTo("en")}
+        className={
+          locale === "en"
+            ? "text-white"
+            : "text-white/30 hover:text-white/60 transition-colors"
+        }
+      >
+        EN
+      </button>
+      <span className="text-white/15">·</span>
+      <button
+        onClick={() => switchTo("de")}
+        className={
+          locale === "de"
+            ? "text-white"
+            : "text-white/30 hover:text-white/60 transition-colors"
+        }
+      >
+        DE
+      </button>
+    </div>
   );
 }
 

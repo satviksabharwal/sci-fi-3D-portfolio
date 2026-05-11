@@ -1,0 +1,173 @@
+{
+  "common": {
+    "nav": {
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "projects": "Projekte",
+      "experience": "Erfahrung",
+      "contact": "Kontakt",
+      "resume": "Lebenslauf"
+    },
+    "footer": {
+      "builtWith": "Gebaut mit",
+      "backToTop": "Nach oben"
+    }
+  },
+  "hero": {
+    "available": "Offen für neue Möglichkeiten",
+    "greeting": "Hallo, ich bin",
+    "roles": [
+      "Frontend-Entwickler",
+      "React-Spezialist",
+      "Analytics-Enthusiast",
+      "Performance-Enthusiast",
+      "Barrierefreiheits-Experte"
+    ],
+    "cta": {
+      "viewWork": "Meine Arbeiten",
+      "getInTouch": "Kontakt aufnehmen",
+      "github": "GitHub"
+    },
+    "stats": {
+      "years": "Jahre Erfahrung",
+      "projects": "Projekte umgesetzt",
+      "companies": "Unternehmen",
+      "degrees": "Abschlüsse"
+    },
+    "tagline": "RENDERING FRONTEND.DEV_v2.0",
+    "scroll": "Scrollen"
+  },
+  "about": {
+    "label": "01 / Über mich",
+    "title": "Wer ich bin",
+    "subtitle": "Ein Entwickler, dem handwerkliche Qualität, Performance und die Menschen, die seine Produkte nutzen, am Herzen liegen.",
+    "bio1": "Ich bin Frontend-Entwickler mit <strong>6+ Jahren Erfahrung</strong> und verwandle komplexe Produktherausforderungen in saubere, performante und ansprechende Interfaces. Ich habe in E-Commerce- und Social-Networking-Plattformen gearbeitet und dabei sowohl kundenseitige Erlebnisse als auch Admin-Dashboards mit tiefen Analytics-Einblicken verantwortet.",
+    "bio2": "Mein akademischer Hintergrund in <cyan>Web Engineering</cyan> (MSc) und <cyan>Computer Science</cyan> (BTech) hat mir ein solides theoretisches Fundament gegeben – doch es sind die Jahre des Shipens realer Produkte unter realen Einschränkungen, die mein Denken über Software geprägt haben.",
+    "bio3": "Mir liegt die Verbindung von technischer Präzision und ästhetischer Qualität am Herzen. Ich habe eng mit Designern, Product Managern und Backend-Entwicklern zusammengearbeitet, um Erlebnisse zu schaffen, die Nutzer lieben, und Systeme zu bauen, die Teams pflegen können. Wenn du etwas Ambitioniertes entwickelst, bin ich gerne dabei.",
+    "educationLabel": "Ausbildung",
+    "education": [
+      {
+        "degree": "MSc Web Engineering",
+        "school": "Technische Universität Chemnitz",
+        "year": "2021 – 2024",
+        "icon": "🎓"
+      },
+      {
+        "degree": "B.Tech Computer Science",
+        "school": "Reva University",
+        "year": "2015 – 2019",
+        "icon": "🖥️"
+      }
+    ],
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "E-Mail"
+    },
+    "values": [
+      {
+        "icon": "🤖",
+        "title": "KI-nativer Entwickler",
+        "desc": "Ich entwickle qualitativ hochwertige Produkte mit hoher Geschwindigkeit mithilfe von KI-Agenten – schreibe präzise Prompts, überprüfe und verantworte jede Zeile generierten Codes und weiß genau, wann ich das Modell leiten muss und wann ich selbst das Steuer übernehme."
+      },
+      {
+        "icon": "🎯",
+        "title": "Produktorientierter Entwickler",
+        "desc": "Ich denke über die Komponente hinaus – ich obsesse über User Flows, Feedback-Schleifen und die kleinen Details, die komplexe Produkte einfach anfühlen lassen. Guter Code liefert Features; großartiges Produktdenken liefert Erlebnisse."
+      },
+      {
+        "icon": "📊",
+        "title": "Datenvisualisierungs-Experte",
+        "desc": "Ich verwandle komplexe Datensätze in intuitive, interaktive Dashboards mit D3.js und Visx. Daten lesbar und schön zu machen ist mir genauso wichtig wie sie akkurat zu halten."
+      },
+      {
+        "icon": "⚡",
+        "title": "Performance zuerst",
+        "desc": "Ich obsesse über Core Web Vitals, Bundle-Größen und Paint-Timelines – besonders kritisch in datenlastigen und Analytics-Anwendungen, wo Rendering-Engpässe das Nutzervertrauen zerstören."
+      },
+      {
+        "icon": "🔬",
+        "title": "Qualitätsorientierter Entwickler",
+        "desc": "Ich schreibe stark typisiertes, gut getestetes Code mit einem Produktinstinkt, der auf Metriken basiert. Ich lese Logs, interpretiere A/B-Ergebnisse und nutze Daten für UI-Entscheidungen – nicht nur Intuition."
+      }
+    ]
+  },
+  "skills": {
+    "label": "02 / Fähigkeiten",
+    "title": "Tech-Repertoire",
+    "subtitle": "Tools und Technologien, mit denen ich Ideen in produktionsreife Software überführe.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Ops"
+    },
+    "alsoWorkedWith": "Weitere Erfahrungen mit"
+  },
+  "projects": {
+    "label": "03 / Projekte",
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Eine Auswahl meiner Projekte – von Design-Systemen bis zu Echtzeit-Applikationen.",
+    "links": {
+      "github": "GitHub",
+      "liveSite": "Live-Seite",
+      "moreOnGithub": "Mehr auf GitHub"
+    },
+    "descriptions": {
+      "photoVoltaic": "Eine Full-Stack-Anwendung auf Basis des MERN-Stacks. Sie ermöglicht die Überwachung und Analyse von Photovoltaik-Daten, die Visualisierung der Systemleistung und die Erstellung von Berichten.",
+      "dataManagement": "Eine umfassende Datenverwaltungsplattform mit Funktionen wie Benutzerauthentifizierung, Benutzerprofilen, Dateistatistik-Visualisierung, Dateioperationen (CRUD), Datei-Tagging, Zugangskontrolle, Dateisuche und -freigabe mit E-Mail-Benachrichtigungen.",
+      "portfolio3d": "Eine 3D-Portfolio-Website, die meine Projekte und Fähigkeiten mit Three.js und WebGL präsentiert.",
+      "comingSoon": "Ich arbeite ständig an neuen Projekten und aktualisiere mein Portfolio. Bleib dran für weitere spannende Projekte!"
+    }
+  },
+  "experience": {
+    "label": "04 / Erfahrung",
+    "title": "Berufliche Laufbahn",
+    "subtitle": "Wo ich gearbeitet und was ich entwickelt habe.",
+    "currentBadge": "Aktuell",
+    "descriptions": {
+      "staffbase": [
+        "Federführende Entwicklung und vollständige Verantwortung des Analytics-Frontends mit React, TypeScript und TailwindCSS – Entwicklung skalierbarer Lösungen und Lieferung hochperformanter Features für eine Plattform mit Millionen aktiver Nutzer.",
+        "Implementierung von Analytics-Tracking über Kommunikationsplattform-Features hinweg, in enger Zusammenarbeit mit mehreren Feature-Teams zur Integration von Tracking in ihre Codebasen, Erfassung des Nutzerverhaltens und Generierung verwertbarer Engagement-Einblicke.",
+        "Verbesserung der Team-Velocity und Reduzierung der Onboarding-Zeit um 30% durch Entwicklung eines optimierten Onboarding-Workflows, aktive Aktualisierung der Dokumentation und Mentoring neuer Mitarbeiter in zweiwöchentlichen Syncs."
+      ],
+      "brillio": [
+        "Entwicklung und Deployment des Frontends einer großangelegten Bestellverwaltungsanwendung mit React, TypeScript und Styled Components für den australischen Einzelhändler Reece – ermöglicht 1.000+ Filialmitarbeitern, Millionen von Kunden effizient zu bedienen.",
+        "Entwicklung responsiver, mobile-first User Interfaces mit modernem UI/UX-Design, Sicherstellung pixelgenauer Layouts und Barrierefreiheit über alle Browser und Geräte hinweg.",
+        "Mentoring von Junior-Entwicklern durch Pair Programming, Code Reviews und strukturierte Wissensteilungs-Sessions; Beschleunigung des Onboardings und Steigerung der Projektliefergeschwindigkeit."
+      ],
+      "wipro": [
+        "Reduzierung des manuellen Betriebsaufwands um 25 Stunden pro Woche durch Entwicklung einer hochgradig anpassbaren internen Tools-Plattform mit React, JavaScript und CSS.",
+        "Implementierung eines robusten Frontend-Authentifizierungssystems mit OAuth-basiertem Login über Gmail, Outlook und Organisationskonten, Optimierung der Sicherheit durch Session Storage und Cookies.",
+        "Anwendung von Continuous Integration und Versionskontrolle mit Git sowie Teilnahme an agilen Lieferzyklen mit Jira für effizientes Task-Management und vorhersehbare, qualitativ hochwertige Releases."
+      ]
+    }
+  },
+  "contact": {
+    "label": "05 / Kontakt",
+    "title": "Lass uns zusammenarbeiten",
+    "subtitle": "Offen für Senior-Rollen, Aufträge und interessante Gespräche.",
+    "intro": "Ich suche aktiv nach meiner nächsten Herausforderung – sei es der Beitritt zu einem großartigen Team, das ambitionierte Produkte entwickelt, oder die Zusammenarbeit an etwas Neuem. Wenn du etwas baust, das mich begeistern würde, lass uns reden.",
+    "reachMeAt": "Erreichbar unter",
+    "availability": {
+      "status": "Verfügbar für neue Projekte",
+      "detail": "Suche nach Senior/Staff Frontend-Rollen, idealerweise remote oder hybrid. Offen für Vollzeit- und Freelance-Engagements. Antwortzeit: < 24h."
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "E-Mail"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Dein Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "deine@email.com",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Erzähl mir von deinem Projekt oder deiner Anfrage...",
+      "send": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "✓ Nachricht gesendet!",
+      "error": "Fehlgeschlagen – erneut versuchen"
+    }
+  }
+}

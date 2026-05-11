@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { PROJECTS } from "@/lib/data";
 
 export function ProjectsSection() {
+  const t = useTranslations("projects");
   const [hovered, setHovered] = useState<number | null>(null);
 
   const featured = PROJECTS.filter((p) => p.featured);
@@ -14,9 +16,9 @@ export function ProjectsSection() {
   return (
     <SectionWrapper
       id="projects"
-      label="03 / Projects"
-      title="Selected Work"
-      subtitle="A handful of projects I'm proud of — from design systems to real-time apps."
+      label={t("label")}
+      title={t("title")}
+      subtitle={t("subtitle")}
     >
       {/* Featured projects */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-5">
@@ -64,7 +66,7 @@ export function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-white/30 hover:text-white hover:border-white/30 transition-colors"
-                    title="GitHub"
+                    title={t("links.github")}
                   >
                     <svg
                       width="14"
@@ -82,7 +84,7 @@ export function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-white/30 hover:text-white hover:border-white/30 transition-colors"
-                    title="Live site"
+                    title={t("links.liveSite")}
                   >
                     <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
                       <path
@@ -102,14 +104,14 @@ export function ProjectsSection() {
               {project.title}
             </h3>
             <p className="text-white/40 text-sm leading-relaxed mb-5 flex-1">
-              {project.description}
+              {t(`descriptions.${project.descriptionKey}`)}
             </p>
 
             {/* Tech tags */}
             <div className="flex flex-wrap gap-1.5 mt-auto">
-              {project.tech.map((t) => (
+              {project.tech.map((tech) => (
                 <span
-                  key={t}
+                  key={tech}
                   className="text-[10px] font-mono px-2 py-0.5 rounded border"
                   style={{
                     color: `${project.color}bb`,
@@ -117,7 +119,7 @@ export function ProjectsSection() {
                     background: `${project.color}0a`,
                   }}
                 >
-                  {t}
+                  {tech}
                 </span>
               ))}
             </div>
@@ -162,15 +164,15 @@ export function ProjectsSection() {
                 </div>
               </div>
               <p className="text-white/30 text-xs leading-relaxed mb-3">
-                {project.description}
+                {t(`descriptions.${project.descriptionKey}`)}
               </p>
               <div className="flex flex-wrap gap-1">
-                {project.tech.slice(0, 4).map((t) => (
+                {project.tech.slice(0, 4).map((tech) => (
                   <span
-                    key={t}
+                    key={tech}
                     className="text-[10px] font-mono text-white/25 border border-white/10 px-1.5 py-0.5 rounded"
                   >
-                    {t}
+                    {tech}
                   </span>
                 ))}
               </div>
@@ -193,7 +195,7 @@ export function ProjectsSection() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm text-white/30 hover:text-white/70 transition-colors font-mono"
         >
-          <span>More on GitHub</span>
+          <span>{t("links.moreOnGithub")}</span>
           <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
             <path
               d="M1 9L9 1M9 1H3M9 1V7"

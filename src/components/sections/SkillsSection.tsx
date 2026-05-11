@@ -1,16 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { SKILLS } from "@/lib/data";
 import type { Skill } from "@/types";
-
-const CATEGORIES: { key: Skill["category"]; label: string; color: string }[] = [
-  { key: "frontend", label: "Frontend", color: "#00f5c4" },
-  { key: "backend", label: "Backend", color: "#7c3aed" },
-  { key: "tools", label: "Tools & Ops", color: "#f472b6" },
-];
 
 function SkillBar({
   skill,
@@ -51,14 +46,21 @@ function SkillBar({
 }
 
 export function SkillsSection() {
+  const t = useTranslations("skills");
   const { ref, inView } = useScrollReveal(0.1);
+
+  const CATEGORIES: { key: Skill["category"]; labelKey: string; color: string }[] = [
+    { key: "frontend", labelKey: "categories.frontend", color: "#00f5c4" },
+    { key: "backend", labelKey: "categories.backend", color: "#7c3aed" },
+    { key: "tools", labelKey: "categories.tools", color: "#f472b6" },
+  ];
 
   return (
     <SectionWrapper
       id="skills"
-      label="02 / Skills"
-      title="Tech Arsenal"
-      subtitle="Tools and technologies I use to bring ideas to life at production scale."
+      label={t("label")}
+      title={t("title")}
+      subtitle={t("subtitle")}
     >
       <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {CATEGORIES.map((cat) => {
@@ -78,7 +80,7 @@ export function SkillsSection() {
                   className="font-display font-bold text-sm tracking-wide uppercase"
                   style={{ color: cat.color }}
                 >
-                  {cat.label}
+                  {t(cat.labelKey)}
                 </span>
               </div>
 
@@ -107,7 +109,7 @@ export function SkillsSection() {
         className="mt-12"
       >
         <p className="text-white/20 text-xs font-mono tracking-widest uppercase mb-4">
-          Also worked with
+          {t("alsoWorkedWith")}
         </p>
         <div className="flex flex-wrap gap-2">
           {[
@@ -125,12 +127,12 @@ export function SkillsSection() {
             "Yarn",
             "NPM",
             "Figma",
-          ].map((t) => (
+          ].map((tech) => (
             <span
-              key={t}
+              key={tech}
               className="tag text-white/40 border-white/10 bg-white/[0.03]"
             >
-              {t}
+              {tech}
             </span>
           ))}
         </div>

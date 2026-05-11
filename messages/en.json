@@ -1,0 +1,173 @@
+{
+  "common": {
+    "nav": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact",
+      "resume": "Resume"
+    },
+    "footer": {
+      "builtWith": "Built with",
+      "backToTop": "Back to top"
+    }
+  },
+  "hero": {
+    "available": "Available for opportunities",
+    "greeting": "Hi, I'm",
+    "roles": [
+      "Frontend Engineer",
+      "React Specialist",
+      "Analytics Enthusiast",
+      "Performance Nerd",
+      "Accessibility Advocate"
+    ],
+    "cta": {
+      "viewWork": "View My Work",
+      "getInTouch": "Get In Touch",
+      "github": "GitHub"
+    },
+    "stats": {
+      "years": "Years Experience",
+      "projects": "Projects Shipped",
+      "companies": "Companies",
+      "degrees": "Degrees"
+    },
+    "tagline": "RENDERING FRONTEND.DEV_v2.0",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "01 / About",
+    "title": "Who I Am",
+    "subtitle": "A developer who cares deeply about craft, performance, and the humans using what I build.",
+    "bio1": "I'm a frontend engineer with <strong>6+ years of experience</strong> turning complex product challenges into clean, performant, and delightful interfaces. I've worked across e-commerce and social networking platforms, owning both the customer-facing experiences users interact with and the admin dashboards that surface deep analytics insights to the teams running the show.",
+    "bio2": "My academic background in <cyan>Web Engineering</cyan> (MSc) and <cyan>Computer Science</cyan> (BTech) gave me a strong theoretical foundation — but it's years of shipping real products under real constraints that shaped how I think about software.",
+    "bio3": "I care about the intersection of engineering rigor and aesthetic quality. I've collaborated closely with designers, product managers, and backend engineers to build experiences that users love and systems that teams can maintain. If you're building something ambitious, I'd love to be part of it.",
+    "educationLabel": "Education",
+    "education": [
+      {
+        "degree": "MSc Web Engineering",
+        "school": "Technische Universität Chemnitz",
+        "year": "2021 – 2024",
+        "icon": "🎓"
+      },
+      {
+        "degree": "B.Tech Computer Science",
+        "school": "Reva University",
+        "year": "2015 – 2019",
+        "icon": "🖥️"
+      }
+    ],
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "values": [
+      {
+        "icon": "🤖",
+        "title": "AI-Native Builder",
+        "desc": "I build high-quality products at speed using AI agents — writing precise prompts, reviewing and owning every line of generated code, and knowing exactly when to guide the model versus take the wheel myself."
+      },
+      {
+        "icon": "🎯",
+        "title": "Product-Minded Engineer",
+        "desc": "I think beyond the component - obsessing over user flows, feedback loops, and the small details that make complex products feel simple. Good code ships features; great product thinking ships experiences."
+      },
+      {
+        "icon": "📊",
+        "title": "Data Visualization Expert",
+        "desc": "I turn complex datasets into intuitive, interactive dashboards using D3.js and Visx. Making data legible and beautiful is as important to me as making it accurate."
+      },
+      {
+        "icon": "⚡",
+        "title": "Performance First",
+        "desc": "I obsess over Core Web Vitals, bundle sizes, and paint timelines — especially critical in data-heavy and analytics applications where rendering bottlenecks kill user trust."
+      },
+      {
+        "icon": "🔬",
+        "title": "Quality Engineer Mindset",
+        "desc": "I write strongly-typed, well-tested code with a product instinct grounded in metrics. I read logs, interpret A/B results, and use data to drive UI decisions — not just intuition."
+      }
+    ]
+  },
+  "skills": {
+    "label": "02 / Skills",
+    "title": "Tech Arsenal",
+    "subtitle": "Tools and technologies I use to bring ideas to life at production scale.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Ops"
+    },
+    "alsoWorkedWith": "Also worked with"
+  },
+  "projects": {
+    "label": "03 / Projects",
+    "title": "Selected Work",
+    "subtitle": "A handful of projects I'm proud of — from design systems to real-time apps.",
+    "links": {
+      "github": "GitHub",
+      "liveSite": "Live site",
+      "moreOnGithub": "More on GitHub"
+    },
+    "descriptions": {
+      "photoVoltaic": "It is a full-stack application built using the MERN stack. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
+      "dataManagement": "It is a comprehensive data management platform with a range of features such as user authentication, user profiles, file statistics visualization, file operations (CRUD), file tagging, file access control, file search, and file sharing with email notifications.",
+      "portfolio3d": "A 3D personal portfolio website showcasing my projects and skills using Three.js and WebGL.",
+      "comingSoon": "I'm always working on new projects and updating my portfolio. Stay tuned for more exciting work coming soon!"
+    }
+  },
+  "experience": {
+    "label": "04 / Experience",
+    "title": "Work History",
+    "subtitle": "Where I've worked and what I've shipped.",
+    "currentBadge": "Current",
+    "descriptions": {
+      "staffbase": [
+        "Spearheaded the development and full ownership of the analytics frontend using React, TypeScript, and TailwindCSS, architecting scalable solutions and delivering high-performance features for a platform with millions of active users.",
+        "Implemented analytics tracking across communication platform features, collaborating with multiple feature teams to integrate tracking into their codebases, capture user behavior, generate actionable engagement insights, and enable organization admins to optimize communication strategies.",
+        "Improved overall team velocity and decreased onboarding time by 30% by architecting a streamlined onboarding workflow, actively updating documentation, and mentoring new hires through bi-weekly syncs."
+      ],
+      "brillio": [
+        "Developed and deployed the frontend of a large-scale stock order management application using React, TypeScript, and Styled Components for the Australian retailer Reece, enabling 1000+ in-store employees to serve millions of customers efficiently and streamlining product operations.",
+        "Engineered responsive, mobile-first user interfaces with modern UI/UX design, ensured pixel-perfect layouts and accessibility compliance across browsers and devices, driving consistent user experiences for all platforms.",
+        "Mentored junior developers through pair programming, code reviews, and structured knowledge-sharing sessions; accelerated onboarding, team skill development, and boosted project delivery speed."
+      ],
+      "wipro": [
+        "Reduced manual operational effort by 25 hours per week by engineering a highly customizable internal tools platform using React, JavaScript, and CSS.",
+        "Implemented a robust front-end authentication system supporting OAuth-based login via Gmail, Outlook, and organizational accounts, optimizing security through session storage and cookies, and streamlining user access for hundreds of internal stakeholders.",
+        "Applied continuous integration and version control using Git and participated in agile delivery cycles with Jira, enabling efficient task management and predictable, high-quality releases in a rapidly evolving environment."
+      ]
+    }
+  },
+  "contact": {
+    "label": "05 / Contact",
+    "title": "Let's Work Together",
+    "subtitle": "Open to senior roles, contracts, and interesting conversations.",
+    "intro": "I'm actively looking for my next challenge — whether that's joining a great team building ambitious products, or collaborating on something new. If you're building something I'd care about, let's talk.",
+    "reachMeAt": "Reach me at",
+    "availability": {
+      "status": "Available for work",
+      "detail": "Looking for senior/staff frontend roles, ideally remote or hybrid. Open to both full-time and freelance engagements. Response time: < 24h."
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "✓ Message Sent!",
+      "error": "Failed — try again"
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { PERSONAL } from "@/lib/data";
 import emailjs from "@emailjs/browser";
@@ -9,6 +10,7 @@ import emailjs from "@emailjs/browser";
 type FormState = "idle" | "sending" | "success" | "error";
 
 export function ContactSection() {
+  const t = useTranslations("contact");
   const [state, setState] = useState<FormState>("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,14 +35,9 @@ export function ContactSection() {
       .then(
         () => {
           setState("success");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
+          setForm({ name: "", email: "", message: "" });
         },
-        (error) => {
+        () => {
           setState("error");
         },
       );
@@ -48,7 +45,7 @@ export function ContactSection() {
 
   const SOCIAL_LINKS = [
     {
-      label: "GitHub",
+      label: t("social.github"),
       href: PERSONAL.github,
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -57,7 +54,7 @@ export function ContactSection() {
       ),
     },
     {
-      label: "LinkedIn",
+      label: t("social.linkedin"),
       href: PERSONAL.linkedin,
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -66,7 +63,7 @@ export function ContactSection() {
       ),
     },
     {
-      label: "Email",
+      label: t("social.email"),
       href: `mailto:${PERSONAL.email}`,
       icon: (
         <svg
@@ -90,9 +87,9 @@ export function ContactSection() {
   return (
     <SectionWrapper
       id="contact"
-      label="05 / Contact"
-      title="Let's Work Together"
-      subtitle="Open to senior roles, contracts, and interesting conversations."
+      label={t("label")}
+      title={t("title")}
+      subtitle={t("subtitle")}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* LEFT */}
@@ -103,16 +100,11 @@ export function ContactSection() {
           transition={{ duration: 0.7 }}
           className="space-y-8"
         >
-          <p className="text-white/40 text-lg leading-relaxed">
-            I'm actively looking for my next challenge — whether that's joining
-            a great team building ambitious products, or collaborating on
-            something new. If you're building something I'd care about, let's
-            talk.
-          </p>
+          <p className="text-white/40 text-lg leading-relaxed">{t("intro")}</p>
 
           <div className="space-y-3">
             <p className="text-xs font-mono tracking-widest text-white/20 uppercase">
-              Reach me at
+              {t("reachMeAt")}
             </p>
             <a
               href={`mailto:${PERSONAL.email}`}
@@ -145,13 +137,11 @@ export function ContactSection() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan" />
               </span>
               <span className="text-accent-cyan text-sm font-mono">
-                Available for work
+                {t("availability.status")}
               </span>
             </div>
             <p className="text-white/30 text-xs leading-relaxed">
-              Looking for senior/staff frontend roles, ideally remote or hybrid.
-              Open to both full-time and freelance engagements. Response time:
-              &lt; 24h.
+              {t("availability.detail")}
             </p>
           </div>
         </motion.div>
@@ -167,15 +157,15 @@ export function ContactSection() {
             {[
               {
                 id: "name",
-                label: "Name",
+                label: t("form.nameLabel"),
                 type: "text",
-                placeholder: "Your name",
+                placeholder: t("form.namePlaceholder"),
               },
               {
                 id: "email",
-                label: "Email",
+                label: t("form.emailLabel"),
                 type: "email",
-                placeholder: "your@email.com",
+                placeholder: t("form.emailPlaceholder"),
               },
             ].map((field) => (
               <div key={field.id}>
@@ -204,12 +194,12 @@ export function ContactSection() {
                 htmlFor="message"
                 className="block text-xs font-mono text-white/30 uppercase tracking-widest mb-2"
               >
-                Message
+                {t("form.messageLabel")}
               </label>
               <textarea
                 id="message"
                 rows={5}
-                placeholder="Tell me about your project or opportunity..."
+                placeholder={t("form.messagePlaceholder")}
                 required
                 value={form.message}
                 onChange={(e) =>
@@ -228,7 +218,7 @@ export function ContactSection() {
                   : "bg-accent-cyan text-bg-primary hover:brightness-110 disabled:opacity-60"
               }`}
             >
-              {state === "idle" && "Send Message"}
+              {state === "idle" && t("form.send")}
               {state === "sending" && (
                 <span className="flex items-center justify-center gap-2">
                   <svg
@@ -247,11 +237,11 @@ export function ContactSection() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  Sending...
+                  {t("form.sending")}
                 </span>
               )}
-              {state === "success" && "✓ Message Sent!"}
-              {state === "error" && "Failed — try again"}
+              {state === "success" && t("form.success")}
+              {state === "error" && t("form.error")}
             </button>
           </form>
         </motion.div>

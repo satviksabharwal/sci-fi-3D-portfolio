@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { TypeAnimation } from "react-type-animation";
+import { useTranslations } from "next-intl";
 import { PERSONAL } from "@/lib/data";
 
 const Avatar3D = dynamic(
@@ -17,6 +18,17 @@ const fadeUp = (delay = 0) => ({
 });
 
 export function HeroSection() {
+  const t = useTranslations("hero");
+  const roles = t.raw("roles") as string[];
+  const sequence = roles.flatMap((role) => [role, 2000]);
+
+  const STATS = [
+    { value: "6+", labelKey: "stats.years" as const },
+    { value: "20+", labelKey: "stats.projects" as const },
+    { value: "3", labelKey: "stats.companies" as const },
+    { value: "2", labelKey: "stats.degrees" as const },
+  ];
+
   return (
     <section
       id="hero"
@@ -41,7 +53,7 @@ export function HeroSection() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan" />
             </span>
             <span className="text-xs tracking-widest text-accent-cyan uppercase font-mono">
-              Available for opportunities
+              {t("available")}
             </span>
           </motion.div>
 
@@ -49,7 +61,7 @@ export function HeroSection() {
           <motion.div {...fadeUp(0.1)}>
             <h1 className="font-display font-black leading-[0.95] tracking-tight mb-4">
               <span className="block text-white/20 text-xl mb-2 font-body font-light tracking-widest uppercase">
-                Hi, I'm
+                {t("greeting")}
               </span>
               <span className="block text-4xl md:text-6xl xl:text-7xl gradient-text">
                 {PERSONAL.name}
@@ -61,18 +73,7 @@ export function HeroSection() {
           <motion.div {...fadeUp(0.2)} className="h-14 flex items-center mb-6">
             <span className="text-2xl md:text-3xl text-white/60 font-display font-semibold tracking-tight">
               <TypeAnimation
-                sequence={[
-                  "Frontend Engineer",
-                  2500,
-                  "React Specialist",
-                  2000,
-                  "Analytics Enthusiast",
-                  2000,
-                  "Performance Nerd",
-                  2000,
-                  "Accessibility Advocate",
-                  2000,
-                ]}
+                sequence={sequence}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
@@ -95,13 +96,13 @@ export function HeroSection() {
               href="#projects"
               className="px-6 py-3 bg-accent-cyan text-bg-primary font-body font-medium text-sm hover:brightness-110 transition-all duration-200 rounded-sm glow-cyan"
             >
-              View My Work
+              {t("cta.viewWork")}
             </a>
             <a
               href="#contact"
               className="px-6 py-3 border border-white/10 text-white/70 font-body text-sm hover:bg-accent-cyan/80 hover:text-white transition-all duration-200 rounded-sm"
             >
-              Get In Touch
+              {t("cta.getInTouch")}
             </a>
             <a
               href={PERSONAL.github}
@@ -110,24 +111,19 @@ export function HeroSection() {
               className="px-6 py-3 border border-white/10 text-white/70 font-body text-sm hover:bg-accent-cyan/80 hover:text-white transition-all duration-200 rounded-sm flex items-center gap-2"
             >
               <GithubIcon />
-              GitHub
+              {t("cta.github")}
             </a>
           </motion.div>
 
           {/* Stats */}
           <motion.div {...fadeUp(0.5)} className="flex gap-10">
-            {[
-              { value: "6+", label: "Years Experience" },
-              { value: "20+", label: "Projects Shipped" },
-              { value: "3", label: "Companies" },
-              { value: "2", label: "Degrees" },
-            ].map((s) => (
-              <div key={s.label}>
+            {STATS.map((s) => (
+              <div key={s.labelKey}>
                 <div className="font-display font-black text-2xl gradient-text-cyan">
                   {s.value}
                 </div>
                 <div className="text-white/30 text-xs tracking-wide mt-0.5">
-                  {s.label}
+                  {t(s.labelKey)}
                 </div>
               </div>
             ))}
@@ -172,7 +168,7 @@ export function HeroSection() {
                 animation: "neonFlicker 4s ease-in-out infinite",
               }}
             >
-              RENDERING FRONTEND.DEV_v2.0
+              {t("tagline")}
             </span>
             <span
               className="w-6 h-px"
@@ -204,7 +200,7 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
       >
         <span className="text-[10px] tracking-widest uppercase font-mono">
-          Scroll
+          {t("scroll")}
         </span>
         <div className="w-px h-12 bg-gradient-to-b from-white/20 to-transparent" />
       </motion.div>

@@ -29,8 +29,7 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "PhotoVoltaic System",
-    description:
-      "It is a full-stack application built using the MERN stack. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
+    descriptionKey: "photoVoltaic",
     tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB"],
     github: "https://github.com/satviksabharwal/PhotoVoltaic-System",
     link: "",
@@ -40,8 +39,7 @@ export const PROJECTS: Project[] = [
   {
     id: 2,
     title: "Data Management Platform",
-    description:
-      "It is a comprehensive data management platform with a range of features such as user authentication, user profiles, file statistics visualization, file operations (CRUD), file tagging, file access control, file search, and file sharing with email notifications.",
+    descriptionKey: "dataManagement",
     tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB"],
     github: "https://github.com/satviksabharwal/data-management-platform",
     link: "",
@@ -51,8 +49,7 @@ export const PROJECTS: Project[] = [
   {
     id: 3,
     title: "3D Personal Portfolio Website",
-    description:
-      "A 3D personal portfolio website showcasing my projects and skills using Three.js and WebGL.",
+    descriptionKey: "portfolio3d",
     tech: ["React", "JavaScript", "CSS", "Three.js", "WebGL"],
     github: "",
     link: "https://satviksabharwal.netlify.app/",
@@ -62,8 +59,7 @@ export const PROJECTS: Project[] = [
   {
     id: 4,
     title: "Coming soon",
-    description:
-      "I'm always working on new projects and updating my portfolio. Stay tuned for more exciting work coming soon!",
+    descriptionKey: "comingSoon",
     tech: ["Information"],
     link: "",
     featured: false,
@@ -77,11 +73,7 @@ export const EXPERIENCE: Experience[] = [
     role: "Frontend Engineer",
     company: "Staffbase SE",
     period: "2022 — Present",
-    description: [
-      "Spearheaded the development and full ownership of the analytics frontend using React, TypeScript, and TailwindCSS, architecting scalable solutions and delivering high-performance features for a platform with millions of active users.",
-      "Implemented analytics tracking across communication platform features, collaborating with multiple feature teams to integrate tracking into their codebases, capture user behavior, generate actionable engagement insights, and enable organization admins to optimize communication strategies.",
-      "Improved overall team velocity and decreased onboarding time by 30% by architecting a streamlined onboarding workflow, actively updating documentation, and mentoring new hires through bi-weekly syncs.",
-    ],
+    descriptionNamespace: "staffbase",
     tech: [
       "React",
       "TypeScript",
@@ -100,11 +92,7 @@ export const EXPERIENCE: Experience[] = [
     role: "Senior Engineer",
     company: "Brillio",
     period: "2021 — 2021",
-    description: [
-      "Developed and deployed the frontend of a large-scale stock order management application using React, TypeScript, and Styled Components for the Australian retailer Reece, enabling 1000+ in-store employees to serve millions of customers efficiently and streamlining product operations.",
-      "Engineered responsive, mobile-first user interfaces with modern UI/UX design, ensured pixel-perfect layouts and accessibility compliance across browsers and devices, driving consistent user experiences for all platforms.",
-      "Mentored junior developers through pair programming, code reviews, and structured knowledge-sharing sessions; accelerated onboarding, team skill development, and boosted project delivery speed.",
-    ],
+    descriptionNamespace: "brillio",
     tech: [
       "React",
       "TypeScript",
@@ -119,11 +107,7 @@ export const EXPERIENCE: Experience[] = [
     role: "Project Engineer",
     company: "Wipro",
     period: "2019 — 2021",
-    description: [
-      "Reduced manual operational effort by 25 hours per week by engineering a highly customizable internal tools platform using React, JavaScript, and CSS.",
-      "Implemented a robust front-end authentication system supporting OAuth-based login via Gmail, Outlook, and organizational accounts, optimizing security through session storage and cookies, and streamlining user access for hundreds of internal stakeholders.",
-      "Applied continuous integration and version control using Git and participated in agile delivery cycles with Jira, enabling efficient task management and predictable, high-quality releases in a rapidly evolving environment.",
-    ],
+    descriptionNamespace: "wipro",
     tech: ["React", "JavaScript", "CSS"],
   },
 ];
