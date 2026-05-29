@@ -87,7 +87,7 @@ export function HeroSection() {
             {...fadeUp(0.3)}
             className="text-white/40 text-lg leading-relaxed max-w-lg mb-10"
           >
-            {PERSONAL.bio}
+            {t("bio")}
           </motion.p>
 
           {/* CTA row */}

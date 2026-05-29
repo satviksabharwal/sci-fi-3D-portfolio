@@ -5,6 +5,7 @@ import { routing } from './routing';
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;
+
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }

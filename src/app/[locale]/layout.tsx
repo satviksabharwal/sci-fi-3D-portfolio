@@ -1,6 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { redirect } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -14,12 +13,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale: localeParam } = await params;
-  const locale = routing.locales.includes(
-    localeParam as (typeof routing.locales)[number],
-  )
-    ? localeParam
-    : "en";
+  const { locale } = await params;
 
   return {
     alternates: {
@@ -37,17 +31,7 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale: localeParam } = await params;
-  const locale = routing.locales.includes(
-    localeParam as (typeof routing.locales)[number],
-  )
-    ? localeParam
-    : "en";
-
-  if (locale !== localeParam) {
-    redirect("/en");
-  }
-
+  const { locale } = await params;
   const messages = await getMessages();
 
   return (

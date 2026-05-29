@@ -2,9 +2,6 @@ import type { Project, Experience, Skill } from "@/types";
 
 export const PERSONAL = {
   name: "Satvik Sabharwal",
-  title: "Frontend Engineer",
-  tagline: "Building extraordinary web experiences",
-  bio: "6+ years crafting high-performance, pixel-perfect interfaces. BTech Computer Science · MSc Web Engineering. I turn complex problems into elegant, scalable solutions that users love.",
   email: "createwithsatvik@gmail.com",
   github: "https://github.com/satviksabharwal",
   linkedin: "https://www.linkedin.com/in/satvik-sabharwal/",
