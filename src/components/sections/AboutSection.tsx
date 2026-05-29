@@ -39,7 +39,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7 }}
             className="space-y-5 text-white/50 leading-relaxed text-[1.05rem]"
           >
@@ -64,7 +64,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
             <h3 className="text-xs tracking-widest uppercase font-mono text-white/30 mb-4">
@@ -95,7 +95,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="flex flex-wrap gap-4 pt-2"
           >

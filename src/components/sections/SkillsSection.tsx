@@ -49,7 +49,11 @@ export function SkillsSection() {
   const t = useTranslations("skills");
   const { ref, inView } = useScrollReveal(0.1);
 
-  const CATEGORIES: { key: Skill["category"]; labelKey: string; color: string }[] = [
+  const CATEGORIES: {
+    key: Skill["category"];
+    labelKey: string;
+    color: string;
+  }[] = [
     { key: "frontend", labelKey: "categories.frontend", color: "#00f5c4" },
     { key: "backend", labelKey: "categories.backend", color: "#7c3aed" },
     { key: "tools", labelKey: "categories.tools", color: "#f472b6" },
@@ -104,7 +108,7 @@ export function SkillsSection() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.6, delay: 0.3 }}
         className="mt-12"
       >

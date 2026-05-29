@@ -35,7 +35,7 @@ export function ExperienceSection() {
                 key={exp.id}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
               >
                 <button

@@ -96,7 +96,7 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7 }}
           className="space-y-8"
         >
@@ -150,7 +150,7 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.7 }}
         >
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">

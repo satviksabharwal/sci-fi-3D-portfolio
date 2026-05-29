@@ -27,7 +27,7 @@ export function ProjectsSection() {
             key={project.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.7, delay: i * 0.12 }}
             onHoverStart={() => setHovered(project.id)}
             onHoverEnd={() => setHovered(null)}
@@ -134,7 +134,7 @@ export function ProjectsSection() {
             key={project.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="card-sci-fi rounded-xl p-5 flex items-start gap-4 hover:scale-[1.01] transition-transform duration-300 group"
           >
@@ -185,7 +185,7 @@ export function ProjectsSection() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ delay: 0.4 }}
         className="text-center mt-10"
       >
