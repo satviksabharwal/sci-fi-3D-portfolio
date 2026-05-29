@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useId } from "react";
+import { LogoSvg } from "@/components/ui/LogoSvg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
@@ -187,48 +188,9 @@ function LanguageSwitcher() {
 export const Logo = () => {
   const gradientId = useId();
   return (
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 26 26"
-      fill="none"
-      aria-hidden="true"
+    <LogoSvg
+      gradientId={gradientId}
       className="transition-transform duration-300 group-hover:scale-110"
-    >
-      <defs>
-        <linearGradient
-          id={gradientId}
-          x1="0"
-          y1="0"
-          x2="26"
-          y2="26"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#00f5c4" />
-          <stop offset="0.5" stopColor="#7c3aed" />
-          <stop offset="1" stopColor="#f472b6" />
-        </linearGradient>
-      </defs>
-      <rect
-        x="0.75"
-        y="0.75"
-        width="24.5"
-        height="24.5"
-        rx="5.25"
-        stroke={`url(#${gradientId})`}
-        strokeWidth="1.5"
-      />
-      <text
-        x="13"
-        y="18.5"
-        textAnchor="middle"
-        fontFamily="Syne, sans-serif"
-        fontWeight="800"
-        fontSize="16"
-        fill={`url(#${gradientId})`}
-      >
-        S
-      </text>
-    </svg>
+    />
   );
 };

@@ -39,9 +39,7 @@ export function ExperienceSection() {
                 transition={{ duration: 0.6, delay: i * 0.12 }}
               >
                 <button
-                  onClick={() =>
-                    setExpanded(expanded === exp.id ? 0 : exp.id)
-                  }
+                  onClick={() => setExpanded(expanded === exp.id ? 0 : exp.id)}
                   className="w-full text-left card-sci-fi rounded-2xl p-6 hover:border-white/15 transition-all duration-300 group cursor-none"
                 >
                   {/* Header */}
@@ -51,12 +49,12 @@ export function ExperienceSection() {
                       <div className="relative flex-shrink-0 mt-1.5">
                         <div
                           className={`w-3 h-3 rounded-full border-2 transition-colors duration-300 ${
-                            exp.current
+                            expanded === exp.id
                               ? "bg-accent-cyan border-accent-cyan"
                               : "bg-transparent border-white/20 group-hover:border-white/40"
                           }`}
                         />
-                        {exp.current && (
+                        {expanded === exp.id && (
                           <div className="absolute inset-0 rounded-full bg-accent-cyan animate-ping opacity-30" />
                         )}
                       </div>
