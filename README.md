@@ -1,6 +1,6 @@
 # Satvik Sabharwal — 3D Portfolio
 
-A high-performance, visually immersive personal portfolio built with **Next.js 14**, **Three.js**, and **Framer Motion**. Features a WebGL 3D avatar, particle background, animated skill bars, timeline experience section, and a fully wired contact form powered by **EmailJS**.
+A high-performance, visually immersive personal portfolio built with **Next.js 14**, **Three.js**, and **Framer Motion**. Features a WebGL 3D avatar, particle background, animated skill bars, accordion experience timeline, and a fully wired contact form powered by **EmailJS**. Fully internationalised in **English** and **German** with browser-locale detection.
 
 **Live demo:** [satviksabharwal.com](https://satviksabharwal.com/)
 
@@ -11,6 +11,7 @@ A high-performance, visually immersive personal portfolio built with **Next.js 1
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
+- [Internationalisation (i18n)](#internationalisation-i18n)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -38,9 +39,11 @@ A high-performance, visually immersive personal portfolio built with **Next.js 1
 | **About**      | Bio, education timeline, values grid, location & social chips                                  |
 | **Skills**     | Animated progress bars grouped by Frontend / Backend / Tools & Ops                             |
 | **Projects**   | Featured project cards with per-project glow color, GitHub + live links                        |
-| **Experience** | Accordion timeline with smooth height transitions                                              |
+| **Experience** | Accordion timeline — active card shows neon cyan indicator with ping animation                 |
 | **Contact**    | EmailJS-powered form with loading / success / error states                                     |
 | **Global**     | Custom cursor, interactive particle background, scroll-reveal animations, smooth-scroll navbar |
+| **i18n**       | English + German, browser-locale detection, language switcher in navbar                        |
+| **Favicon**    | Programmatic gradient "S" monogram matching the navbar logo                                    |
 
 ---
 
@@ -53,6 +56,7 @@ A high-performance, visually immersive personal portfolio built with **Next.js 1
 | Styling         | Tailwind CSS v3 with custom design tokens             |
 | 3D / WebGL      | Three.js + `@react-three/fiber` + `@react-three/drei` |
 | Animations      | Framer Motion                                         |
+| i18n            | `next-intl` v4                                        |
 | Typewriter      | `react-type-animation`                                |
 | Contact form    | `@emailjs/browser`                                    |
 | Intersection    | `react-intersection-observer`                         |
@@ -65,17 +69,23 @@ A high-performance, visually immersive personal portfolio built with **Next.js 1
 
 ```
 portfolio/
-├── public/                        # Static assets (images, fonts, models)
+├── messages/
+│   ├── en.json                    # All English strings (UI copy, section text, descriptions)
+│   └── de.json                    # All German strings
 ├── src/
 │   ├── app/
+│   │   ├── [...slug]/page.tsx     # Catch-all redirect → /
+│   │   ├── [locale]/
+│   │   │   ├── [...slug]/page.tsx # Catch-all redirect → /{locale}
+│   │   │   ├── layout.tsx         # HTML shell, NextIntlClientProvider, Navbar, ParticleBackground
+│   │   │   └── page.tsx           # Flat assembly of all section components
 │   │   ├── globals.css            # Global styles & Tailwind directives
-│   │   ├── layout.tsx             # Root layout — cursor, navbar
-│   │   ├── page.tsx               # Single-page assembly of all sections
-│   │   └── [...slug]/page.tsx     # Catch-all route (fallback)
+│   │   ├── icon.tsx               # Programmatic favicon (gradient "S" monogram via ImageResponse)
+│   │   └── layout.tsx             # Root pass-through layout
 │   ├── components/
 │   │   ├── 3d/
-│   │   │   ├── Avatar3D.tsx       # Three.js 3D avatar (dynamic, SSR-disabled)
-│   │   │   └── ParticleBackground.tsx
+│   │   │   ├── Avatar3D.tsx       # SVG-based avatar driven by mouse position (dynamic, SSR-disabled)
+│   │   │   └── ParticleBackground.tsx  # Three.js particle scene, mounted globally
 │   │   ├── sections/
 │   │   │   ├── HeroSection.tsx
 │   │   │   ├── AboutSection.tsx
@@ -86,14 +96,20 @@ portfolio/
 │   │   └── ui/
 │   │       ├── CustomCursor.tsx
 │   │       ├── Footer.tsx
-│   │       ├── Navbar.tsx
+│   │       ├── LogoSvg.tsx        # Shared gradient "S" logo — used by Navbar and favicon
+│   │       ├── Navbar.tsx         # Language switcher + locale-aware resume link
 │   │       └── SectionWrapper.tsx
 │   ├── hooks/
-│   │   ├── useMousePosition.ts    # Global mouse tracking
-│   │   └── useScrollReveal.ts     # IntersectionObserver helper
+│   │   ├── useMousePosition.ts    # Global mouse tracking for parallax
+│   │   └── useScrollReveal.ts     # IntersectionObserver helper (re-triggers on each scroll)
+│   ├── i18n/
+│   │   ├── navigation.ts          # Locale-aware Link / useRouter / usePathname
+│   │   ├── request.ts             # Resolves locale + loads messages at request time
+│   │   └── routing.ts             # Single source of truth: locales, defaultLocale, detection
 │   ├── lib/
-│   │   ├── data.ts                # All personal content — edit this to personalise
-│   │   └── utils.ts               # cn() utility
+│   │   ├── data.ts                # Language-agnostic structured data (PERSONAL, SKILLS, PROJECTS, EXPERIENCE)
+│   │   └── utils.ts               # cn() utility (clsx + tailwind-merge)
+│   ├── middleware.ts              # next-intl middleware — locale prefix + Accept-Language detection
 │   └── types/
 │       └── index.ts
 ├── tailwind.config.ts
@@ -101,6 +117,44 @@ portfolio/
 ├── tsconfig.json
 └── .env.local                     # NOT committed — you must create this
 ```
+
+---
+
+## Internationalisation (i18n)
+
+The site is fully internationalised with [next-intl](https://next-intl-docs.vercel.app/) v4. Every public route lives under a `[locale]` segment (`/en`, `/de`).
+
+### How it works
+
+| File                  | Role                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------ |
+| `src/i18n/routing.ts` | Declares supported locales (`en`, `de`), `defaultLocale: 'en'`, and `localePrefix: 'always'`     |
+| `src/middleware.ts`   | Intercepts every request; reads the `Accept-Language` header and redirects `/` to `/en` or `/de` |
+| `src/i18n/request.ts` | Loads the correct `messages/*.json` for the active locale on the server                          |
+| `messages/en.json`    | All English strings                                                                              |
+| `messages/de.json`    | All German strings                                                                               |
+
+### Browser locale detection
+
+- `localeDetection: true` — the middleware reads the browser's `Accept-Language` header on every visit to `/`
+- `localeCookie: false` — no locale cookie is set, so the browser language is always respected (not overridden by a previous visit)
+- Unsupported languages (e.g. French, Spanish) fall back to `defaultLocale: 'en'`
+
+### Content model
+
+Content lives in two places that must stay in sync:
+
+1. **`src/lib/data.ts`** — language-agnostic structured data. Items reference translation keys, not values:
+   - `Project.descriptionKey` → looked up as `projects.descriptions.{key}` in the JSON messages
+   - `Experience.descriptionNamespace` → namespace under `experience.{namespace}` containing bullet points
+
+2. **`messages/en.json` and `messages/de.json`** — all user-visible strings, including the hero bio, section labels, and the description text referenced above.
+
+When adding a project or experience entry, update **both** `data.ts` (structured metadata) and **every locale JSON** (translated text).
+
+### Language switcher
+
+The Navbar includes an `EN · DE` toggle that calls `router.replace(pathname, { locale })` from `next-intl` — no page reload, no cookie set.
 
 ---
 
@@ -128,7 +182,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser — it auto-redirects to `/en` (or `/de` if your browser language is German).
 
 > **Note:** The contact form will silently fail until you add your EmailJS credentials to `.env.local` (see [Environment Variables](#environment-variables)).
 
@@ -143,6 +197,12 @@ Create a `.env.local` file in the root of the project (next to `package.json`). 
 NEXT_PUBLIC_EMAIL_SERVICE_ID=your_service_id
 NEXT_PUBLIC_EMAIL_SERVICE_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAIL_SERVICE_PUBLIC_KEY=your_public_key
+NEXT_PUBLIC_RESUME_URL_EN=https://example.com/resume-en.pdf
+NEXT_PUBLIC_RESUME_URL_DE=https://example.com/resume-de.pdf
+
+# Resume links — locale-aware (shown in Navbar based on active language)
+NEXT_PUBLIC_RESUME_URL_EN=https://your-link/resume-en.pdf
+NEXT_PUBLIC_RESUME_URL_DE=https://your-link/resume-de.pdf
 ```
 
 After adding these values, restart the dev server (`pnpm dev`) for Next.js to pick them up.
@@ -203,7 +263,7 @@ An _email template_ defines the shape of every email EmailJS sends on your behal
    > The variables inside `{{ }}` **must match exactly** the keys passed to `emailjs.send()` in the code:
    > `from_name`, `from_email`, `message`, `to_name`, `to_email`.
 
-4. Under **To Email**, enter your personal email address (e.g., `satviksabharwal7@gmail.com`) — this is where messages will land.
+4. Under **To Email**, enter your personal email address — this is where messages will land.
 5. Optionally set **Reply To** to `{{from_email}}` so you can reply directly to the sender.
 6. Click **Save**.
 7. Copy the **Template ID** — it looks like `template_xxxxxxx`.
@@ -213,8 +273,6 @@ An _email template_ defines the shape of every email EmailJS sends on your behal
 ---
 
 ### Step 4 — Get Your Public Key
-
-The public key authenticates requests from your browser without exposing any secrets.
 
 1. In the dashboard, click your account avatar (top-right) → **Account**.
 2. Under the **API Keys** section, find your **Public Key** — it looks like `AbCdEfGhIjKlMnOpQr`.
@@ -226,12 +284,14 @@ The public key authenticates requests from your browser without exposing any sec
 
 ### Step 5 — Add Credentials to `.env.local`
 
-Your completed `.env.local` should look like this (replace with your real values):
+Your completed `.env.local` should look like this:
 
 ```env
 NEXT_PUBLIC_EMAIL_SERVICE_ID=service_abc123
 NEXT_PUBLIC_EMAIL_SERVICE_TEMPLATE_ID=template_xyz789
 NEXT_PUBLIC_EMAIL_SERVICE_PUBLIC_KEY=AbCdEfGhIjKlMnOpQr
+NEXT_PUBLIC_RESUME_URL_EN=https://your-link/resume-en.pdf
+NEXT_PUBLIC_RESUME_URL_DE=https://your-link/resume-de.pdf
 ```
 
 Restart the dev server:
@@ -244,7 +304,7 @@ pnpm dev
 
 ### Step 6 — Verify the Integration
 
-1. Open [http://localhost:3000/#contact](http://localhost:3000/#contact).
+1. Open [http://localhost:3000/en#contact](http://localhost:3000/en#contact).
 2. Fill in the Name, Email, and Message fields.
 3. Click **Send Message**.
 4. The button should show a spinner, then display a success confirmation.
@@ -265,21 +325,30 @@ pnpm dev
 
 ## Customization
 
-All personal content is centralised in `src/lib/data.ts`. Edit the exported constants to make the portfolio your own:
+### Structured data (`src/lib/data.ts`)
 
-| Constant     | What it controls                                                               |
-| ------------ | ------------------------------------------------------------------------------ |
-| `PERSONAL`   | Name, title, tagline, bio, email, GitHub, LinkedIn, location                   |
-| `SKILLS`     | Skill name, proficiency level (0–100), category                                |
-| `PROJECTS`   | Title, description, tech stack, GitHub/live links, featured flag, accent color |
-| `EXPERIENCE` | Role, company, period, bullet points, tech tags                                |
+Language-agnostic metadata lives here. Edit these constants to personalise the portfolio:
 
-**Other customization points:**
+| Constant     | What it controls                                                              |
+| ------------ | ----------------------------------------------------------------------------- |
+| `PERSONAL`   | Name, email, GitHub, LinkedIn, location                                       |
+| `SKILLS`     | Skill name, proficiency level (0–100), category                               |
+| `PROJECTS`   | Title, `descriptionKey` (points to messages JSON), tech stack, links, color   |
+| `EXPERIENCE` | Role, company, period, `descriptionNamespace` (points to messages JSON), tech |
 
-- **Initials in Navbar & Footer** — search for `YN` (or similar) in `Navbar.tsx` and `Footer.tsx` and replace with your own initials.
-- **Resume link** — place your PDF at `public/resume.pdf`; the Navbar "Resume" button links to it automatically.
-- **Avatar appearance** — the 3D avatar is built with raw Three.js geometries in `Avatar3D.tsx`. Adjust skin tone, hair color, or glasses glow in the `Materials` section near the top of that file.
-- **Design tokens** — colors, fonts, and animations are all defined in `tailwind.config.ts`.
+> `PERSONAL.bio` and all user-visible text have moved to `messages/en.json` and `messages/de.json`. Edit those files for copy changes.
+
+### Translated copy (`messages/en.json` and `messages/de.json`)
+
+All visible text — hero roles, section headings, bio paragraphs, project descriptions, experience bullets — lives in these files. Add or edit keys in both files to keep the locales in sync.
+
+### Other customization points
+
+- **Logo** — the gradient "S" monogram is defined once in `src/components/ui/LogoSvg.tsx` and shared between the Navbar and the browser favicon (`src/app/icon.tsx`).
+- **Resume links** — set `NEXT_PUBLIC_RESUME_URL_EN` and `NEXT_PUBLIC_RESUME_URL_DE` in `.env.local`; the Navbar picks the right one based on the active locale.
+- **Avatar appearance** — the avatar is an SVG component driven by mouse position via `requestAnimationFrame` in `Avatar3D.tsx`. Adjust colors and geometry in that file.
+- **Design tokens** — colors, fonts, and animations are defined in `tailwind.config.ts`.
+- **Adding a locale** — update `locales` in `src/i18n/routing.ts` and add a matching `messages/{locale}.json`.
 
 ---
 
@@ -296,17 +365,17 @@ pnpm start
 
 1. Push the repository to GitHub.
 2. Import the repo at [vercel.com/new](https://vercel.com/new).
-3. In the Vercel project settings → **Environment Variables**, add the three `NEXT_PUBLIC_EMAIL_*` variables.
+3. In the Vercel project settings → **Environment Variables**, add all five `NEXT_PUBLIC_*` variables.
 4. Deploy — Vercel auto-detects Next.js and configures everything.
 
 ### Deploy to Netlify
 
 1. Connect the GitHub repo in the Netlify dashboard.
 2. Set **Build command** to `pnpm build` and **Publish directory** to `.next`.
-3. Under **Site settings → Environment variables**, add the three `NEXT_PUBLIC_EMAIL_*` variables.
+3. Under **Site settings → Environment variables**, add all five `NEXT_PUBLIC_*` variables.
 4. Deploy.
 
-> When deploying, always add your EmailJS environment variables in the hosting platform's dashboard — **never commit `.env.local`** to version control.
+> When deploying, always add your environment variables in the hosting platform's dashboard — **never commit `.env.local`** to version control.
 
 ---
 
@@ -314,7 +383,7 @@ pnpm start
 
 - The Three.js components use `dynamic()` with `ssr: false` — they only load client-side, keeping the initial HTML payload small.
 - Particle count is set to 2500 in `ParticleBackground.tsx` — reduce this value for better performance on lower-end devices.
-- Framer Motion `useScrollReveal` uses `IntersectionObserver` with `triggerOnce: true`, so animations run only once and don't re-trigger on scroll.
+- Scroll-reveal animations (`useScrollReveal` + Framer Motion `whileInView`) re-trigger on every scroll. Set `triggerOnce: false → true` in `src/hooks/useScrollReveal.ts` and flip `viewport={{ once: false }}` back to `true` in each section component to lock animations to first-play only.
 
 ---
 
@@ -325,13 +394,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 > Built by [Satvik Sabharwal](https://www.linkedin.com/in/satvik-sabharwal/)
-
-- All section animations use `triggerOnce: true` — they only play once on scroll
-
-## FAANG-Ready Extras to Consider
-
-- Add **Google Analytics / Vercel Analytics** for visitor tracking
-- Integrate a **CMS** (Sanity, Contentful) so you can update projects without redeploying
-- Add **JSON-LD structured data** in `layout.tsx` for SEO
-- Set up **OG image generation** via `app/opengraph-image.tsx`
-- Add a **Projects detail page** at `app/projects/[slug]/page.tsx`
