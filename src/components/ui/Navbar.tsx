@@ -11,6 +11,11 @@ export function Navbar() {
   const [active, setActive] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const t = useTranslations("common");
+  const locale = useLocale();
+  const resumeUrl =
+    locale === "de"
+      ? process.env.NEXT_PUBLIC_RESUME_URL_DE
+      : process.env.NEXT_PUBLIC_RESUME_URL_EN;
 
   const LINKS = [
     { label: t("nav.about"), href: "#about" },
@@ -76,7 +81,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <a
-            href="https://drive.google.com/file/d/1Vfyi1AoZkVdJEN9dMkSMDIAChpkvtKLU/view?usp=sharing"
+            href={resumeUrl ?? "#"}
             target="_blank"
             className="flex items-center gap-2 px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-sm"
           >
