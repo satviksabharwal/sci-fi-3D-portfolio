@@ -114,7 +114,9 @@
       "moreOnGithub": "More on GitHub"
     },
     "descriptions": {
-      "photoVoltaic": "It is a full-stack application built using the MERN stack. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
+      "photoVoltaic": "It is a full-stack application built using the React, Node.js, Express.js, Supabase. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
+      "calorieCam": "Snap a photo of your meal and instantly get a full nutrition breakdown — calories, protein, carbs, fat, and fibre. Meals are saved to your account so you can track what you eat over time.",
+      "portfolio": "A sci-fi themed portfolio website that keeps you up to date with my work experience, personal projects, and everything else I'm building.",
       "dataManagement": "It is a comprehensive data management platform with a range of features such as user authentication, user profiles, file statistics visualization, file operations (CRUD), file tagging, file access control, file search, and file sharing with email notifications.",
       "portfolio3d": "A 3D personal portfolio website showcasing my projects and skills using Three.js and WebGL.",
       "comingSoon": "I'm always working on new projects and updating my portfolio. Stay tuned for more exciting work coming soon!"

@@ -57,7 +57,7 @@ export function ProjectsSection() {
                   border: `1px solid ${project.color}30`,
                 }}
               >
-                {["⬡", "◈", "⬖"][i]}
+                {["⬡", "◈", "⬖", "⬠", "⌖"][i]}
               </div>
               <div className="flex gap-2">
                 {project.github && (

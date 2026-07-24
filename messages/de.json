@@ -115,6 +115,8 @@
     },
     "descriptions": {
       "photoVoltaic": "Eine Full-Stack-Anwendung auf Basis des MERN-Stacks. Sie ermöglicht die Überwachung und Analyse von Photovoltaik-Daten, die Visualisierung der Systemleistung und die Erstellung von Berichten.",
+      "calorieCam": "Fotografiere einfach deine Mahlzeit und erhalte sofort eine vollständige Nährwertanalyse – Kalorien, Protein, Kohlenhydrate, Fett und Ballaststoffe. Deine Mahlzeiten werden in deinem Konto gespeichert, damit du deine Ernährung langfristig im Blick behältst.",
+      "portfolio": "Eine Portfolio-Website im Sci-Fi-Look, die dich über meine Berufserfahrung, meine persönlichen Projekte und alles Weitere auf dem Laufenden hält.",
       "dataManagement": "Eine umfassende Datenverwaltungsplattform mit Funktionen wie Benutzerauthentifizierung, Benutzerprofilen, Dateistatistik-Visualisierung, Dateioperationen (CRUD), Datei-Tagging, Zugangskontrolle, Dateisuche und -freigabe mit E-Mail-Benachrichtigungen.",
       "portfolio3d": "Eine 3D-Portfolio-Website, die meine Projekte und Fähigkeiten mit Three.js und WebGL präsentiert.",
       "comingSoon": "Ich arbeite ständig an neuen Projekten und aktualisiere mein Portfolio. Bleib dran für weitere spannende Projekte!"
