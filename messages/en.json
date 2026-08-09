@@ -17,10 +17,10 @@
     "available": "Available for opportunities",
     "greeting": "Hi, I'm",
     "roles": [
-      "Frontend Engineer",
+      "Frontend-Focused Full-Stack Developer",
       "React Specialist",
+      "AI-Native Builder",
       "Analytics Enthusiast",
-      "Performance Nerd",
       "Accessibility Advocate"
     ],
     "cta": {
@@ -34,7 +34,7 @@
       "companies": "Companies",
       "degrees": "Degrees"
     },
-    "bio": "6+ years crafting high-performance, pixel-perfect interfaces. BTech Computer Science · MSc Web Engineering. I turn complex problems into elegant, scalable solutions that users love.",
+    "bio": "Frontend-focused full-stack developer with 6+ years crafting high-performance products — from pixel-perfect React interfaces to Node.js APIs. BTech Computer Science · MSc Web Engineering. I turn complex problems into elegant, scalable solutions that users love.",
     "tagline": "RENDERING FRONTEND.DEV_v2.0",
     "scroll": "Scroll"
   },
@@ -42,7 +42,7 @@
     "label": "01 / About",
     "title": "Who I Am",
     "subtitle": "A developer who cares deeply about craft, performance, and the humans using what I build.",
-    "bio1": "I'm a frontend engineer with <strong>6+ years of experience</strong> turning complex product challenges into clean, performant, and delightful interfaces. I've worked across e-commerce and social networking platforms, owning both the customer-facing experiences users interact with and the admin dashboards that surface deep analytics insights to the teams running the show.",
+    "bio1": "I'm a frontend-focused full-stack developer with <strong>6+ years of experience</strong> delivering React and TypeScript products at enterprise scale — including 4+ years at Staffbase building AI-native features for 2,000+ B2B customers and millions of end users. I own features end to end, from discovery and architecture to production, across analytics platforms, agentic workflows, and data visualization systems.",
     "bio2": "My academic background in <cyan>Web Engineering</cyan> (MSc) and <cyan>Computer Science</cyan> (BTech) gave me a strong theoretical foundation — but it's years of shipping real products under real constraints that shaped how I think about software.",
     "bio3": "I care about the intersection of engineering rigor and aesthetic quality. I've collaborated closely with designers, product managers, and backend engineers to build experiences that users love and systems that teams can maintain. If you're building something ambitious, I'd love to be part of it.",
     "educationLabel": "Education",
@@ -129,19 +129,23 @@
     "currentBadge": "Current",
     "descriptions": {
       "staffbase": [
-        "Spearheaded the development and full ownership of the analytics frontend using React, TypeScript, and TailwindCSS, architecting scalable solutions and delivering high-performance features for a platform with millions of active users.",
-        "Implemented analytics tracking across communication platform features, collaborating with multiple feature teams to integrate tracking into their codebases, capture user behavior, generate actionable engagement insights, and enable organization admins to optimize communication strategies.",
-        "Improved overall team velocity and decreased onboarding time by 30% by architecting a streamlined onboarding workflow, actively updating documentation, and mentoring new hires through bi-weekly syncs."
+        "Architected and shipped AI-powered features for an AI-native communication platform serving 2,000+ enterprise customers and millions of employees, including AI content insights and agentic workflow integrations.",
+        "Led discovery across 10+ projects with customers, PMs, and designers, architecting a behavioral tracking solution and a WCAG-compliant interactive visualization dashboard that surfaces real-time insights for millions of users.",
+        "Re-engineered the analytics platform using React, TypeScript, and Visx with RESTful APIs, delivered dynamic visualizations at scale, and shipped a cross-team component library adopted across multiple product teams.",
+        "Drove end-to-end migration of 3+ projects from discovery to production, authoring ADRs to align stakeholders, and modernized legacy UIs with client-side routing for a seamless SPA experience.",
+        "Migrated a fragmented micro-frontend architecture to a Turborepo monorepo, cutting build times by 2 hours and improving deployment efficiency by 200% through unified tooling and streamlined CI pipelines."
       ],
       "brillio": [
-        "Developed and deployed the frontend of a large-scale stock order management application using React, TypeScript, and Styled Components for the Australian retailer Reece, enabling 1000+ in-store employees to serve millions of customers efficiently and streamlining product operations.",
-        "Engineered responsive, mobile-first user interfaces with modern UI/UX design, ensured pixel-perfect layouts and accessibility compliance across browsers and devices, driving consistent user experiences for all platforms.",
-        "Mentored junior developers through pair programming, code reviews, and structured knowledge-sharing sessions; accelerated onboarding, team skill development, and boosted project delivery speed."
+        "Architected the frontend of an enterprise stock order management SPA in React.js for an Australian retail client, used by thousands of users across hundreds of physical store operations.",
+        "Owned frontend tech stack decisions, evaluating and finalizing React.js, TypeScript, Redux, Styled Components, and Material UI as the core architecture for a scalable, maintainable foundation.",
+        "Delivered mobile-first, WCAG-compliant UIs with pixel-perfect precision, ensuring a consistent user experience across browsers and devices.",
+        "Mentored 2 junior developers via pair programming and code reviews, accelerating onboarding and improving team productivity."
       ],
       "wipro": [
-        "Reduced manual operational effort by 25 hours per week by engineering a highly customizable internal tools platform using React, JavaScript, and CSS.",
-        "Implemented a robust front-end authentication system supporting OAuth-based login via Gmail, Outlook, and organizational accounts, optimizing security through session storage and cookies, and streamlining user access for hundreds of internal stakeholders.",
-        "Applied continuous integration and version control using Git and participated in agile delivery cycles with Jira, enabling efficient task management and predictable, high-quality releases in a rapidly evolving environment."
+        "Reduced manual operational effort by engineering client-facing web applications using React.js and JavaScript, delivering responsive, pixel-perfect UI solutions across multiple enterprise projects.",
+        "Implemented front-end features and integrated RESTful APIs with scalable state management, streamlining data flow across critical user journeys for hundreds of end users.",
+        "Utilized Git for CI and version control, and participated in agile cycles with Jira for efficient task management and high-quality releases.",
+        "Promoted design patterns, modular architecture, and reusable components and libraries to enhance scalability and maintainability."
       ]
     }
   },
@@ -153,7 +157,7 @@
     "reachMeAt": "Reach me at",
     "availability": {
       "status": "Available for work",
-      "detail": "Looking for senior/staff frontend roles, ideally remote or hybrid. Open to both full-time and freelance engagements. Response time: < 24h."
+      "detail": "Looking for senior frontend / full-stack roles, ideally remote or hybrid. Open to relocation and to both full-time and freelance engagements. Response time: < 24h."
     },
     "social": {
       "github": "GitHub",
@@ -172,5 +176,26 @@
       "success": "✓ Message Sent!",
       "error": "Failed — try again"
     }
+  },
+  "chat": {
+    "launcherLabel": "Chat with AI Satvik",
+    "title": "Satvik (AI)",
+    "status": "online — AI twin",
+    "greeting": "Hey, I'm Satvik's AI twin 👋 Ask me anything about his work, projects, or whether he's free for your team.",
+    "placeholder": "Ask me anything...",
+    "send": "Send",
+    "disclaimer": "AI version of Satvik — may occasionally be imperfect.",
+    "suggestions": [
+      "What do you do at Staffbase?",
+      "Show me your projects",
+      "Are you open to new roles?",
+      "Can I see your resume?"
+    ],
+    "error": "Something went wrong — please try again.",
+    "rateLimited": "Whoa, that's a lot of messages — give it a minute and try again.",
+    "videoCall": "Start video call",
+    "videoCallHint": "Talk face-to-face with my AI avatar",
+    "resumeLink": "Open my resume",
+    "close": "Close chat"
   }
 }

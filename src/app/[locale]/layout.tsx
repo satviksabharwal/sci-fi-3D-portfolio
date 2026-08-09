@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { Navbar } from "@/components/ui/Navbar";
 import { ParticleBackground } from "@/components/3d/ParticleBackground";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import type { Metadata } from "next";
 
 type Props = {
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: {
-      default: "Satvik Sabharwal | Frontend Engineer",
+      default: "Satvik Sabharwal | Frontend-Focused Full-Stack Developer",
       template: "%s | Satvik Sabharwal",
     },
     description: t("bio"),
@@ -48,6 +49,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           <ParticleBackground />
           <Navbar />
           <main className="relative z-10">{children}</main>
+          <ChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>

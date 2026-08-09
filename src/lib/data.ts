@@ -5,7 +5,7 @@ export const PERSONAL = {
   email: "createwithsatvik@gmail.com",
   github: "https://github.com/satviksabharwal",
   linkedin: "https://www.linkedin.com/in/satvik-sabharwal/",
-  location: "Berlin, Germany",
+  location: "Chemnitz, Germany",
 };
 
 export const SKILLS: Skill[] = [
@@ -96,11 +96,11 @@ export const EXPERIENCE: Experience[] = [
       "TypeScript",
       "TailwindCSS",
       "Zustand",
-      "React Query",
-      "i18next",
+      "TanStack Query",
+      "Visx",
+      "Turborepo",
       "Vitest",
       "Jest",
-      "Visx",
     ],
     current: true,
   },
@@ -113,9 +113,8 @@ export const EXPERIENCE: Experience[] = [
     tech: [
       "React",
       "TypeScript",
-      "StyledComponents",
       "Redux",
-      "StyledComponents",
+      "Styled Components",
       "MaterialUI",
     ],
   },
@@ -125,6 +124,6 @@ export const EXPERIENCE: Experience[] = [
     company: "Wipro",
     period: "2019 — 2021",
     descriptionNamespace: "wipro",
-    tech: ["React", "JavaScript", "CSS"],
+    tech: ["React", "JavaScript", "REST APIs", "CSS"],
   },
 ];

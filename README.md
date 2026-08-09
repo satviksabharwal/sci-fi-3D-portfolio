@@ -207,6 +207,38 @@ NEXT_PUBLIC_RESUME_URL_DE=https://your-link/resume-de.pdf
 
 After adding these values, restart the dev server (`pnpm dev`) for Next.js to pick them up.
 
+### Server environment variables (AI chat)
+
+The AI twin chat (`/api/chat`) needs a server-side secret. Unlike the variables above, **never** prefix these with `NEXT_PUBLIC_` — that would expose them to every visitor's browser.
+
+```env
+# Kimi (Moonshot AI) — required for the AI chat widget.
+# Create a key at https://platform.moonshot.ai (account needs a small top-up first).
+MOONSHOT_API_KEY=sk-...
+
+# Optional overrides & guardrails
+KIMI_MODEL=kimi-k2.6      # chat model (default kimi-k2.6)
+CHAT_DISABLED=            # set to any value to disable the chat (returns 503)
+CHAT_MAX_REQUESTS_PER_MINUTE=10   # per-visitor rate limit (default 10)
+CHAT_GLOBAL_DAILY_LIMIT=500       # total chat requests/day across all visitors (default 500)
+
+# Runway Characters video avatar (optional — chat works without it)
+# Public by design: security comes from the origin allowlist in the Runway portal.
+NEXT_PUBLIC_RUNWAY_PUB_KEY=pub_...
+```
+
+On Vercel, add `MOONSHOT_API_KEY` (and any optional vars) under **Project Settings → Environment Variables** for Production, Preview, and Development.
+
+### Runway Characters setup (video avatar)
+
+The face-to-face video avatar is powered by [Runway Characters](https://docs.dev.runwayml.com/characters/). One-time setup in the [Runway developer portal](https://dev.runwayml.com/):
+
+1. Create a Character from a single well-lit reference photo (1088×704 recommended) and clone your voice from a 1–2 minute clean audio sample.
+2. Personality prompt: use the spoken-style variant of `PERSONA` from `src/lib/knowledge/satvik.ts` (see `RUNWAY_PERSONA_NOTES` in that file).
+3. Knowledge base: export `KNOWLEDGE_BASE` from the same file to a `.txt`/`.md` and upload it. **Re-upload after every edit** so both twins stay in sync.
+4. Embed tab: allow origins `https://satviksabharwal.com`, `https://www.satviksabharwal.com`, `http://localhost:3000`; set max session duration (~180s) and a max daily call cap (sessions cost ~$0.20/min); match brand colors (`#05070f` / `#00f5c4`).
+5. Copy the `pub_...` key into `NEXT_PUBLIC_RUNWAY_PUB_KEY`. The video-call button only appears when this variable is set.
+
 ---
 
 ## Connecting EmailJS

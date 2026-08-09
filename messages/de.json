@@ -17,10 +17,10 @@
     "available": "Offen für neue Möglichkeiten",
     "greeting": "Hallo, ich bin",
     "roles": [
-      "Frontend-Entwickler",
+      "Frontend-fokussierter Full-Stack-Entwickler",
       "React-Spezialist",
+      "AI-Native Builder",
       "Analytics-Enthusiast",
-      "Performance-Enthusiast",
       "Barrierefreiheits-Experte"
     ],
     "cta": {
@@ -34,7 +34,7 @@
       "companies": "Unternehmen",
       "degrees": "Abschlüsse"
     },
-    "bio": "6+ Jahre Entwicklung hochperformanter, pixelgenauer Interfaces. BTech Informatik · MSc Web Engineering. Ich verwandle komplexe Probleme in elegante, skalierbare Lösungen, die Nutzer lieben.",
+    "bio": "Frontend-fokussierter Full-Stack-Entwickler mit 6+ Jahren Erfahrung — von pixelgenauen React-Interfaces bis zu Node.js-APIs. BTech Informatik · MSc Web Engineering. Ich verwandle komplexe Probleme in elegante, skalierbare Lösungen, die Nutzer lieben.",
     "tagline": "RENDERING FRONTEND.DEV_v2.0",
     "scroll": "Scrollen"
   },
@@ -42,7 +42,7 @@
     "label": "01 / Über mich",
     "title": "Wer ich bin",
     "subtitle": "Ein Entwickler, dem handwerkliche Qualität, Performance und die Menschen, die seine Produkte nutzen, am Herzen liegen.",
-    "bio1": "Ich bin Frontend-Entwickler mit <strong>6+ Jahren Erfahrung</strong> und verwandle komplexe Produktherausforderungen in saubere, performante und ansprechende Interfaces. Ich habe in E-Commerce- und Social-Networking-Plattformen gearbeitet und dabei sowohl kundenseitige Erlebnisse als auch Admin-Dashboards mit tiefen Analytics-Einblicken verantwortet.",
+    "bio1": "Ich bin ein Frontend-fokussierter Full-Stack-Entwickler mit <strong>6+ Jahren Erfahrung</strong> in der Entwicklung von React- und TypeScript-Produkten im Enterprise-Maßstab — davon 4+ Jahre bei Staffbase, wo ich AI-native Features für 2.000+ B2B-Kunden und Millionen von Endnutzern baue. Ich verantworte Features end-to-end, von Discovery und Architektur bis zur Produktion, über Analytics-Plattformen, agentische Workflows und Datenvisualisierungssysteme hinweg.",
     "bio2": "Mein akademischer Hintergrund in <cyan>Web Engineering</cyan> (MSc) und <cyan>Computer Science</cyan> (BTech) hat mir ein solides theoretisches Fundament gegeben – doch es sind die Jahre des Shipens realer Produkte unter realen Einschränkungen, die mein Denken über Software geprägt haben.",
     "bio3": "Mir liegt die Verbindung von technischer Präzision und ästhetischer Qualität am Herzen. Ich habe eng mit Designern, Product Managern und Backend-Entwicklern zusammengearbeitet, um Erlebnisse zu schaffen, die Nutzer lieben, und Systeme zu bauen, die Teams pflegen können. Wenn du etwas Ambitioniertes entwickelst, bin ich gerne dabei.",
     "educationLabel": "Ausbildung",
@@ -129,19 +129,23 @@
     "currentBadge": "Aktuell",
     "descriptions": {
       "staffbase": [
-        "Federführende Entwicklung und vollständige Verantwortung des Analytics-Frontends mit React, TypeScript und TailwindCSS – Entwicklung skalierbarer Lösungen und Lieferung hochperformanter Features für eine Plattform mit Millionen aktiver Nutzer.",
-        "Implementierung von Analytics-Tracking über Kommunikationsplattform-Features hinweg, in enger Zusammenarbeit mit mehreren Feature-Teams zur Integration von Tracking in ihre Codebasen, Erfassung des Nutzerverhaltens und Generierung verwertbarer Engagement-Einblicke.",
-        "Verbesserung der Team-Velocity und Reduzierung der Onboarding-Zeit um 30% durch Entwicklung eines optimierten Onboarding-Workflows, aktive Aktualisierung der Dokumentation und Mentoring neuer Mitarbeiter in zweiwöchentlichen Syncs."
+        "Architektur und Auslieferung KI-gestützter Features für eine AI-native Kommunikationsplattform mit 2.000+ Enterprise-Kunden und Millionen von Mitarbeitern – darunter AI Content Insights und agentische Workflow-Integrationen.",
+        "Leitung der Discovery in 10+ Projekten mit Kunden, PMs und Designern; Architektur einer Behavioral-Tracking-Lösung und eines WCAG-konformen interaktiven Visualisierungs-Dashboards mit Echtzeit-Einblicken für Millionen von Nutzern.",
+        "Neuentwicklung der Analytics-Plattform mit React, TypeScript und Visx auf Basis von RESTful APIs; Lieferung dynamischer Visualisierungen im großen Maßstab und Aufbau einer teamübergreifenden Komponentenbibliothek, die von mehreren Produktteams übernommen wurde.",
+        "End-to-End-Migration von 3+ Projekten von der Discovery bis zur Produktion, Verfassen von ADRs zur Abstimmung mit Stakeholdern und Modernisierung von Legacy-UIs mit Client-Side-Routing für ein nahtloses SPA-Erlebnis.",
+        "Migration einer fragmentierten Micro-Frontend-Architektur in einen Turborepo-Monorepo – Verkürzung der Build-Zeiten um 2 Stunden und Steigerung der Deployment-Effizienz um 200% durch einheitliches Tooling und optimierte CI-Pipelines."
       ],
       "brillio": [
-        "Entwicklung und Deployment des Frontends einer großangelegten Bestellverwaltungsanwendung mit React, TypeScript und Styled Components für den australischen Einzelhändler Reece – ermöglicht 1.000+ Filialmitarbeitern, Millionen von Kunden effizient zu bedienen.",
-        "Entwicklung responsiver, mobile-first User Interfaces mit modernem UI/UX-Design, Sicherstellung pixelgenauer Layouts und Barrierefreiheit über alle Browser und Geräte hinweg.",
-        "Mentoring von Junior-Entwicklern durch Pair Programming, Code Reviews und strukturierte Wissensteilungs-Sessions; Beschleunigung des Onboardings und Steigerung der Projektliefergeschwindigkeit."
+        "Architektur des Frontends einer Enterprise-SPA für Bestellverwaltung in React.js für einen australischen Einzelhandelskunden, genutzt von Tausenden Nutzern in Hunderten von Filialen.",
+        "Verantwortung für die Frontend-Tech-Stack-Entscheidungen: Evaluierung und Festlegung von React.js, TypeScript, Redux, Styled Components und Material UI als skalierbare, wartbare Kernarchitektur.",
+        "Lieferung mobile-first, WCAG-konformer UIs mit pixelgenauer Präzision und konsistenter User Experience über alle Browser und Geräte hinweg.",
+        "Mentoring von 2 Junior-Entwicklern durch Pair Programming und Code Reviews – schnelleres Onboarding und höhere Team-Produktivität."
       ],
       "wipro": [
-        "Reduzierung des manuellen Betriebsaufwands um 25 Stunden pro Woche durch Entwicklung einer hochgradig anpassbaren internen Tools-Plattform mit React, JavaScript und CSS.",
-        "Implementierung eines robusten Frontend-Authentifizierungssystems mit OAuth-basiertem Login über Gmail, Outlook und Organisationskonten, Optimierung der Sicherheit durch Session Storage und Cookies.",
-        "Anwendung von Continuous Integration und Versionskontrolle mit Git sowie Teilnahme an agilen Lieferzyklen mit Jira für effizientes Task-Management und vorhersehbare, qualitativ hochwertige Releases."
+        "Reduzierung des manuellen Betriebsaufwands durch Entwicklung kundenorientierter Webanwendungen mit React.js und JavaScript – responsive, pixelgenaue UI-Lösungen über mehrere Enterprise-Projekte hinweg.",
+        "Implementierung von Frontend-Features und Integration von RESTful APIs mit skalierbarem State Management – optimierter Datenfluss über kritische User Journeys für Hunderte von Endnutzern.",
+        "Einsatz von Git für CI und Versionskontrolle sowie Teilnahme an agilen Zyklen mit Jira für effizientes Task-Management und qualitativ hochwertige Releases.",
+        "Förderung von Design Patterns, modularer Architektur und wiederverwendbaren Komponenten und Bibliotheken für bessere Skalierbarkeit und Wartbarkeit."
       ]
     }
   },
@@ -153,7 +157,7 @@
     "reachMeAt": "Erreichbar unter",
     "availability": {
       "status": "Verfügbar für neue Projekte",
-      "detail": "Suche nach Senior/Staff Frontend-Rollen, idealerweise remote oder hybrid. Offen für Vollzeit- und Freelance-Engagements. Antwortzeit: < 24h."
+      "detail": "Suche nach Senior Frontend-/Full-Stack-Rollen, idealerweise remote oder hybrid. Offen für Umzug sowie Vollzeit- und Freelance-Engagements. Antwortzeit: < 24h."
     },
     "social": {
       "github": "GitHub",
@@ -172,5 +176,26 @@
       "success": "✓ Nachricht gesendet!",
       "error": "Fehlgeschlagen – erneut versuchen"
     }
+  },
+  "chat": {
+    "launcherLabel": "Mit KI-Satvik chatten",
+    "title": "Satvik (KI)",
+    "status": "online — KI-Zwilling",
+    "greeting": "Hey, ich bin Satviks KI-Zwilling 👋 Frag mich alles über seine Arbeit, Projekte oder ob er für dein Team verfügbar ist.",
+    "placeholder": "Frag mich etwas...",
+    "send": "Senden",
+    "disclaimer": "KI-Version von Satvik — kann gelegentlich Fehler machen.",
+    "suggestions": [
+      "Was machst du bei Staffbase?",
+      "Zeig mir deine Projekte",
+      "Bist du offen für neue Rollen?",
+      "Kann ich deinen Lebenslauf sehen?"
+    ],
+    "error": "Etwas ist schiefgelaufen — bitte versuche es erneut.",
+    "rateLimited": "Wow, das sind viele Nachrichten — warte kurz und versuche es dann erneut.",
+    "videoCall": "Videoanruf starten",
+    "videoCallHint": "Sprich von Angesicht zu Angesicht mit meinem KI-Avatar",
+    "resumeLink": "Meinen Lebenslauf öffnen",
+    "close": "Chat schließen"
   }
 }
