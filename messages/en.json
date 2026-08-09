@@ -193,8 +193,6 @@
     ],
     "error": "Something went wrong — please try again.",
     "rateLimited": "Whoa, that's a lot of messages — give it a minute and try again.",
-    "videoCall": "Start video call",
-    "videoCallHint": "Talk face-to-face with my AI avatar",
     "resumeLink": "Open my resume",
     "close": "Close chat"
   }

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:https": "next dev --experimental-https",
+    "export:runway": "pnpm dlx tsx scripts/export-runway.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

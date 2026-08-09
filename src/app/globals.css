@@ -214,3 +214,18 @@ body::before {
 .timeline-line {
   background: linear-gradient(180deg, #00f5c4, #7c3aed, rgba(0,0,0,0));
 }
+
+/* Runway video-twin widget: the host div carries a closed shadow root, so
+   inherited cursor: none from body would hide the mouse over it. Restore it. */
+#runway-embed-widget {
+  cursor: auto;
+}
+
+/* While the chat sheet is open on mobile, hide the Runway video widget —
+   its near-infinite z-index would float over the sheet and a stray tap
+   would start a billable video call. It reappears when the chat closes. */
+@media (max-width: 767px) {
+  body.chat-open #runway-embed-widget {
+    display: none;
+  }
+}

@@ -41,7 +41,9 @@ export function SectionWrapper({
             </span>
           </div>
           {/* Title */}
-          <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight mb-4">
+          {/* hyphens-auto + break-words: long German words (e.g.
+              "zusammenarbeiten") must wrap instead of forcing h-scroll */}
+          <h2 className="font-display font-black text-4xl md:text-5xl tracking-tight mb-4 break-words hyphens-auto">
             {title}
           </h2>
           {subtitle && (

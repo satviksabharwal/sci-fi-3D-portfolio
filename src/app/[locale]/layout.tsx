@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
+import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -51,6 +52,15 @@ export default async function LocaleLayout({ children, params }: Props) {
           <main className="relative z-10">{children}</main>
           <ChatWidget />
         </NextIntlClientProvider>
+        {/* Runway video twin — renders its own floating button (portal
+            placement: bottom LEFT, auto-expand OFF). Chat stays bottom right. */}
+        {process.env.NEXT_PUBLIC_RUNWAY_PUB_KEY && (
+          <Script
+            src="https://cdn.dev.runwayml.com/prod/widget.js"
+            data-pub-key={process.env.NEXT_PUBLIC_RUNWAY_PUB_KEY}
+            strategy="lazyOnload"
+          />
+        )}
       </body>
     </html>
   );

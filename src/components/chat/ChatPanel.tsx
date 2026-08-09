@@ -9,7 +9,6 @@ import { ChatMessage } from "@/components/chat/ChatMessage";
 import { TypingIndicator } from "@/components/chat/TypingIndicator";
 import { SuggestedQuestions } from "@/components/chat/SuggestedQuestions";
 import { ChatInput } from "@/components/chat/ChatInput";
-import { VideoAvatarLauncher } from "@/components/chat/VideoAvatarLauncher";
 
 export function ChatPanel({
   onClose,
@@ -54,7 +53,6 @@ export function ChatPanel({
             {t("status")}
           </p>
         </div>
-        <VideoAvatarLauncher onLaunch={onClose} />
         <button
           onClick={onClose}
           aria-label={t("close")}

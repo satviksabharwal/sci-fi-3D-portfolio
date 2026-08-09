@@ -193,8 +193,6 @@
     ],
     "error": "Etwas ist schiefgelaufen — bitte versuche es erneut.",
     "rateLimited": "Wow, das sind viele Nachrichten — warte kurz und versuche es dann erneut.",
-    "videoCall": "Videoanruf starten",
-    "videoCallHint": "Sprich von Angesicht zu Angesicht mit meinem KI-Avatar",
     "resumeLink": "Meinen Lebenslauf öffnen",
     "close": "Chat schließen"
   }

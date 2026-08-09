@@ -128,6 +128,11 @@ export async function POST(request: Request) {
             tools: TOOLS,
             stream: true,
             max_completion_tokens: 1024,
+            // Moonshot extension (not in the OpenAI SDK types): K2.6 thinks
+            // before answering by default, which delays the first token by
+            // seconds. Grounded persona Q&A doesn't need it — disable.
+            // Note: temperature must stay unset on this model either way.
+            ...({ thinking: { type: "disabled" } } as Record<string, unknown>),
           });
 
           let assistantText = "";
@@ -168,6 +173,12 @@ export async function POST(request: Request) {
             }
             send({ type: "tool", name: call.name, input });
           }
+
+          // One-shot replies: if the model already said a sentence before the
+          // tool call, that's the whole answer — skip the follow-up completion
+          // that would extend the bubble seconds later. Only continue when the
+          // tool fired with no text at all (never leave a silent scroll).
+          if (assistantText.trim()) break;
 
           history.push({
             role: "assistant",
