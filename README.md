@@ -227,7 +227,9 @@ CHAT_GLOBAL_DAILY_LIMIT=500       # total chat requests/day across all visitors 
 NEXT_PUBLIC_RUNWAY_PUB_KEY=pub_...
 ```
 
-On Vercel, add `MOONSHOT_API_KEY` (and any optional vars) under **Project Settings → Environment Variables** for Production, Preview, and Development.
+In your hosting dashboard, add `MOONSHOT_API_KEY` (and any optional vars) for all deploy contexts — Netlify: **Site configuration → Environment variables**; Vercel: **Project Settings → Environment Variables**.
+
+> **Netlify note:** `netlify.toml` sets `SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_RUNWAY_PUB_KEY"` — the Runway publishable key is inlined into the client bundle by design (all `NEXT_PUBLIC_*` vars are), and without the omit rule Netlify's secrets scanning fails the build when it finds the value in the output.
 
 ### Runway Characters setup (video avatar)
 

@@ -1,2 +1,5 @@
-[build]
+# Netlify configuration.
+# Build command and publish dir come from the Netlify UI.
+
+[build.environment]
   SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_RUNWAY_PUB_KEY"
