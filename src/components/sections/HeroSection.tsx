@@ -11,6 +11,14 @@ const Avatar3D = dynamic(
   { ssr: false, loading: () => <div className="w-[320px] h-[380px]" /> },
 );
 
+// Transform-only entrance for the name, role and bio: they are the LCP
+// candidates, so they must be painted in the server HTML (no opacity: 0).
+const slideUp = (delay = 0) => ({
+  initial: { y: 24 },
+  animate: { y: 0 },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
+});
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
@@ -58,7 +66,7 @@ export function HeroSection() {
           </motion.div>
 
           {/* Name */}
-          <motion.div {...fadeUp(0.1)}>
+          <motion.div {...slideUp(0.1)}>
             <h1 className="font-display font-black leading-[0.95] tracking-tight mb-4">
               <span className="block text-white/20 text-xl mb-2 font-body font-light tracking-widest uppercase">
                 {t("greeting")}
@@ -70,11 +78,12 @@ export function HeroSection() {
           </motion.div>
 
           {/* Typewriter role */}
-          <motion.div {...fadeUp(0.2)} className="h-14 flex items-center mb-6">
+          <motion.div {...slideUp(0.2)} className="h-14 flex items-center mb-6">
             <span className="text-2xl md:text-3xl text-white/60 font-display font-semibold tracking-tight">
               <TypeAnimation
                 sequence={sequence}
                 wrapper="span"
+                preRenderFirstString
                 speed={50}
                 repeat={Infinity}
               />
@@ -84,7 +93,7 @@ export function HeroSection() {
 
           {/* Bio */}
           <motion.p
-            {...fadeUp(0.3)}
+            {...slideUp(0.3)}
             className="text-white/40 text-lg leading-relaxed max-w-lg mb-10"
           >
             {t("bio")}

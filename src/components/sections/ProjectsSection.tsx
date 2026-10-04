@@ -67,6 +67,7 @@ export function ProjectsSection() {
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-white/30 hover:text-white hover:border-white/30 transition-colors"
                     title={t("links.github")}
+                    aria-label={`${project.title} — ${t("links.github")}`}
                   >
                     <svg
                       width="14"
@@ -85,6 +86,7 @@ export function ProjectsSection() {
                     rel="noopener noreferrer"
                     className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-white/30 hover:text-white hover:border-white/30 transition-colors"
                     title={t("links.liveSite")}
+                    aria-label={`${project.title} — ${t("links.liveSite")}`}
                   >
                     <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
                       <path
@@ -156,6 +158,7 @@ export function ProjectsSection() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${project.title} — ${t("links.liveSite")}`}
                       className="text-white/20 hover:text-white/60 transition-colors text-xs font-mono"
                     >
                       ↗

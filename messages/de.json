@@ -13,6 +13,16 @@
       "backToTop": "Nach oben"
     }
   },
+  "metadata": {
+    "title": "Satvik Sabharwal | Frontend-fokussierter Full-Stack-Entwickler",
+    "description": "Satvik Sabharwal ist Frontend-fokussierter Full-Stack-Entwickler in Chemnitz mit 6+ Jahren Erfahrung in schnellen, barrierefreien React-, Next.js- und TypeScript-Apps."
+  },
+  "notFound": {
+    "label": "Fehler 404",
+    "title": "Seite nicht gefunden",
+    "description": "Diese Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zur Startseite"
+  },
   "hero": {
     "available": "Offen für neue Möglichkeiten",
     "greeting": "Hallo, ich bin",

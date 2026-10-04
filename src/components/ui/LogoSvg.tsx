@@ -43,7 +43,7 @@ export function LogoSvg({
         x="13"
         y="18.5"
         textAnchor="middle"
-        fontFamily="Syne, sans-serif"
+        style={{ fontFamily: "var(--font-syne), sans-serif" }}
         fontWeight="800"
         fontSize="16"
         fill={`url(#${gradientId})`}

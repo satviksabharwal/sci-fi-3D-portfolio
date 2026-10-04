@@ -1,4 +1,5 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 
 export default async function CatchAll({
   params,
@@ -6,5 +7,6 @@ export default async function CatchAll({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  redirect(`/${locale}`);
+  setRequestLocale(locale);
+  notFound();
 }

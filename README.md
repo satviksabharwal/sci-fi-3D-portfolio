@@ -74,9 +74,9 @@ portfolio/
 │   └── de.json                    # All German strings
 ├── src/
 │   ├── app/
-│   │   ├── [...slug]/page.tsx     # Catch-all redirect → /
+│   │   ├── not-found.tsx          # 404 for paths outside a locale
 │   │   ├── [locale]/
-│   │   │   ├── [...slug]/page.tsx # Catch-all redirect → /{locale}
+│   │   │   ├── [...slug]/page.tsx # Catch-all → 404 (not-found.tsx)
 │   │   │   ├── layout.tsx         # HTML shell, NextIntlClientProvider, Navbar, ParticleBackground
 │   │   │   └── page.tsx           # Flat assembly of all section components
 │   │   ├── globals.css            # Global styles & Tailwind directives

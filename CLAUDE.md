@@ -27,7 +27,9 @@ This is a Next.js 14 App Router project where **every public route lives under a
 - [src/middleware.ts](src/middleware.ts) — wraps `createMiddleware(routing)`; its matcher excludes `_next`, `_vercel`, and any path with a dot (files).
 - [next.config.mjs](next.config.mjs) — wraps the config with `createNextIntlPlugin('./src/i18n/request.ts')`. Also sets `transpilePackages: ["three"]`.
 
-Because `localePrefix: 'always'`, the bare `/` is never a valid render path — the middleware rewrites it. There are catch-all redirect routes at [src/app/\[...slug\]/page.tsx](src/app/[...slug]/page.tsx) (redirects to `/`) and [src/app/\[locale\]/\[...slug\]/page.tsx](src/app/[locale]/[...slug]/page.tsx) (redirects to `/${locale}`) to keep deep-link 404s from leaking through.
+Because `localePrefix: 'always'`, the bare `/` is never a valid render path — the middleware rewrites it. Unknown paths return a real 404 (not a redirect, which search engines treat as a soft 404): [src/app/\[locale\]/\[...slug\]/page.tsx](src/app/[locale]/[...slug]/page.tsx) calls `notFound()` and renders the translated [src/app/\[locale\]/not-found.tsx](src/app/[locale]/not-found.tsx); [src/app/not-found.tsx](src/app/not-found.tsx) covers requests the middleware skips and renders its own `<html>`.
+
+SEO surface: `generateMetadata` in the locale layout (strings under the `metadata` namespace in the messages), [src/app/robots.ts](src/app/robots.ts), [src/app/sitemap.ts](src/app/sitemap.ts), [src/app/\[locale\]/opengraph-image.tsx](src/app/[locale]/opengraph-image.tsx), and the JSON-LD block in the locale page. The canonical origin is `SITE_URL` in [src/lib/data.ts](src/lib/data.ts). The locale layout and page call `setRequestLocale` so both locales are statically rendered — keep that call in any new page.
 
 [src/app/layout.tsx](src/app/layout.tsx) is a pass-through; the real `<html>`/`<body>` shell, `NextIntlClientProvider`, `CustomCursor`, `ParticleBackground`, and `Navbar` all live in [src/app/\[locale\]/layout.tsx](src/app/[locale]/layout.tsx). `generateStaticParams` there pre-renders one branch per locale.
 

@@ -1,5 +1,7 @@
 import type { Project, Experience, Skill } from "@/types";
 
+export const SITE_URL = "https://satviksabharwal.com";
+
 export const PERSONAL = {
   name: "Satvik Sabharwal",
   email: "createwithsatvik@gmail.com",
@@ -49,7 +51,7 @@ export const PROJECTS: Project[] = [
     descriptionKey: "portfolio",
     tech: ["Next.js", "TypeScript", "TailwindCSS", "Three.js", "Framer Motion"],
     github: "https://github.com/satviksabharwal/sci-fi-3D-portfolio",
-    link: "http://satviksabharwal.com/",
+    link: "https://satviksabharwal.com/",
     featured: true,
     color: "#38bdf8",
   },

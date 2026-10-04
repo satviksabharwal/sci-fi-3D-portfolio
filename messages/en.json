@@ -13,6 +13,16 @@
       "backToTop": "Back to top"
     }
   },
+  "metadata": {
+    "title": "Satvik Sabharwal | Frontend-Focused Full-Stack Developer",
+    "description": "Satvik Sabharwal is a frontend-focused full-stack developer in Chemnitz, Germany, with 6+ years building fast, accessible React, Next.js and TypeScript apps."
+  },
+  "notFound": {
+    "label": "Error 404",
+    "title": "Page not found",
+    "description": "This page does not exist or has moved.",
+    "backHome": "Back to home"
+  },
   "hero": {
     "available": "Available for opportunities",
     "greeting": "Hi, I'm",
