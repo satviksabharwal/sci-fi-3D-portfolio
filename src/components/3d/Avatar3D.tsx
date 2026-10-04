@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useMousePosition } from "@/hooks/useMousePosition";
 
 export function Avatar3D() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -9,11 +8,12 @@ export function Avatar3D() {
   const headGroupRef = useRef<SVGGElement>(null);
   const leftEyeRef = useRef<SVGGElement>(null);
   const rightEyeRef = useRef<SVGGElement>(null);
-  const { normalised } = useMousePosition();
 
+  // Listen directly instead of via useMousePosition(): a state update per
+  // mousemove would re-render this whole SVG on every pointer event.
   useEffect(() => {
-    cancelAnimationFrame(rafRef.current);
-    rafRef.current = requestAnimationFrame(() => {
+    const normalised = { x: 0, y: 0 };
+    const apply = () => {
       if (wrapRef.current) {
         wrapRef.current.style.transform = `perspective(700px) rotateY(${normalised.x * 13}deg) rotateX(${-normalised.y * 8}deg)`;
       }
@@ -38,8 +38,19 @@ export function Avatar3D() {
           `translate(${eyeX}, ${eyeY})`,
         );
       }
-    });
-  }, [normalised]);
+    };
+    const onMove = (e: MouseEvent) => {
+      normalised.x = (e.clientX / window.innerWidth) * 2 - 1;
+      normalised.y = -((e.clientY / window.innerHeight) * 2 - 1);
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(apply);
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
 
   const CHIPS = [
     {
@@ -105,19 +116,19 @@ export function Avatar3D() {
       <div className="absolute bottom-3.5 right-3.5 w-5 h-5 border-b border-r border-accent-cyan/35 pointer-events-none" />
 
       {/* HUD labels */}
-      <div className="absolute top-5 left-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] pointer-events-none uppercase tracking-widest">
+      <div className="absolute top-5 left-10 text-[8px] font-mono text-accent-cyan/70 leading-[1.7] pointer-events-none uppercase tracking-widest">
         <div>ID_SCAN</div>
         <div className="animate-pulse">● ACTIVE</div>
       </div>
-      <div className="absolute top-5 right-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] text-right pointer-events-none uppercase tracking-widest">
+      <div className="absolute top-5 right-10 text-[8px] font-mono text-accent-cyan/70 leading-[1.7] text-right pointer-events-none uppercase tracking-widest">
         <div>FE_DEV</div>
         <div>6+_YRS</div>
       </div>
-      <div className="absolute bottom-5 left-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] pointer-events-none uppercase tracking-widest">
+      <div className="absolute bottom-5 left-10 text-[8px] font-mono text-accent-cyan/70 leading-[1.7] pointer-events-none uppercase tracking-widest">
         <div>BTech·MSc</div>
         <div>CS·WEB</div>
       </div>
-      <div className="absolute bottom-5 right-10 text-[8px] font-mono text-accent-cyan/45 leading-[1.7] text-right pointer-events-none uppercase tracking-widest">
+      <div className="absolute bottom-5 right-10 text-[8px] font-mono text-accent-cyan/70 leading-[1.7] text-right pointer-events-none uppercase tracking-widest">
         <div>REACT·TS</div>
         <div className="animate-pulse">ONLINE</div>
       </div>
@@ -167,7 +178,7 @@ export function Avatar3D() {
         {/* Scan line */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
           <div
-            className="absolute left-0 right-0 h-[2px]"
+            className="absolute top-0 left-0 right-0 h-[2px]"
             style={{
               background:
                 "linear-gradient(90deg,transparent,rgba(0,245,196,0.5),transparent)",
@@ -1087,8 +1098,8 @@ export function Avatar3D() {
           50%      { transform: translateY(-14px) rotate(0.4deg); }
         }
         @keyframes scanDown {
-          0%   { top: 0%;   opacity: 0.8; }
-          100% { top: 100%; opacity: 0;   }
+          0%   { transform: translateY(0);     opacity: 0.8; }
+          100% { transform: translateY(500px); opacity: 0;   }
         }
       `}</style>
     </div>

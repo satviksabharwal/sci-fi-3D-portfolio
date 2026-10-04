@@ -189,12 +189,10 @@ export function HeroSection() {
           <style>{`
             @keyframes neonFlicker {
               0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 0 0 6px #00f5c4, 0 0 14px #00f5c4, 0 0 30px rgba(0,245,196,0.6), 0 0 60px rgba(0,245,196,0.25);
                 opacity: 1;
               }
               20%, 24%, 55% {
-                text-shadow: none;
-                opacity: 0.6;
+                opacity: 0.45;
               }
             }
           `}</style>
@@ -206,7 +204,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50"
       >
         <span className="text-[10px] tracking-widest uppercase font-mono">
           {t("scroll")}

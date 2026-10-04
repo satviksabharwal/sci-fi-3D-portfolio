@@ -1,0 +1,22 @@
+# Satvik Sabharwal
+
+> Portfolio of Satvik Sabharwal, a frontend-focused full-stack developer based in Chemnitz, Germany, with 6+ years of experience building React, Next.js and TypeScript products. Currently Frontend Engineer at Staffbase SE.
+
+The site is a single page per language with sections for about, skills, projects, experience and contact.
+
+## Pages
+
+- [Portfolio (English)](https://satviksabharwal.com/en): Background, skills, projects, work experience and contact form
+- [Portfolio (Deutsch)](https://satviksabharwal.com/de): German version of the same page
+
+## Projects
+
+- [PhotoVoltaic System](https://thesolarsense.online/): React, TypeScript, Node.js, Express.js, Supabase
+- [CalorieCam](https://app.calorie-cam.workers.dev/): React, TypeScript, Node.js, Express.js, Supabase
+- [Sci-fi inspired Portfolio](https://github.com/satviksabharwal/sci-fi-3D-portfolio): Next.js, TypeScript, Tailwind CSS, Three.js, Framer Motion
+- [Data Management Platform](https://github.com/satviksabharwal/data-management-platform): React, Node.js, Express.js, MongoDB
+
+## Profiles
+
+- [GitHub](https://github.com/satviksabharwal)
+- [LinkedIn](https://www.linkedin.com/in/satvik-sabharwal/)

@@ -104,6 +104,8 @@ export function Navbar() {
         <button
           className="md:hidden text-white/60 hover:text-white"
           onClick={() => setMenuOpen((v) => !v)}
+          aria-label={t("nav.menu")}
+          aria-expanded={menuOpen}
         >
           <svg
             width="24"

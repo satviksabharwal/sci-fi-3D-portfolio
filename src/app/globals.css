@@ -40,6 +40,11 @@ body {
   color: #00f5c4;
 }
 
+/* CSS starfield (touch devices) — see StarField.tsx */
+@keyframes starDrift {
+  to { transform: translate3d(0, calc(var(--star-loop) * -1), 0); }
+}
+
 /* Custom cursor */
 .cursor-dot {
   pointer-events: none;

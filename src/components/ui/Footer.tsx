@@ -17,7 +17,7 @@ export function Footer() {
           </span>
         </div>
 
-        <div className="flex items-center gap-2 text-white/15 text-xs font-mono">
+        <div className="flex items-center gap-2 text-white/50 text-xs font-mono">
           <span>{t("footer.builtWith")}</span>
           <span className="tag text-white/20 border-white/10 text-[10px]">
             Next.js
@@ -35,7 +35,7 @@ export function Footer() {
 
         <a
           href="#hero"
-          className="text-xs font-mono text-white/20 hover:text-accent-cyan transition-colors flex items-center gap-1"
+          className="text-xs font-mono text-white/50 hover:text-accent-cyan transition-colors flex items-center gap-1"
         >
           {t("footer.backToTop")} ↑
         </a>

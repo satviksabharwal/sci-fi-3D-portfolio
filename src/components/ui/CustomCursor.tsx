@@ -5,9 +5,17 @@ import { useEffect, useRef, useState } from "react";
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
 
+  // Touch devices have no cursor to replace — skip the per-frame loop there.
   useEffect(() => {
+    setEnabled(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+
     let ringX = 0,
       ringY = 0;
     let mouseX = 0,
@@ -52,7 +60,9 @@ export function CustomCursor() {
       });
       cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <>

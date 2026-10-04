@@ -52,8 +52,8 @@ So `PROJECTS[0].title` is hard-coded English in `data.ts`, but its description t
 
 [src/components/3d/](src/components/3d/) holds the two visually-heavy pieces. Both are client-only:
 
-- [ParticleBackground.tsx](src/components/3d/ParticleBackground.tsx) — actual Three.js scene. Mounted once globally in the locale layout. Reads `useMousePosition()` to parallax the particles. Particle count is set in this file; lower it for low-end device perf.
-- [Avatar3D.tsx](src/components/3d/Avatar3D.tsx) — despite the `/3d/` path, this is an **SVG-based** avatar driven by mouse position via `requestAnimationFrame` transform updates. It is `dynamic()`-imported with `ssr: false` from [HeroSection.tsx](src/components/sections/HeroSection.tsx).
+- [ParticleBackground.tsx](src/components/3d/ParticleBackground.tsx) — mounted once globally in the locale layout; picks the background per device. Touch devices (`pointer: coarse`) get [StarField.tsx](src/components/3d/StarField.tsx), a CSS-only starfield, because creating the WebGL context blocks a mid-range phone's main thread for about a second. Everything else gets [ParticleScene.tsx](src/components/3d/ParticleScene.tsx), the actual Three.js scene, loaded as a separate chunk after page load when the main thread is idle. Particle count is set in `ParticleScene.tsx`.
+- [Avatar3D.tsx](src/components/3d/Avatar3D.tsx) — despite the `/3d/` path, this is an **SVG-based** avatar driven by a direct `mousemove` listener and `requestAnimationFrame` transform updates (no React state per pointer event). It is `dynamic()`-imported with `ssr: false` from [HeroSection.tsx](src/components/sections/HeroSection.tsx).
 
 When adding new Three.js code, follow the existing pattern: `"use client"` + `dynamic()` import with `ssr: false` from the consuming section. Three is listed in `transpilePackages` so direct imports from `three` work.
 

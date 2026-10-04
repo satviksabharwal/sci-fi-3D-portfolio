@@ -1,11 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ChatPanel } from "@/components/chat/ChatPanel";
 import { cn } from "@/lib/utils";
+
+// Loaded on first open — keeps the chat UI and its hook out of the initial bundle.
+const ChatPanel = dynamic(
+  () => import("@/components/chat/ChatPanel").then((m) => m.ChatPanel),
+  { ssr: false },
+);
 
 const isMobileViewport = () => window.matchMedia("(max-width: 767px)").matches;
 
