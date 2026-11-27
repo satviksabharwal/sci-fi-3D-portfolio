@@ -3,6 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
+// Favicon: the same helmet mark as LogoSvg, drawn with boxes for next/og.
 export default function Icon() {
   return new ImageResponse(
     <div
@@ -12,18 +13,17 @@ export default function Icon() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background:
-          "linear-gradient(135deg, #00f5c4 0%, #7c3aed 50%, #f472b6 100%)",
-        borderRadius: 13,
-        padding: 2,
+        background: "#090a0c",
+        borderRadius: 14,
       }}
     >
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          background: "#0a0a0f",
-          borderRadius: 11,
+          width: 50,
+          height: 50,
+          borderRadius: 25,
+          border: "4px solid #e8ecf1",
+          background: "#0f1114",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -31,18 +31,13 @@ export default function Icon() {
       >
         <div
           style={{
-            fontSize: 36,
-            fontWeight: 800,
-            fontFamily: "sans-serif",
-            lineHeight: 1,
-            background:
-              "linear-gradient(135deg, #00f5c4 0%, #7c3aed 50%, #f472b6 100%)",
-            backgroundClip: "text",
-            color: "transparent",
+            width: 32,
+            height: 19,
+            borderRadius: 10,
+            background: "#5fd9c9",
+            marginTop: -3,
           }}
-        >
-          S
-        </div>
+        />
       </div>
     </div>,
     { ...size },

@@ -2,15 +2,15 @@
 
 ## Identity & quick facts
 - Name: Satvik Sabharwal
-- Role: Senior Frontend Engineer — positions himself as a frontend-focused full-stack developer (also: React Specialist, AI-Native Builder, Analytics Enthusiast, Accessibility Advocate)
-- Location: Chemnitz, Germany — open to relocation
+- Role: Full Stack Engineer at Talon.One (an Adyen company) — positions himself as a full-stack engineer who works from the interface through APIs to AI services (also: React Specialist, AI-Native Builder, Analytics Enthusiast, Accessibility Advocate)
+- Location: Berlin, Germany
 - Email: createwithsatvik@gmail.com
 - GitHub: https://github.com/satviksabharwal
 - LinkedIn: https://www.linkedin.com/in/satvik-sabharwal/
-- Quick numbers: 6+ years of experience, 20+ projects shipped, 3 companies, 2 degrees
+- Quick numbers: 6+ years of experience, 20+ projects shipped, 5 companies, 2 degrees
 
 ## Bio
-Frontend-focused full-stack developer with 6+ years delivering React and TypeScript products at enterprise scale, including 4+ years at Staffbase building AI-native features for 2,000+ B2B customers and millions of end users.
+Full-stack engineer with 6+ years delivering React and TypeScript products at enterprise scale. Today he is a Full Stack Engineer at Talon.One, an Adyen company, in Berlin. Before that he spent 4+ years at Staffbase building AI-native features for 2,000+ B2B customers and millions of end users, followed by a short engagement at Codefitters working on an ERP and a restaurant guest app. On the side he designed and built Wealthbook solo.
 
 He has a proven track record of owning features end to end — from discovery and architecture to production — across analytics platforms, agentic workflows, and data visualization systems. He is skilled in integrating LLM APIs, MCP, and RESTful APIs, with deep expertise in advanced React patterns including code splitting, virtualization, memoization, and custom hooks, and a track record of driving large-scale migrations, authoring ADRs, and building cross-team component libraries.
 
@@ -18,10 +18,19 @@ His academic background in Web Engineering (MSc) and Computer Science (BTech) ga
 
 ## Work experience
 
-### Frontend Engineer — Staffbase SE (06/2022 – August 2026; Chemnitz, Germany)
-Tech: React, TypeScript, TailwindCSS, Zustand, TanStack Query, Visx, Turborepo, Vitest, Jest
+### Full Stack Engineer — Talon.One, an Adyen company (11/2026 – present; Berlin, Germany; hybrid)
+This is his current role. He joined in November 2026. The knowledge base has no details yet about what he works on there — if asked, say he recently joined and point the visitor to email or LinkedIn for more.
 
-Satvik is wrapping up his time at Staffbase in August 2026 — which is why he's actively looking for his next role right now.
+### Senior Frontend Engineer — Codefitters (09/2026 – 10/2026; Berlin, Germany; remote)
+Tech: Angular, TypeScript, Firebase, GitHub Actions, pnpm workspaces, Vitest, ngx-translate, Vertex AI
+- Built CI/CD pipelines on GitHub Actions for two Angular/Firebase products (an ERP and a restaurant guest app): path-filtered pipelines with ESLint, Vitest/Karma, Firestore rules tests, i18n checks and gitleaks, enforced via required Quality Gate and Build Gate checks; automated releases with release-please, Conventional Commits and SemVer.
+- Replaced manual deployments with pipeline delivery to Firebase Hosting across 10+ targets using GitHub Environments with approval gates, smoke tests and tag-based rollback; added label-triggered PR preview environments on Firebase preview channels with automatic cleanup.
+- Led the monorepo migration (ADR, four-phase plan): extracted shared domain logic into a pnpm workspace package with lint-enforced import boundaries, migrated npm to pnpm workspaces, added CODEOWNERS and Dependabot, and scaffolded two zoneless, strict-TypeScript Angular apps.
+- Internationalized the ERP from German-only to DE/EN/HU across 28 modules, growing the ngx-translate catalog from ~270 to ~25,000 keys per language with CI parity checks.
+- Delivered a gamification engine for the guest app (XP, streaks, levels, challenges, CO2 metrics) and its UI redesign; hardened the ERP's AI assistant with owner-scoped Firestore rules, TTL expiry, server-side model enforcement for Vertex AI and AI-content labelling.
+
+### Frontend Engineer — Staffbase SE (06/2022 – 08/2026; Chemnitz, then Berlin, Germany)
+Tech: React, TypeScript, TailwindCSS, Zustand, TanStack Query, Visx, Turborepo, Vitest, Jest
 
 Career growth: Satvik grew at Staffbase from Working Student all the way to Mid-Level Engineer. Mention this progression proudly when relevant; share the exact role-by-role timeline only when a visitor asks for more detail:
 - Working Student Software Engineer: June 2022 – end of June 2024
@@ -48,13 +57,17 @@ Tech: React, JavaScript, REST APIs, CSS
 
 ## Projects
 
-### PhotoVoltaic System (Solar Sense)
-Full-stack application built with React, TypeScript, Node.js, Express.js, Supabase, and MaterialUI. Lets users monitor and analyze photovoltaic data, visualize system performance, and generate reports.
-Live: https://thesolarsense.online/ · Code: https://github.com/satviksabharwal/PhotoVoltaic-System
+### Wealthbook (founder, solo)
+A personal finance tracker for people with money in more than one country. It turns scattered accounts into one clear picture: net worth in your home currency, the real impact of exchange rates on your returns, AI insights in plain language, and goal planning per country. It imports statements, so setup takes minutes. Satvik designed and built it solo; it launched as a free beta in October 2026. Built with TypeScript and React. It is not financial advice.
+Live: https://wealthbook.me/
 
-### CalorieCam
+### SolarSense (formerly PhotoVoltaic System)
+Full-stack application built with React, TypeScript, Node.js, Express.js, Supabase, and MaterialUI. Lets users monitor and analyze photovoltaic data, visualize system performance, and generate reports.
+Live: https://thesolarsense.online/ · The code is private.
+
+### Satvio (the new version of CalorieCam)
 Snap a photo of your meal and instantly get a full nutrition breakdown — calories, protein, carbs, fat, and fibre. Meals are saved to your account so you can track what you eat over time. Built with React, TypeScript, Node.js, Express.js, Supabase, TailwindCSS.
-Live: https://app.calorie-cam.workers.dev/ · Code: https://github.com/satviksabharwal/calorie-cam-metrics
+Live: https://app.satvio.life/ · The code is private.
 
 ### Sci-fi inspired Portfolio (this website)
 Sci-fi themed portfolio built with Next.js, TypeScript, TailwindCSS, Three.js, and Framer Motion — including the AI twin the visitor is talking to right now.
@@ -73,7 +86,7 @@ He is always working on new projects — more is on his GitHub.
 ## Skills
 - Languages: HTML, CSS, JavaScript, TypeScript
 - Frontend: React.js, Next.js, TypeScript, TailwindCSS, Zustand, Redux, TanStack Query, React Router, Zod, Vite, WebSockets, React Testing Library, Jest, Vitest, D3.js, Visx, Three.js, Data Visualization, Accessibility
-- AI-Native Development: LLM APIs, MCP (Model Context Protocol), Agentic Workflows, RAG, Prompt Engineering, Claude Code, GitHub Copilot
+- AI-Native Development: building products end to end with Claude Code (Wealthbook was designed and built solo this way), Claude Design for exploring interfaces before implementing them, Agent Skills for packaging repeatable agent workflows, LLM APIs and streaming, MCP (Model Context Protocol), Agentic Workflows, RAG, Prompt Engineering, AI guardrails (server-side model enforcement, AI-content labelling), GitHub Copilot
 - Backend: Node.js, REST API design, Express.js
 - Cloud: Firebase
 - Also worked with: i18next, Turborepo, Prettier, ESLint, PNPM, Figma / Design Systems, CI/CD (GitHub Actions)
@@ -97,15 +110,15 @@ He is always working on new projects — more is on his GitHub.
 - Quality Engineer Mindset: writes strongly-typed, well-tested code with a product instinct grounded in metrics — logs, A/B results, and data drive his UI decisions.
 
 ## Availability
-Satvik is actively looking for his next challenge — his time at Staffbase ends in August 2026, so he can start a new role soon. He is open to senior frontend and full-stack roles, ideally remote or hybrid, is open to relocation, and considers both full-time and freelance engagements. He typically responds within 24 hours via email. If you're building something ambitious, he'd love to hear about it — reach him at createwithsatvik@gmail.com or on LinkedIn.
+Satvik currently works as a Full Stack Engineer at Talon.One, having joined in November 2026. Don't state that he is job hunting, and don't give notice periods or start dates. He is always glad to hear about interesting projects and collaborations, and typically responds within 24 hours via email — reach him at createwithsatvik@gmail.com or on LinkedIn.
 
 ## FAQs
 <!-- TODO(owner): replace/extend these draft answers with your real ones. -->
-- Are you open to relocation? Yes — he is based in Chemnitz, Germany and explicitly open to relocation for the right role, alongside remote and hybrid options.
-- Are you frontend or full-stack? Frontend-focused full-stack: his deepest expertise is React/TypeScript frontends at enterprise scale, and he also builds the backend side with Node.js, Express.js, and REST API design, plus AI integrations (LLM APIs, MCP, agentic workflows).
+- Where are you based? Berlin, Germany. For anything about relocation or remote work, best to ask him directly by email.
+- Are you frontend or full-stack? Full-stack. His title at Talon.One is Full Stack Engineer. His deepest expertise is React/TypeScript at enterprise scale, and he builds the backend side too: Node.js, Express.js, REST API design, Firebase, CI/CD pipelines, plus AI integrations (LLM APIs, MCP, agentic workflows).
 - Do you need visa sponsorship? No sponsorship needed right now — he holds a valid German work visa until mid-2028, so he can start immediately. For anything beyond that horizon, best to discuss with him directly by email.
-- When can you start? His time at Staffbase ends in August 2026, so he can start soon after — confirm exact dates directly with him by email.
+- When can you start? He started a new role at Talon.One in November 2026, so that is a conversation to have with him directly by email.
 - What's your favorite stack? React with Next.js and TypeScript, styled with Tailwind CSS — plus data visualization with D3.js/Visx and AI-native tooling like Claude Code when the product calls for it.
 - Why Germany? He moved to Germany for his MSc in Web Engineering at TU Chemnitz and has been building his career here since. <!-- TODO(owner): add your personal angle. -->
 - How was this website built? Next.js 14, TypeScript, TailwindCSS, Three.js and Framer Motion, with an AI twin powered by Kimi (Moonshot AI) — the code is public on his GitHub.
-- Do you do freelance work? Yes — he is open to freelance engagements alongside full-time opportunities. Email him with the project details.
+- Do you do freelance work? Email him with the project details and he'll tell you whether it fits alongside his role at Talon.One.

@@ -18,10 +18,11 @@ export function Navbar() {
       : process.env.NEXT_PUBLIC_RESUME_URL_EN;
 
   const LINKS = [
+    // Story order — matches the mission route on the page.
     { label: t("nav.about"), href: "#about" },
+    { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.skills"), href: "#skills" },
     { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.contact"), href: "#contact" },
   ];
 
@@ -42,14 +43,13 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 xl:px-0 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2.5 select-none group">
           <Logo />
-          <span className="font-display font-black text-base tracking-tight leading-none">
-            <span className="gradient-text">Satvik</span>
-            <span className="text-white/20 mx-1.5">·</span>
-            <span className="gradient-text">Sabharwal</span>
+          <span className="font-display text-base tracking-tight leading-none text-white">
+            <span className="font-bold">Satvik</span>{" "}
+            <span className="font-light">Sabharwal</span>
           </span>
         </a>
 
@@ -63,7 +63,7 @@ export function Navbar() {
                 className={`relative text-xs tracking-widest uppercase font-body transition-colors duration-200 group ${
                   active === l.href
                     ? "text-white"
-                    : "text-white/40 hover:text-white/80"
+                    : "text-white/55 hover:text-white"
                 }`}
               >
                 {l.label}
@@ -85,7 +85,7 @@ export function Navbar() {
               href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-sm"
+              className="flex items-center gap-2 px-4 py-2 border border-accent-cyan/60 text-white text-xs tracking-widest uppercase font-body hover:bg-accent-cyan hover:text-bg-primary transition-all duration-200 rounded-full"
             >
               <span>{t("nav.resume")}</span>
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -175,7 +175,7 @@ function LanguageSwitcher() {
         className={
           locale === "en"
             ? "text-white"
-            : "text-white/30 hover:text-white/60 transition-colors"
+            : "text-white/45 hover:text-white/80 transition-colors"
         }
       >
         EN
@@ -186,7 +186,7 @@ function LanguageSwitcher() {
         className={
           locale === "de"
             ? "text-white"
-            : "text-white/30 hover:text-white/60 transition-colors"
+            : "text-white/45 hover:text-white/80 transition-colors"
         }
       >
         DE

@@ -28,9 +28,9 @@ export default async function OpengraphImage({
         flexDirection: "column",
         justifyContent: "center",
         padding: 80,
-        backgroundColor: "#05070f",
+        backgroundColor: "#090a0c",
         backgroundImage:
-          "radial-gradient(circle at 20% 20%, rgba(124,58,237,0.35), transparent 55%), radial-gradient(circle at 85% 80%, rgba(0,245,196,0.22), transparent 50%)",
+          "radial-gradient(circle at 85% 80%, rgba(95,217,201,0.22), transparent 50%)",
         fontFamily: "sans-serif",
       }}
     >
@@ -40,12 +40,12 @@ export default async function OpengraphImage({
           alignItems: "center",
           fontSize: 24,
           letterSpacing: 6,
-          color: "#00f5c4",
+          color: "#5fd9c9",
           textTransform: "uppercase",
         }}
       >
         <div
-          style={{ width: 48, height: 2, background: "#00f5c4", marginRight: 20 }}
+          style={{ width: 48, height: 2, background: "#5fd9c9", marginRight: 20 }}
         />
         satviksabharwal.com
       </div>
@@ -56,10 +56,7 @@ export default async function OpengraphImage({
           fontWeight: 800,
           lineHeight: 1,
           letterSpacing: -3,
-          background:
-            "linear-gradient(135deg, #00f5c4 0%, #a78bfa 50%, #f472b6 100%)",
-          backgroundClip: "text",
-          color: "transparent",
+          color: "#ffffff",
         }}
       >
         {PERSONAL.name}

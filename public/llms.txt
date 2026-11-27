@@ -1,6 +1,6 @@
 # Satvik Sabharwal
 
-> Portfolio of Satvik Sabharwal, a frontend-focused full-stack developer based in Chemnitz, Germany, with 6+ years of experience building React, Next.js and TypeScript products. Currently Frontend Engineer at Staffbase SE.
+> Portfolio of Satvik Sabharwal, a full-stack engineer based in Berlin, Germany, with 6+ years of experience building React, Next.js and TypeScript products. Currently Full Stack Engineer at Talon.One, an Adyen company.
 
 The site is a single page per language with sections for about, skills, projects, experience and contact.
 
@@ -11,8 +11,9 @@ The site is a single page per language with sections for about, skills, projects
 
 ## Projects
 
-- [PhotoVoltaic System](https://thesolarsense.online/): React, TypeScript, Node.js, Express.js, Supabase
-- [CalorieCam](https://app.calorie-cam.workers.dev/): React, TypeScript, Node.js, Express.js, Supabase
+- [Wealthbook](https://wealthbook.me/): Personal finance tracker for people with money in more than one country; TypeScript, React
+- [SolarSense](https://thesolarsense.online/): React, TypeScript, Node.js, Express.js, Supabase
+- [Satvio](https://app.satvio.life/): React, TypeScript, Node.js, Express.js, Supabase
 - [Sci-fi inspired Portfolio](https://github.com/satviksabharwal/sci-fi-3D-portfolio): Next.js, TypeScript, Tailwind CSS, Three.js, Framer Motion
 - [Data Management Platform](https://github.com/satviksabharwal/data-management-platform): React, Node.js, Express.js, MongoDB
 

@@ -15,8 +15,8 @@
     }
   },
   "metadata": {
-    "title": "Satvik Sabharwal | Frontend-Focused Full-Stack Developer",
-    "description": "Satvik Sabharwal is a frontend-focused full-stack developer in Chemnitz, Germany, with 6+ years building fast, accessible React, Next.js and TypeScript apps."
+    "title": "Satvik Sabharwal | Full Stack Engineer",
+    "description": "Satvik Sabharwal is a full-stack engineer in Berlin, Germany, with 6+ years building fast, accessible products with React, Next.js, TypeScript and Node.js."
   },
   "notFound": {
     "label": "Error 404",
@@ -25,18 +25,18 @@
     "backHome": "Back to home"
   },
   "hero": {
-    "available": "Available for opportunities",
-    "greeting": "Hi, I'm",
+    "available": "Open to collaborations",
+    "greeting": "Station log · Hi, I'm",
     "roles": [
-      "Frontend-Focused Full-Stack Developer",
+      "Full Stack Engineer",
       "React Specialist",
       "AI-Native Builder",
       "Analytics Enthusiast",
       "Accessibility Advocate"
     ],
     "cta": {
-      "viewWork": "View My Work",
-      "getInTouch": "Get In Touch",
+      "viewWork": "Follow the mission",
+      "getInTouch": "Get in touch",
       "github": "GitHub"
     },
     "stats": {
@@ -45,17 +45,40 @@
       "companies": "Companies",
       "degrees": "Degrees"
     },
-    "bio": "Frontend-focused full-stack developer with 6+ years crafting high-performance products — from pixel-perfect React interfaces to Node.js APIs. BTech Computer Science · MSc Web Engineering. I turn complex problems into elegant, scalable solutions that users love.",
-    "tagline": "RENDERING FRONTEND.DEV_v2.0",
-    "scroll": "Scroll"
+    "bio": "Full-stack engineer with 6+ years crafting high-performance products — from pixel-perfect React interfaces to Node.js APIs. BTech Computer Science · MSc Web Engineering. I turn complex problems into elegant, scalable solutions that users love.",
+    "scroll": "Scroll",
+    "intro": {
+      "lines": [
+        "Oh, hey! Didn't see you float in.",
+        "I'm Satvik, a full-stack engineer based in Berlin, Germany.",
+        "For 6+ years I've been building products end to end, from React interfaces to APIs and AI features. Today I'm a Full Stack Engineer at Talon.One, an Adyen company.",
+        "Scroll, or hold S, and fly with me through my mission log. Helmet on!"
+      ],
+      "again": "Welcome back aboard! The mission log continues just below.",
+      "statusCoding": "On station · coding",
+      "statusLive": "Live · saying hi",
+      "replay": "Replay intro",
+      "soundOn": "Sound on",
+      "soundOff": "Sound off"
+    }
+  },
+  "mission": {
+    "label": "Mission progress",
+    "stations": {
+      "hero": "Station",
+      "about": "Origin",
+      "experience": "Flight log",
+      "skills": "Systems",
+      "projects": "Payloads",
+      "contact": "Open channel"
+    },
+    "keys": "W/S or ↑/↓ fly · A/D or ←/→ move sideways · 1–6 jump"
   },
   "about": {
-    "label": "01 / About",
+    "label": "Log 01 · Crew profile",
     "title": "Who I Am",
-    "subtitle": "A developer who cares deeply about craft, performance, and the humans using what I build.",
-    "bio1": "I'm a frontend-focused full-stack developer with <strong>6+ years of experience</strong> delivering React and TypeScript products at enterprise scale — including 4+ years at Staffbase building AI-native features for 2,000+ B2B customers and millions of end users. I own features end to end, from discovery and architecture to production, across analytics platforms, agentic workflows, and data visualization systems.",
-    "bio2": "My academic background in <cyan>Web Engineering</cyan> (MSc) and <cyan>Computer Science</cyan> (BTech) gave me a strong theoretical foundation — but it's years of shipping real products under real constraints that shaped how I think about software.",
-    "bio3": "I care about the intersection of engineering rigor and aesthetic quality. I've collaborated closely with designers, product managers, and backend engineers to build experiences that users love and systems that teams can maintain. If you're building something ambitious, I'd love to be part of it.",
+    "subtitle": "An engineer who builds AI-native products end to end, and cares about the people using them.",
+    "bio1": "I'm a full-stack engineer with <strong>6+ years of experience</strong>, currently a <strong>Full Stack Engineer at Talon.One</strong>, an Adyen company, in Berlin. Before that I spent 4+ years at Staffbase as a frontend developer, shipping AI-native features to 2,000+ enterprise customers, and worked on an ERP and a restaurant guest app at Codefitters. On the side I built <cyan>Wealthbook</cyan>, a personal finance tracker, solo.",
     "educationLabel": "Education",
     "education": [
       {
@@ -102,10 +125,11 @@
         "title": "Quality Engineer Mindset",
         "desc": "I write strongly-typed, well-tested code with a product instinct grounded in metrics. I read logs, interpret A/B results, and use data to drive UI decisions — not just intuition."
       }
-    ]
+    ],
+    "chapter": "Origin"
   },
   "skills": {
-    "label": "02 / Skills",
+    "label": "Log 03 · On-board systems",
     "title": "Tech Arsenal",
     "subtitle": "Tools and technologies I use to bring ideas to life at production scale.",
     "categories": {
@@ -113,10 +137,53 @@
       "backend": "Backend",
       "tools": "Tools & Ops"
     },
-    "alsoWorkedWith": "Also worked with"
+    "alsoWorkedWith": "Also worked with",
+    "chapter": "Systems",
+    "ai": {
+      "label": "AI-Native Development",
+      "lead": "How I build with AI, and what I build with it.",
+      "items": [
+        {
+          "name": "Claude Code",
+          "desc": "Building products end to end with an AI coding agent, from first commit to production. Wealthbook was designed and built solo this way."
+        },
+        {
+          "name": "Claude Design",
+          "desc": "Exploring layouts and interfaces as designs first, then implementing the direction that works."
+        },
+        {
+          "name": "Agent Skills",
+          "desc": "Packaging repeatable workflows as skills so agents follow the same process every time."
+        },
+        {
+          "name": "LLM APIs & streaming",
+          "desc": "Connecting React frontends to LLM backends over REST and streaming APIs."
+        },
+        {
+          "name": "MCP & agentic workflows",
+          "desc": "Implementing agentic workflows with the Model Context Protocol."
+        },
+        {
+          "name": "AI features in production",
+          "desc": "AI content insights and agentic workflow integrations shipped to 2,000+ enterprise customers at Staffbase."
+        },
+        {
+          "name": "AI guardrails",
+          "desc": "Owner-scoped data rules, server-side model enforcement for Vertex AI and AI-content labelling."
+        },
+        {
+          "name": "RAG & prompt engineering",
+          "desc": "Grounding model answers in real data and writing precise prompts. This site's AI twin works this way."
+        },
+        {
+          "name": "Reviewing AI output",
+          "desc": "Owning every line of generated code: knowing when to guide the model and when to take the wheel."
+        }
+      ]
+    }
   },
   "projects": {
-    "label": "03 / Projects",
+    "label": "Log 04 · Deployed payloads",
     "title": "Selected Work",
     "subtitle": "A handful of projects I'm proud of — from design systems to real-time apps.",
     "links": {
@@ -125,20 +192,32 @@
       "moreOnGithub": "More on GitHub"
     },
     "descriptions": {
-      "photoVoltaic": "It is a full-stack application built using the React, Node.js, Express.js, Supabase. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
-      "calorieCam": "Snap a photo of your meal and instantly get a full nutrition breakdown — calories, protein, carbs, fat, and fibre. Meals are saved to your account so you can track what you eat over time.",
+      "wealthbook": "A personal finance tracker for people with money in more than one country. Wealthbook turns scattered accounts into one clear picture: net worth in your home currency, the real impact of exchange rates on your returns, AI insights in plain language, and goal planning per country. Designed and built solo.",
+      "solarSense": "It is a full-stack application built using the React, Node.js, Express.js, Supabase. It allows users to monitor and analyze photovoltaic data, visualize system performance, and generate reports.",
+      "satvio": "Snap a photo of your meal and instantly get a full nutrition breakdown — calories, protein, carbs, fat, and fibre. Meals are saved to your account so you can track what you eat over time.",
       "portfolio": "A sci-fi themed portfolio website that keeps you up to date with my work experience, personal projects, and everything else I'm building.",
       "dataManagement": "It is a comprehensive data management platform with a range of features such as user authentication, user profiles, file statistics visualization, file operations (CRUD), file tagging, file access control, file search, and file sharing with email notifications.",
       "portfolio3d": "A 3D personal portfolio website showcasing my projects and skills using Three.js and WebGL.",
       "comingSoon": "I'm always working on new projects and updating my portfolio. Stay tuned for more exciting work coming soon!"
-    }
+    },
+    "chapter": "Payloads"
   },
   "experience": {
-    "label": "04 / Experience",
+    "label": "Log 02 · Career trajectory",
     "title": "Work History",
     "subtitle": "Where I've worked and what I've shipped.",
     "currentBadge": "Current",
     "descriptions": {
+      "talonOne": [
+        "Joined Talon.One, an Adyen company, as a Full Stack Engineer in Berlin in November 2026."
+      ],
+      "codefitters": [
+        "Built CI/CD pipelines on GitHub Actions for two Angular/Firebase products (an ERP and a restaurant guest app): path-filtered pipelines with ESLint, Vitest/Karma, Firestore rules tests, i18n checks and gitleaks, enforced via required Quality Gate and Build Gate checks; automated releases with release-please, Conventional Commits and SemVer.",
+        "Replaced manual deployments with pipeline delivery to Firebase Hosting across 10+ targets using GitHub Environments with approval gates, smoke tests and tag-based rollback; added label-triggered PR preview environments on Firebase preview channels with automatic cleanup.",
+        "Led the monorepo migration (ADR, four-phase plan): extracted shared domain logic into a pnpm workspace package with lint-enforced import boundaries, migrated npm to pnpm workspaces, added CODEOWNERS and Dependabot, and scaffolded two zoneless, strict-TypeScript Angular apps.",
+        "Internationalized the ERP from German-only to DE/EN/HU across 28 modules, growing the ngx-translate catalog from ~270 to ~25,000 keys per language with CI parity checks.",
+        "Delivered a gamification engine for the guest app (XP, streaks, levels, challenges, CO2 metrics) and its UI redesign; hardened the ERP's AI assistant with owner-scoped Firestore rules, TTL expiry, server-side model enforcement for Vertex AI and AI-content labelling."
+      ],
       "staffbase": [
         "Architected and shipped AI-powered features for an AI-native communication platform serving 2,000+ enterprise customers and millions of employees, including AI content insights and agentic workflow integrations.",
         "Led discovery across 10+ projects with customers, PMs, and designers, architecting a behavioral tracking solution and a WCAG-compliant interactive visualization dashboard that surfaces real-time insights for millions of users.",
@@ -158,17 +237,21 @@
         "Utilized Git for CI and version control, and participated in agile cycles with Jira for efficient task management and high-quality releases.",
         "Promoted design patterns, modular architecture, and reusable components and libraries to enhance scalability and maintainability."
       ]
-    }
+    },
+    "chapter": "Flight log",
+    "waypoint": "Waypoint",
+    "more": "Read the full log",
+    "less": "Show less"
   },
   "contact": {
-    "label": "05 / Contact",
-    "title": "Let's Work Together",
-    "subtitle": "Open to senior roles, contracts, and interesting conversations.",
-    "intro": "I'm actively looking for my next challenge — whether that's joining a great team building ambitious products, or collaborating on something new. If you're building something I'd care about, let's talk.",
+    "label": "Log 05 · Transmission",
+    "title": "Let's Build Something",
+    "subtitle": "Open to collaborations, side projects, and good conversations.",
+    "intro": "I'm always up for building something with people who care about the craft, whether that's an open-source idea, a side project, or just trading notes on frontend and AI. If you have something in mind, let's connect.",
     "reachMeAt": "Reach me at",
     "availability": {
-      "status": "Available for work",
-      "detail": "Looking for senior frontend / full-stack roles, ideally remote or hybrid. Open to relocation and to both full-time and freelance engagements. Response time: < 24h."
+      "status": "Open to collaborate",
+      "detail": "Side projects, open source, and ideas worth exploring. Tell me what you're working on and how I can help. Response time: < 24h."
     },
     "social": {
       "github": "GitHub",
@@ -181,12 +264,13 @@
       "emailLabel": "Email",
       "emailPlaceholder": "your@email.com",
       "messageLabel": "Message",
-      "messagePlaceholder": "Tell me about your project or opportunity...",
+      "messagePlaceholder": "Tell me about your idea or what you'd like to build together...",
       "send": "Send Message",
       "sending": "Sending...",
       "success": "✓ Message Sent!",
       "error": "Failed — try again"
-    }
+    },
+    "chapter": "Open channel"
   },
   "chat": {
     "launcherLabel": "Chat with AI Satvik",
@@ -197,9 +281,9 @@
     "send": "Send",
     "disclaimer": "AI version of Satvik — may occasionally be imperfect.",
     "suggestions": [
-      "What do you do at Staffbase?",
+      "What did you do at Staffbase?",
       "Show me your projects",
-      "Are you open to new roles?",
+      "Can we collaborate on something?",
       "Can I see your resume?"
     ],
     "error": "Something went wrong — please try again.",

@@ -1,159 +1,165 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { EXPERIENCE } from "@/lib/data";
 
+// The flight log reads as a journey, so it runs oldest → newest.
+const WAYPOINTS = [...EXPERIENCE].reverse();
+
+
 export function ExperienceSection() {
   const t = useTranslations("experience");
-  const [expanded, setExpanded] = useState<number>(1);
+  const [active, setActive] = useState(0);
+  const [open, setOpen] = useState<number[]>([]);
+  const itemRefs = useRef<(HTMLElement | null)[]>([]);
+
+  // Whichever waypoint crosses the middle band of the viewport is "docked".
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(Number((entry.target as HTMLElement).dataset.index));
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    itemRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const current = WAYPOINTS[active];
 
   return (
     <SectionWrapper
       id="experience"
       label={t("label")}
+      chapter={t("chapter")}
       title={t("title")}
       subtitle={t("subtitle")}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Timeline */}
-        <div className="lg:col-span-1 hidden lg:flex flex-col items-center pt-2">
-          <div className="w-px flex-1 timeline-line" />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        {/* LEFT — pinned viewport showing where we are docked */}
+        <div className="hidden lg:block lg:col-span-5">
+          <div className="sticky top-[38vh]">
+            <div>
+              <div className="text-[11px] font-mono tracking-[0.22em] uppercase text-white/50 mb-3">
+                {t("waypoint")} 0{active + 1} / 0{WAYPOINTS.length}
+              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="font-display font-light text-5xl xl:text-6xl text-white tracking-tight break-words">
+                    <span className="text-accent-cyan">/</span>
+                    {current.company}
+                  </div>
+                  <div className="font-mono text-sm text-white/50 mt-3">
+                    {current.period}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+              {/* Route */}
+              <div className="flex items-center gap-2 mt-6">
+                {WAYPOINTS.map((w, i) => (
+                  <span
+                    key={w.id}
+                    className={`h-0.5 rounded-full transition-all duration-500 ${
+                      i === active
+                        ? "w-12 bg-accent-cyan"
+                        : i < active
+                          ? "w-6 bg-accent-cyan/40"
+                          : "w-6 bg-white/15"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Entries */}
-        <div className="lg:col-span-11 space-y-4">
-          {EXPERIENCE.map((exp, i) => {
-            const bullets = t.raw(
+        {/* RIGHT — the log entries */}
+        <ol className="lg:col-span-7">
+          {WAYPOINTS.map((exp, i) => {
+            const all = t.raw(
               `descriptions.${exp.descriptionNamespace}`,
             ) as string[];
-
+            const expanded = open.includes(exp.id);
+            // Two headline points; the rest of the log opens on request.
+            const bullets = expanded ? all : all.slice(0, 2);
             return (
-              <motion.div
+              <li
                 key={exp.id}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.6, delay: i * 0.12 }}
+                data-index={i}
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                className={`border-t border-white/10 py-12 lg:py-20 lg:min-h-[70vh] transition-opacity duration-500 ${
+                  i === active ? "opacity-100" : "lg:opacity-35"
+                }`}
               >
-                <button
-                  onClick={() => setExpanded(expanded === exp.id ? 0 : exp.id)}
-                  className="w-full text-left card-sci-fi rounded-2xl p-6 hover:border-white/15 transition-all duration-300 group cursor-none"
-                >
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-4">
-                      {/* Dot */}
-                      <div className="relative flex-shrink-0 mt-1.5">
-                        <div
-                          className={`w-3 h-3 rounded-full border-2 transition-colors duration-300 ${
-                            expanded === exp.id
-                              ? "bg-accent-cyan border-accent-cyan"
-                              : "bg-transparent border-white/20 group-hover:border-white/40"
-                          }`}
-                        />
-                        {expanded === exp.id && (
-                          <div className="absolute inset-0 rounded-full bg-accent-cyan animate-ping opacity-30" />
-                        )}
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <h3 className="font-display font-bold text-white text-lg">
-                            {exp.role}
-                          </h3>
-                          {exp.current && (
-                            <span className="text-[10px] font-mono px-2 py-0.5 bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 rounded">
-                              {t("currentBadge")}
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          <span className="text-white/50 text-sm">
-                            {exp.company}
-                          </span>
-                          <span className="text-white/15">·</span>
-                          <span className="text-white/30 text-xs font-mono">
-                            {exp.period}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Expand chevron */}
-                    <motion.div
-                      animate={{ rotate: expanded === exp.id ? 180 : 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="text-white/20 group-hover:text-white/40 flex-shrink-0 mt-1"
+                <div className="text-[11px] font-mono tracking-[0.22em] uppercase text-accent-cyan mb-4">
+                  {t("waypoint")} 0{i + 1} · {exp.period}
+                </div>
+                <div className="flex items-center gap-3 flex-wrap mb-1">
+                  <h3 className="font-display font-bold text-white text-2xl md:text-3xl tracking-tight">
+                    {exp.role}
+                  </h3>
+                  {exp.current && (
+                    <span className="text-[10px] font-mono px-2.5 py-1 text-accent-cyan border border-accent-cyan/40 rounded-full">
+                      {t("currentBadge")}
+                    </span>
+                  )}
+                </div>
+                <div className="text-white/60 text-lg font-light mb-7">
+                  {exp.company}
+                </div>
+                <ul className="space-y-4 mb-5">
+                  {bullets.map((point, j) => (
+                    <li
+                      key={j}
+                      className="flex items-start gap-4 text-white/65 leading-relaxed font-light"
                     >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M3 6l5 5 5-5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </motion.div>
-                  </div>
-
-                  {/* Expanded content */}
-                  <AnimatePresence>
-                    {expanded === exp.id && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pt-5 pl-7 space-y-4">
-                          {/* Bullet points */}
-                          <ul className="space-y-2">
-                            {bullets.map((point, j) => (
-                              <motion.li
-                                key={j}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: j * 0.08 }}
-                                className="flex items-start gap-3 text-white/50 text-sm leading-relaxed"
-                              >
-                                <span className="text-accent-cyan mt-1.5 flex-shrink-0">
-                                  ›
-                                </span>
-                                {point}
-                              </motion.li>
-                            ))}
-                          </ul>
-
-                          {/* Tech used */}
-                          <div className="flex flex-wrap gap-2 pt-2">
-                            {exp.tech.map((tech) => (
-                              <span
-                                key={tech}
-                                className="tag text-white/40 border-white/10 bg-white/[0.03]"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </button>
-              </motion.div>
+                      <span className="font-mono text-xs text-accent-cyan/80 pt-1.5 flex-shrink-0">
+                        0{j + 1}
+                      </span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                {all.length > 2 && (
+                  <button
+                    type="button"
+                    aria-expanded={expanded}
+                    onClick={() =>
+                      setOpen((ids) =>
+                        expanded ? ids.filter((id) => id !== exp.id) : [...ids, exp.id],
+                      )
+                    }
+                    className="mb-8 text-sm text-accent-cyan border-b border-accent-cyan/40 hover:border-accent-cyan transition-colors"
+                  >
+                    {expanded ? t("less") : t("more")}
+                  </button>
+                )}
+                <div className={exp.tech.length ? "flex flex-wrap gap-2" : "hidden"}>
+                  {exp.tech.map((tech) => (
+                    <span key={tech} className="tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </SectionWrapper>
   );

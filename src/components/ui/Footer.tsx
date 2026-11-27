@@ -9,26 +9,26 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 border-t border-white/[0.05] py-10 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Logo />
-          <span className="gradient-text text-xs font-mono">
+          <span className="text-white/60 text-xs font-mono">
             © {new Date().getFullYear()} {PERSONAL.name}
           </span>
         </div>
 
         <div className="flex items-center gap-2 text-white/50 text-xs font-mono">
           <span>{t("footer.builtWith")}</span>
-          <span className="tag text-white/20 border-white/10 text-[10px]">
+          <span className="tag text-[10px]">
             Next.js
           </span>
-          <span className="tag text-white/20 border-white/10 text-[10px]">
+          <span className="tag text-[10px]">
             TypeScript
           </span>
-          <span className="tag text-white/20 border-white/10 text-[10px]">
+          <span className="tag text-[10px]">
             Tailwind
           </span>
-          <span className="tag text-white/20 border-white/10 text-[10px]">
+          <span className="tag text-[10px]">
             Three.js
           </span>
         </div>

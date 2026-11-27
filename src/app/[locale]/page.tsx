@@ -72,10 +72,12 @@ export default async function Home({ params }: Props) {
         }}
       />
       <HeroSection />
+      {/* Story order: who he is → the route he flew → what he flies with →
+          what he launched. MissionHud and the Navbar list the same order. */}
       <AboutSection />
+      <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
-      <ExperienceSection />
       <ContactSection />
       <Footer />
     </>

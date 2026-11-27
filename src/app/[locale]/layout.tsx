@@ -4,7 +4,7 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { DM_Sans, JetBrains_Mono, Syne } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Manrope } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { routing } from "@/i18n/routing";
@@ -13,13 +13,14 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import { Navbar } from "@/components/ui/Navbar";
 import { ParticleBackground } from "@/components/3d/ParticleBackground";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { MissionHud } from "@/components/ui/MissionHud";
 import { PERSONAL, SITE_URL } from "@/lib/data";
 import type { Metadata } from "next";
 
-const syne = Syne({
+const display = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-syne",
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -111,13 +112,14 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`scroll-smooth ${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth ${display.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-bg-primary text-slate-200 font-body antialiased">
         <NextIntlClientProvider messages={messages}>
           <CustomCursor />
           <ParticleBackground />
           <Navbar />
+          <MissionHud />
           <main className="relative z-10">{children}</main>
           <ChatWidget />
         </NextIntlClientProvider>
