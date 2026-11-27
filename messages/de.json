@@ -15,8 +15,8 @@
     }
   },
   "metadata": {
-    "title": "Satvik Sabharwal | Frontend-fokussierter Full-Stack-Entwickler",
-    "description": "Satvik Sabharwal ist Frontend-fokussierter Full-Stack-Entwickler in Chemnitz mit 6+ Jahren Erfahrung in schnellen, barrierefreien React-, Next.js- und TypeScript-Apps."
+    "title": "Satvik Sabharwal | Full Stack Engineer",
+    "description": "Satvik Sabharwal ist Full-Stack-Engineer in Berlin mit 6+ Jahren Erfahrung in schnellen, barrierefreien Produkten mit React, Next.js, TypeScript und Node.js."
   },
   "notFound": {
     "label": "Fehler 404",
@@ -25,17 +25,17 @@
     "backHome": "Zur Startseite"
   },
   "hero": {
-    "available": "Offen für neue Möglichkeiten",
-    "greeting": "Hallo, ich bin",
+    "available": "Offen für Zusammenarbeit",
+    "greeting": "Stationslog · Hi, ich bin",
     "roles": [
-      "Frontend-fokussierter Full-Stack-Entwickler",
+      "Full Stack Engineer",
       "React-Spezialist",
       "AI-Native Builder",
       "Analytics-Enthusiast",
       "Barrierefreiheits-Experte"
     ],
     "cta": {
-      "viewWork": "Meine Arbeiten",
+      "viewWork": "Der Mission folgen",
       "getInTouch": "Kontakt aufnehmen",
       "github": "GitHub"
     },
@@ -45,17 +45,40 @@
       "companies": "Unternehmen",
       "degrees": "Abschlüsse"
     },
-    "bio": "Frontend-fokussierter Full-Stack-Entwickler mit 6+ Jahren Erfahrung — von pixelgenauen React-Interfaces bis zu Node.js-APIs. BTech Informatik · MSc Web Engineering. Ich verwandle komplexe Probleme in elegante, skalierbare Lösungen, die Nutzer lieben.",
-    "tagline": "RENDERING FRONTEND.DEV_v2.0",
-    "scroll": "Scrollen"
+    "bio": "Full-Stack-Engineer mit 6+ Jahren Erfahrung — von pixelgenauen React-Interfaces bis zu Node.js-APIs. BTech Informatik · MSc Web Engineering. Ich verwandle komplexe Probleme in elegante, skalierbare Lösungen, die Nutzer lieben.",
+    "scroll": "Scrollen",
+    "intro": {
+      "lines": [
+        "Oh, hey! Ich habe dich gar nicht hereinschweben sehen.",
+        "Ich bin Satvik, Full-Stack-Engineer aus Berlin.",
+        "Seit über 6 Jahren baue ich Produkte von Anfang bis Ende, vom React-Interface bis zu APIs und KI-Features. Heute bin ich Full Stack Engineer bei Talon.One, einem Adyen-Unternehmen.",
+        "Scroll oder halte S gedrückt und flieg mit mir durch mein Missionslog. Helm auf!"
+      ],
+      "again": "Willkommen zurück an Bord! Das Missionslog geht direkt unten weiter.",
+      "statusCoding": "Auf Station · am Coden",
+      "statusLive": "Live · sagt Hallo",
+      "replay": "Intro wiederholen",
+      "soundOn": "Ton an",
+      "soundOff": "Ton aus"
+    }
+  },
+  "mission": {
+    "label": "Missionsfortschritt",
+    "stations": {
+      "hero": "Station",
+      "about": "Ursprung",
+      "experience": "Flugprotokoll",
+      "skills": "Systeme",
+      "projects": "Nutzlast",
+      "contact": "Offener Kanal"
+    },
+    "keys": "W/S oder ↑/↓ fliegen · A/D oder ←/→ seitwärts · 1–6 springen"
   },
   "about": {
-    "label": "01 / Über mich",
+    "label": "Log 01 · Crew-Profil",
     "title": "Wer ich bin",
-    "subtitle": "Ein Entwickler, dem handwerkliche Qualität, Performance und die Menschen, die seine Produkte nutzen, am Herzen liegen.",
-    "bio1": "Ich bin ein Frontend-fokussierter Full-Stack-Entwickler mit <strong>6+ Jahren Erfahrung</strong> in der Entwicklung von React- und TypeScript-Produkten im Enterprise-Maßstab — davon 4+ Jahre bei Staffbase, wo ich AI-native Features für 2.000+ B2B-Kunden und Millionen von Endnutzern baue. Ich verantworte Features end-to-end, von Discovery und Architektur bis zur Produktion, über Analytics-Plattformen, agentische Workflows und Datenvisualisierungssysteme hinweg.",
-    "bio2": "Mein akademischer Hintergrund in <cyan>Web Engineering</cyan> (MSc) und <cyan>Computer Science</cyan> (BTech) hat mir ein solides theoretisches Fundament gegeben – doch es sind die Jahre des Shipens realer Produkte unter realen Einschränkungen, die mein Denken über Software geprägt haben.",
-    "bio3": "Mir liegt die Verbindung von technischer Präzision und ästhetischer Qualität am Herzen. Ich habe eng mit Designern, Product Managern und Backend-Entwicklern zusammengearbeitet, um Erlebnisse zu schaffen, die Nutzer lieben, und Systeme zu bauen, die Teams pflegen können. Wenn du etwas Ambitioniertes entwickelst, bin ich gerne dabei.",
+    "subtitle": "Ein Engineer, der KI-native Produkte von Anfang bis Ende baut und an die Menschen denkt, die sie nutzen.",
+    "bio1": "Ich bin Full-Stack-Engineer mit <strong>6+ Jahren Erfahrung</strong>, aktuell <strong>Full Stack Engineer bei Talon.One</strong>, einem Adyen-Unternehmen, in Berlin. Davor war ich über 4 Jahre Frontend-Entwickler bei Staffbase und habe KI-native Features für 2.000+ Enterprise-Kunden ausgeliefert, anschließend habe ich bei Codefitters an einem ERP und einer Gäste-App für Restaurants gearbeitet. Nebenbei habe ich <cyan>Wealthbook</cyan>, einen Finanz-Tracker, allein gebaut.",
     "educationLabel": "Ausbildung",
     "education": [
       {
@@ -102,10 +125,11 @@
         "title": "Qualitätsorientierter Entwickler",
         "desc": "Ich schreibe stark typisiertes, gut getestetes Code mit einem Produktinstinkt, der auf Metriken basiert. Ich lese Logs, interpretiere A/B-Ergebnisse und nutze Daten für UI-Entscheidungen – nicht nur Intuition."
       }
-    ]
+    ],
+    "chapter": "Ursprung"
   },
   "skills": {
-    "label": "02 / Fähigkeiten",
+    "label": "Log 03 · Bordsysteme",
     "title": "Tech-Repertoire",
     "subtitle": "Tools und Technologien, mit denen ich Ideen in produktionsreife Software überführe.",
     "categories": {
@@ -113,10 +137,53 @@
       "backend": "Backend",
       "tools": "Tools & Ops"
     },
-    "alsoWorkedWith": "Weitere Erfahrungen mit"
+    "alsoWorkedWith": "Weitere Erfahrungen mit",
+    "chapter": "Systeme",
+    "ai": {
+      "label": "KI-native Entwicklung",
+      "lead": "Wie ich mit KI baue und was ich damit baue.",
+      "items": [
+        {
+          "name": "Claude Code",
+          "desc": "Produkte von Anfang bis Ende mit einem KI-Coding-Agenten bauen, vom ersten Commit bis zur Produktion. Wealthbook ist so allein entworfen und gebaut worden."
+        },
+        {
+          "name": "Claude Design",
+          "desc": "Layouts und Interfaces zuerst als Designs erkunden und dann die Richtung umsetzen, die funktioniert."
+        },
+        {
+          "name": "Agent Skills",
+          "desc": "Wiederkehrende Abläufe als Skills verpacken, damit Agenten jedes Mal demselben Prozess folgen."
+        },
+        {
+          "name": "LLM-APIs & Streaming",
+          "desc": "React-Frontends über REST- und Streaming-APIs mit LLM-Backends verbinden."
+        },
+        {
+          "name": "MCP & agentische Workflows",
+          "desc": "Agentische Workflows mit dem Model Context Protocol umsetzen."
+        },
+        {
+          "name": "KI-Features in Produktion",
+          "desc": "KI-Content-Insights und agentische Workflow-Integrationen für 2.000+ Enterprise-Kunden bei Staffbase ausgeliefert."
+        },
+        {
+          "name": "KI-Leitplanken",
+          "desc": "Owner-bezogene Datenregeln, serverseitige Modell-Durchsetzung für Vertex AI und Kennzeichnung von KI-Inhalten."
+        },
+        {
+          "name": "RAG & Prompt Engineering",
+          "desc": "Modellantworten in echten Daten verankern und präzise Prompts schreiben. Der KI-Zwilling dieser Seite funktioniert so."
+        },
+        {
+          "name": "KI-Output prüfen",
+          "desc": "Jede generierte Zeile verantworten: wissen, wann man das Modell führt und wann man selbst übernimmt."
+        }
+      ]
+    }
   },
   "projects": {
-    "label": "03 / Projekte",
+    "label": "Log 04 · Ausgesetzte Nutzlast",
     "title": "Ausgewählte Projekte",
     "subtitle": "Eine Auswahl meiner Projekte – von Design-Systemen bis zu Echtzeit-Applikationen.",
     "links": {
@@ -125,20 +192,32 @@
       "moreOnGithub": "Mehr auf GitHub"
     },
     "descriptions": {
-      "photoVoltaic": "Eine Full-Stack-Anwendung auf Basis von React, Node.js, Express.js und Supabase. Sie ermöglicht die Überwachung und Analyse von Photovoltaik-Daten, die Visualisierung der Systemleistung und die Erstellung von Berichten.",
-      "calorieCam": "Fotografiere einfach deine Mahlzeit und erhalte sofort eine vollständige Nährwertanalyse – Kalorien, Protein, Kohlenhydrate, Fett und Ballaststoffe. Deine Mahlzeiten werden in deinem Konto gespeichert, damit du deine Ernährung langfristig im Blick behältst.",
+      "wealthbook": "Ein Finanz-Tracker für Menschen, deren Geld in mehr als einem Land liegt. Wealthbook macht aus verstreuten Konten ein klares Bild: Nettovermögen in deiner Heimatwährung, der echte Einfluss von Wechselkursen auf deine Rendite, KI-Einblicke in verständlicher Sprache und Zielplanung pro Land. Allein entworfen und gebaut.",
+      "solarSense": "Eine Full-Stack-Anwendung auf Basis von React, Node.js, Express.js und Supabase. Sie ermöglicht die Überwachung und Analyse von Photovoltaik-Daten, die Visualisierung der Systemleistung und die Erstellung von Berichten.",
+      "satvio": "Fotografiere einfach deine Mahlzeit und erhalte sofort eine vollständige Nährwertanalyse – Kalorien, Protein, Kohlenhydrate, Fett und Ballaststoffe. Deine Mahlzeiten werden in deinem Konto gespeichert, damit du deine Ernährung langfristig im Blick behältst.",
       "portfolio": "Eine Portfolio-Website im Sci-Fi-Look, die dich über meine Berufserfahrung, meine persönlichen Projekte und alles Weitere auf dem Laufenden hält.",
       "dataManagement": "Eine umfassende Datenverwaltungsplattform mit Funktionen wie Benutzerauthentifizierung, Benutzerprofilen, Dateistatistik-Visualisierung, Dateioperationen (CRUD), Datei-Tagging, Zugangskontrolle, Dateisuche und -freigabe mit E-Mail-Benachrichtigungen.",
       "portfolio3d": "Eine 3D-Portfolio-Website, die meine Projekte und Fähigkeiten mit Three.js und WebGL präsentiert.",
       "comingSoon": "Ich arbeite ständig an neuen Projekten und aktualisiere mein Portfolio. Bleib dran für weitere spannende Projekte!"
-    }
+    },
+    "chapter": "Nutzlast"
   },
   "experience": {
-    "label": "04 / Erfahrung",
+    "label": "Log 02 · Karriereverlauf",
     "title": "Berufliche Laufbahn",
     "subtitle": "Wo ich gearbeitet und was ich entwickelt habe.",
     "currentBadge": "Aktuell",
     "descriptions": {
+      "talonOne": [
+        "Seit November 2026 Full Stack Engineer bei Talon.One, einem Adyen-Unternehmen, in Berlin."
+      ],
+      "codefitters": [
+        "Aufbau von CI/CD-Pipelines auf GitHub Actions für zwei Angular/Firebase-Produkte (ein ERP und eine Gäste-App für Restaurants): pfadgefilterte Pipelines mit ESLint, Vitest/Karma, Firestore-Rules-Tests, i18n-Checks und gitleaks, abgesichert über verpflichtende Quality-Gate- und Build-Gate-Checks; automatisierte Releases mit release-please, Conventional Commits und SemVer.",
+        "Ablösung manueller Deployments durch Pipeline-Auslieferung auf Firebase Hosting über 10+ Targets mit GitHub Environments, Freigabe-Gates, Smoke-Tests und Tag-basiertem Rollback; dazu per Label ausgelöste PR-Preview-Umgebungen auf Firebase-Preview-Channels mit automatischem Aufräumen.",
+        "Leitung der Monorepo-Migration (ADR, Vier-Phasen-Plan): gemeinsame Domänenlogik in ein pnpm-Workspace-Paket mit per Lint erzwungenen Import-Grenzen ausgelagert, npm auf pnpm Workspaces migriert, CODEOWNERS und Dependabot ergänzt und zwei zonenlose Angular-Apps mit striktem TypeScript aufgesetzt.",
+        "Internationalisierung des ERP von rein Deutsch auf DE/EN/HU über 28 Module; der ngx-translate-Katalog wuchs von ~270 auf ~25.000 Keys pro Sprache, mit Paritäts-Checks in der CI.",
+        "Umsetzung einer Gamification-Engine für die Gäste-App (XP, Streaks, Level, Challenges, CO2-Kennzahlen) samt UI-Redesign; Härtung des KI-Assistenten im ERP mit Owner-bezogenen Firestore-Rules, TTL-Ablauf, serverseitiger Modell-Durchsetzung für Vertex AI und Kennzeichnung von KI-Inhalten."
+      ],
       "staffbase": [
         "Architektur und Auslieferung KI-gestützter Features für eine AI-native Kommunikationsplattform mit 2.000+ Enterprise-Kunden und Millionen von Mitarbeitern – darunter AI Content Insights und agentische Workflow-Integrationen.",
         "Leitung der Discovery in 10+ Projekten mit Kunden, PMs und Designern; Architektur einer Behavioral-Tracking-Lösung und eines WCAG-konformen interaktiven Visualisierungs-Dashboards mit Echtzeit-Einblicken für Millionen von Nutzern.",
@@ -158,17 +237,21 @@
         "Einsatz von Git für CI und Versionskontrolle sowie Teilnahme an agilen Zyklen mit Jira für effizientes Task-Management und qualitativ hochwertige Releases.",
         "Förderung von Design Patterns, modularer Architektur und wiederverwendbaren Komponenten und Bibliotheken für bessere Skalierbarkeit und Wartbarkeit."
       ]
-    }
+    },
+    "chapter": "Flugprotokoll",
+    "waypoint": "Wegpunkt",
+    "more": "Ganzes Log lesen",
+    "less": "Weniger anzeigen"
   },
   "contact": {
-    "label": "05 / Kontakt",
-    "title": "Lass uns zusammenarbeiten",
-    "subtitle": "Offen für Senior-Rollen, Aufträge und interessante Gespräche.",
-    "intro": "Ich suche aktiv nach meiner nächsten Herausforderung – sei es der Beitritt zu einem großartigen Team, das ambitionierte Produkte entwickelt, oder die Zusammenarbeit an etwas Neuem. Wenn du etwas baust, das mich begeistern würde, lass uns reden.",
+    "label": "Log 05 · Übertragung",
+    "title": "Lass uns etwas bauen",
+    "subtitle": "Offen für Zusammenarbeit, Side Projects und gute Gespräche.",
+    "intro": "Ich baue gern etwas mit Menschen, denen gutes Handwerk wichtig ist, ob Open-Source-Idee, Side Project oder einfach ein Austausch über Frontend und KI. Wenn du etwas im Kopf hast, lass uns sprechen.",
     "reachMeAt": "Erreichbar unter",
     "availability": {
-      "status": "Verfügbar für neue Projekte",
-      "detail": "Suche nach Senior Frontend-/Full-Stack-Rollen, idealerweise remote oder hybrid. Offen für Umzug sowie Vollzeit- und Freelance-Engagements. Antwortzeit: < 24h."
+      "status": "Offen für Zusammenarbeit",
+      "detail": "Side Projects, Open Source und Ideen, die es wert sind. Erzähl mir, woran du arbeitest und wie ich helfen kann. Antwortzeit: < 24h."
     },
     "social": {
       "github": "GitHub",
@@ -181,25 +264,26 @@
       "emailLabel": "E-Mail",
       "emailPlaceholder": "deine@email.com",
       "messageLabel": "Nachricht",
-      "messagePlaceholder": "Erzähl mir von deinem Projekt oder deiner Anfrage...",
+      "messagePlaceholder": "Erzähl mir von deiner Idee oder was du gemeinsam bauen möchtest...",
       "send": "Nachricht senden",
       "sending": "Wird gesendet...",
       "success": "✓ Nachricht gesendet!",
       "error": "Fehlgeschlagen – erneut versuchen"
-    }
+    },
+    "chapter": "Offener Kanal"
   },
   "chat": {
     "launcherLabel": "Mit KI-Satvik chatten",
     "title": "Satvik (KI)",
     "status": "online — KI-Zwilling",
-    "greeting": "Hey, ich bin Satviks KI-Zwilling 👋 Frag mich alles über seine Arbeit, Projekte oder ob er für dein Team verfügbar ist.",
+    "greeting": "Hey, ich bin Satviks KI-Zwilling 👋 Frag mich alles über seine Arbeit, seine Projekte oder wie ihr zusammenarbeiten könntet.",
     "placeholder": "Frag mich etwas...",
     "send": "Senden",
     "disclaimer": "KI-Version von Satvik — kann gelegentlich Fehler machen.",
     "suggestions": [
-      "Was machst du bei Staffbase?",
+      "Was hast du bei Staffbase gemacht?",
       "Zeig mir deine Projekte",
-      "Bist du offen für neue Rollen?",
+      "Können wir zusammenarbeiten?",
       "Kann ich deinen Lebenslauf sehen?"
     ],
     "error": "Etwas ist schiefgelaufen — bitte versuche es erneut.",

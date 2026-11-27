@@ -9,18 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-syne)", "sans-serif"],
+        display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-dm-sans)", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       colors: {
         bg: {
-          primary: "#05070f",
-          secondary: "#0a0d18",
-          tertiary: "#0f1322",
+          primary: "#090a0c",
+          secondary: "#0f1114",
+          tertiary: "#15181c",
         },
         accent: {
-          cyan: "#00f5c4",
+          cyan: "#5fd9c9",
           violet: "#7c3aed",
           pink: "#f472b6",
         },
@@ -28,11 +28,11 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-pattern":
-          "linear-gradient(rgba(0,245,196,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,245,196,0.03) 1px, transparent 1px)",
+          "linear-gradient(rgba(95,217,201,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(95,217,201,0.03) 1px, transparent 1px)",
         "hero-glow":
           "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124,58,237,0.3), transparent)",
         "card-glow":
-          "linear-gradient(135deg, rgba(0,245,196,0.06), rgba(124,58,237,0.06))",
+          "linear-gradient(135deg, rgba(95,217,201,0.06), rgba(124,58,237,0.06))",
       },
       backgroundSize: {
         "grid-size": "60px 60px",
@@ -68,9 +68,9 @@ const config: Config = {
         },
       },
       boxShadow: {
-        "glow-cyan": "0 0 40px rgba(0,245,196,0.2)",
+        "glow-cyan": "0 0 40px rgba(95,217,201,0.2)",
         "glow-violet": "0 0 40px rgba(124,58,237,0.3)",
-        "card-hover": "0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,245,196,0.08)",
+        "card-hover": "0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(95,217,201,0.08)",
       },
     },
   },

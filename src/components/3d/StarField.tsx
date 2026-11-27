@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-const COLORS = ["#00f5c4", "#7c3aed", "#ffffff"];
+const COLORS = ["#5fd9c9", "#7c3aed", "#ffffff"];
 const COUNT = 140;
 
 // CSS-only stand-in for the WebGL scene on touch devices: stars are

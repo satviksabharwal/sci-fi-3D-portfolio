@@ -7,7 +7,7 @@ export const PERSONAL = {
   email: "createwithsatvik@gmail.com",
   github: "https://github.com/satviksabharwal",
   linkedin: "https://www.linkedin.com/in/satvik-sabharwal/",
-  location: "Chemnitz, Germany",
+  location: "Berlin, Germany",
 };
 
 export const SKILLS: Skill[] = [
@@ -26,22 +26,29 @@ export const SKILLS: Skill[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 7,
+    title: "Wealthbook",
+    descriptionKey: "wealthbook",
+    tech: ["TypeScript", "React"],
+    link: "https://wealthbook.me/",
+    featured: true,
+    color: "#5fd9c9",
+  },
+  {
     id: 1,
-    title: "PhotoVoltaic System",
-    descriptionKey: "photoVoltaic",
+    title: "SolarSense",
+    descriptionKey: "solarSense",
     tech: ["React", "TypeScript", "Node.js", "Express.js", "Supabase", "MaterialUI"],
-    github: "https://github.com/satviksabharwal/PhotoVoltaic-System",
     link: "https://thesolarsense.online/",
     featured: true,
-    color: "#00f5c4",
+    color: "#5fd9c9",
   },
   {
     id: 2,
-    title: "CalorieCam",
-    descriptionKey: "calorieCam",
+    title: "Satvio",
+    descriptionKey: "satvio",
     tech: ["React", "TypeScript", "Node.js", "Express.js", "Supabase", "TailwindCSS"],
-    github: "https://github.com/satviksabharwal/calorie-cam-metrics",
-    link: "https://app.calorie-cam.workers.dev/",
+    link: "https://app.satvio.life/",
     featured: true,
     color: "#a78bfa",
   },
@@ -88,10 +95,36 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: 5,
+    role: "Full Stack Engineer",
+    company: "Talon.One",
+    period: "2026 — Present",
+    descriptionNamespace: "talonOne",
+    tech: [],
+    current: true,
+  },
+  {
+    id: 4,
+    role: "Senior Frontend Engineer",
+    company: "Codefitters",
+    period: "2026 — 2026",
+    descriptionNamespace: "codefitters",
+    tech: [
+      "Angular",
+      "TypeScript",
+      "Firebase",
+      "GitHub Actions",
+      "pnpm workspaces",
+      "Vitest",
+      "ngx-translate",
+      "Vertex AI",
+    ],
+  },
+  {
     id: 1,
     role: "Frontend Engineer",
     company: "Staffbase SE",
-    period: "2022 — Present",
+    period: "2022 — 2026",
     descriptionNamespace: "staffbase",
     tech: [
       "React",
@@ -104,7 +137,6 @@ export const EXPERIENCE: Experience[] = [
       "Vitest",
       "Jest",
     ],
-    current: true,
   },
   {
     id: 2,

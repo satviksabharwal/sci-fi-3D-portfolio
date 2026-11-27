@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "dev:https": "next dev --experimental-https",
-    "export:runway": "pnpm dlx tsx scripts/export-runway.ts"
+    "export:runway": "pnpm dlx tsx scripts/export-runway.ts",
+    "generate:intro": "pnpm dlx tsx scripts/generate-intro.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

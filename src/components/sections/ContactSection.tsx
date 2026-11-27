@@ -88,6 +88,7 @@ export function ContactSection() {
     <SectionWrapper
       id="contact"
       label={t("label")}
+      chapter={t("chapter")}
       title={t("title")}
       subtitle={t("subtitle")}
     >
@@ -96,19 +97,19 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="space-y-8"
         >
-          <p className="text-white/40 text-lg leading-relaxed">{t("intro")}</p>
+          <p className="text-white/60 text-lg leading-relaxed font-light">{t("intro")}</p>
 
           <div className="space-y-3">
-            <p className="text-xs font-mono tracking-widest text-white/20 uppercase">
+            <p className="text-[11px] font-mono tracking-[0.22em] text-white/50 uppercase">
               {t("reachMeAt")}
             </p>
             <a
               href={`mailto:${PERSONAL.email}`}
-              className="text-accent-cyan font-display font-bold text-xl hover:brightness-125 transition-all"
+              className="text-white font-display font-light text-2xl md:text-3xl tracking-tight hover:text-accent-cyan transition-colors break-all"
             >
               {PERSONAL.email}
             </a>
@@ -121,8 +122,9 @@ export function ContactSection() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 card-sci-fi rounded-xl flex items-center justify-center text-white/30 hover:text-white hover:border-white/20 transition-all duration-200"
+                className="w-11 h-11 card-sci-fi rounded-full flex items-center justify-center text-white/60 hover:text-accent-cyan transition-all duration-200"
                 title={s.label}
+                aria-label={s.label}
               >
                 {s.icon}
               </a>
@@ -130,7 +132,7 @@ export function ContactSection() {
           </div>
 
           {/* Availability card */}
-          <div className="card-sci-fi rounded-xl p-5 border-accent-cyan/10">
+          <div className="card-sci-fi rounded-2xl p-5">
             <div className="flex items-center gap-3 mb-2">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-cyan opacity-75" />
@@ -140,7 +142,7 @@ export function ContactSection() {
                 {t("availability.status")}
               </span>
             </div>
-            <p className="text-white/30 text-xs leading-relaxed">
+            <p className="text-white/55 text-sm leading-relaxed font-light">
               {t("availability.detail")}
             </p>
           </div>
@@ -150,7 +152,7 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
@@ -171,7 +173,7 @@ export function ContactSection() {
               <div key={field.id}>
                 <label
                   htmlFor={field.id}
-                  className="block text-xs font-mono text-white/30 uppercase tracking-widest mb-2"
+                  className="block text-[11px] font-mono text-white/50 uppercase tracking-[0.22em] mb-2"
                 >
                   {field.label}
                 </label>
@@ -184,7 +186,7 @@ export function ContactSection() {
                   onChange={(e) =>
                     setForm((f) => ({ ...f, [field.id]: e.target.value }))
                   }
-                  className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-body focus:outline-none focus:border-accent-cyan/40 focus:bg-white/[0.06] transition-all duration-200"
+                  className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 font-body focus:outline-none focus:border-accent-cyan/60 focus:bg-white/[0.05] transition-all duration-200"
                 />
               </div>
             ))}
@@ -192,7 +194,7 @@ export function ContactSection() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-xs font-mono text-white/30 uppercase tracking-widest mb-2"
+                className="block text-[11px] font-mono text-white/50 uppercase tracking-[0.22em] mb-2"
               >
                 {t("form.messageLabel")}
               </label>
@@ -205,14 +207,14 @@ export function ContactSection() {
                 onChange={(e) =>
                   setForm((f) => ({ ...f, message: e.target.value }))
                 }
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 font-body focus:outline-none focus:border-accent-cyan/40 focus:bg-white/[0.06] transition-all duration-200 resize-none"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 font-body focus:outline-none focus:border-accent-cyan/60 focus:bg-white/[0.05] transition-all duration-200 resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={state === "sending" || state === "success"}
-              className={`w-full py-3.5 rounded-lg text-sm font-body font-medium tracking-wide transition-all duration-200 relative overflow-hidden ${
+              className={`w-full py-3.5 rounded-full text-sm font-body font-medium tracking-wide transition-all duration-200 relative overflow-hidden ${
                 state === "success"
                   ? "bg-green-500/20 border border-green-500/30 text-green-400"
                   : "bg-accent-cyan text-bg-primary hover:brightness-110 disabled:opacity-60"
