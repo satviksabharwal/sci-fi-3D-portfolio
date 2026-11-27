@@ -119,10 +119,13 @@ export function HeroSection() {
     const loadMedia = <T extends HTMLMediaElement>(el: T, src: string) =>
       new Promise<T | null>((resolve) => {
         el.preload = "auto";
-        el.onloadeddata = () => resolve(el);
+        // loadedmetadata, not loadeddata: iPhones don't decode any frames
+        // until playback starts, so loadeddata would never arrive there.
+        el.onloadedmetadata = () => resolve(el);
         el.onerror = () => resolve(null);
         timers.push(setTimeout(() => resolve(null), 4000));
         el.src = src;
+        el.load();
       });
 
     const loadClip = async (key: string) => {
@@ -130,6 +133,7 @@ export function HeroSection() {
       if (videoKeys.includes(key)) {
         const video = document.createElement("video");
         video.playsInline = true;
+        video.setAttribute("playsinline", "");
         video.muted = !sound;
         const loaded = await loadMedia(video, `/intro/${locale}/${key}.mp4`);
         if (loaded) return loaded;
@@ -142,7 +146,12 @@ export function HeroSection() {
         playing = audio;
         audio.onended = () => resolve();
         audio.onerror = () => resolve();
-        audio.play().catch(() => resolve());
+        audio.play().catch(() => {
+          // Phones refuse sound that doesn't start from a tap. Play the clip
+          // silently so his lips still move with the captions.
+          audio.muted = true;
+          audio.play().catch(() => resolve());
+        });
       });
 
     const speak = (line: string) =>
@@ -245,12 +254,12 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-24 lg:pt-28 pb-10 lg:pb-20 px-6"
+      className="relative min-h-[100svh] flex items-center pt-24 lg:pt-28 pb-10 lg:pb-20 px-6"
     >
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
         {/* LEFT — Text */}
         <div>
-          <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-8">
+          <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-5 lg:mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-cyan opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan" />
@@ -286,16 +295,16 @@ export function HeroSection() {
           </motion.div>
 
 
-          <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-3 mb-6 lg:mb-14">
+          <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-2.5 sm:gap-3 mb-6 lg:mb-14">
             <a
               href="#about"
-              className="px-6 py-3 rounded-full bg-accent-cyan text-bg-primary font-body font-medium text-sm hover:brightness-110 transition-all duration-200"
+              className="px-4 sm:px-6 py-3 rounded-full bg-accent-cyan text-bg-primary font-body font-medium text-[13px] sm:text-sm whitespace-nowrap hover:brightness-110 transition-all duration-200"
             >
               {t("cta.viewWork")} ↓
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 rounded-full border border-accent-cyan/50 text-white text-sm hover:bg-accent-cyan/10 transition-all duration-200"
+              className="px-4 sm:px-6 py-3 rounded-full border border-accent-cyan/50 text-white text-[13px] sm:text-sm whitespace-nowrap hover:bg-accent-cyan/10 transition-all duration-200"
             >
               {t("cta.getInTouch")}
             </a>
@@ -318,7 +327,7 @@ export function HeroSection() {
         {/* RIGHT — Live intro */}
         <div
           ref={sceneRef}
-          className="relative h-[46vh] lg:h-[620px]"
+          className="relative h-[46svh] lg:h-[620px]"
         >
           {sceneFailed ? (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -362,7 +371,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 6 }}
                 transition={{ duration: 0.25 }}
-                className="absolute bottom-12 lg:bottom-auto lg:top-2 left-0 sm:left-4 max-w-[19rem] rounded-2xl rounded-bl-sm border border-accent-cyan/30 bg-bg-secondary/90 backdrop-blur-md px-4 py-3 text-[15px] leading-snug text-white/90"
+                className="fixed z-30 bottom-5 left-4 right-24 lg:absolute lg:z-auto lg:bottom-auto lg:top-2 lg:left-4 lg:right-auto lg:max-w-[19rem] rounded-2xl rounded-bl-sm border border-accent-cyan/30 bg-bg-secondary/90 backdrop-blur-md px-4 py-3 text-sm lg:text-[15px] leading-snug text-white/90"
                 aria-hidden="true"
               >
                 {caption}
@@ -378,7 +387,11 @@ export function HeroSection() {
 
           {/* Status + controls */}
           {sceneReady && (
-            <div className="absolute bottom-0 inset-x-0 flex items-center justify-between gap-3">
+            <div className="absolute top-0 lg:top-auto lg:bottom-0 inset-x-0 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 lg:pr-[4.5rem] 2xl:pr-0">
+              {/* Phones: directly under the hero buttons, above the scene, so
+                  neither the caption bar nor the chat button can cover it.
+                  Desktop: along the bottom of the scene, kept left of the chat
+                  button until the screen is wide enough to clear it. */}
               <span className="flex items-center gap-2 text-[10px] font-mono tracking-[0.2em] uppercase text-white/50">
                 <span
                   className={`w-1.5 h-1.5 rounded-full ${

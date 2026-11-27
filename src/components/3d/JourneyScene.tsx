@@ -797,18 +797,45 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
     const restVideo = document.createElement("video");
     restVideo.muted = true;
     restVideo.playsInline = true;
+    restVideo.setAttribute("muted", "");
+    restVideo.setAttribute("playsinline", "");
     restVideo.preload = "auto";
     const restTex = new THREE.VideoTexture(restVideo);
     restTex.colorSpace = THREE.SRGBColorSpace;
     textures.push(restTex);
+    const markRestReady = () => {
+      restTex.needsUpdate = true;
+      restReady = true;
+    };
+    // Desktop browsers decode a frame as soon as the data is there.
     restVideo.addEventListener("loadeddata", () => {
       restVideo.currentTime = 0.04;
     });
-    restVideo.addEventListener("seeked", () => {
-      restTex.needsUpdate = true;
-      restReady = true;
-    });
+    restVideo.addEventListener("seeked", markRestReady);
     restVideo.src = "/intro/rest.mp4";
+    restVideo.load();
+    // iPhones ignore preload and only decode once playback starts, so play
+    // the (muted, inline) clip for a moment and hold it on its first frames.
+    restVideo
+      .play()
+      .then(() => {
+        setTimeout(() => {
+          restVideo.pause();
+          markRestReady();
+        }, 150);
+      })
+      .catch(() => {
+        // autoplay refused (e.g. Low Power Mode): the still below takes over
+      });
+    // Last resort so the helmet never falls back to the cartoon face just
+    // because video is unavailable: the same frame as a still image.
+    let restImageReady = false;
+    const restImage = new THREE.TextureLoader().load("/intro/rest.jpg", () => {
+      restImageReady = true;
+    });
+    restImage.colorSpace = THREE.SRGBColorSpace;
+    textures.push(restImage);
+    let baseTex: THREE.Texture = restTex;
     faceMat.uniforms.map.value = restTex;
     faceMat.uniforms.mapB.value = restTex;
     let shownVideo: HTMLVideoElement | null = null;
@@ -1093,7 +1120,7 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
         faceTex?.dispose();
         faceTex = fv ? new THREE.VideoTexture(fv) : null;
         if (faceTex) faceTex.colorSpace = THREE.SRGBColorSpace;
-        faceMat.uniforms.mapB.value = faceTex ?? restTex;
+        faceMat.uniforms.mapB.value = faceTex ?? baseTex;
         faceMat.uniforms.mixB.value = 0;
         shownVideo = fv;
       }
@@ -1106,9 +1133,17 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
         fv.duration - fv.currentTime > 0.14;
       faceMat.uniforms.mixB.value +=
         ((clipLive ? 1 : 0) - faceMat.uniforms.mixB.value) * (1 - Math.exp(-16 * dt));
-      faceScreen.visible = restReady;
-      neck.visible = restReady;
-      face3d.visible = !restReady;
+      // If the resting video hasn't produced a frame after a couple of
+      // seconds, switch to the still image.
+      if (!restReady && restImageReady && baseTex !== restImage && t > 2.5) {
+        baseTex = restImage;
+        faceMat.uniforms.map.value = restImage;
+        if (!faceTex) faceMat.uniforms.mapB.value = restImage;
+      }
+      const faceReady = restReady || baseTex === restImage;
+      faceScreen.visible = faceReady;
+      neck.visible = faceReady;
+      face3d.visible = !faceReady;
 
       // Arms
       arms.forEach((arm, i) => {
@@ -1211,7 +1246,7 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
       // Where he sits on screen: beside the hero text on the station, then out
       // in the right margin for the flight so he never covers the content.
       const offX = wide ? mix(-0.23, -0.39, ride) : mix(0, -0.36, ride);
-      const offY = wide ? 0 : mix(-0.24, -0.1, ride);
+      const offY = wide ? 0 : mix(-0.3, -0.1, ride);
       camera.setViewOffset(viewW, viewH, offX * viewW, offY * viewH, viewW, viewH);
 
       renderer.render(scene, camera);
@@ -1238,7 +1273,7 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
       // Narrow: it sits below the hero text, so it has to be smaller.
       heroDist = wide
         ? 4.25 * Math.max(1, 1.08 / (camera.aspect * 0.5))
-        : 4.25 * Math.max(2.1, 1.08 / camera.aspect);
+        : 4.25 * Math.max(2.7, 1.08 / camera.aspect);
       measure();
     };
     window.addEventListener("resize", resize);
