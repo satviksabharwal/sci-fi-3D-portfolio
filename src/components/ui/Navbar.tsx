@@ -5,6 +5,7 @@ import { LogoSvg } from "@/components/ui/LogoSvg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
+import { setSoundOn, useSoundOn } from "@/lib/sound";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -79,6 +80,7 @@ export function Navbar() {
 
         {/* Right side: language switcher + Resume CTA */}
         <div className="hidden md:flex items-center gap-4">
+          <SoundToggle />
           <LanguageSwitcher />
           {resumeUrl && (
             <a
@@ -100,9 +102,11 @@ export function Navbar() {
           )}
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile: sound + menu toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <SoundToggle />
         <button
-          className="md:hidden text-white/60 hover:text-white"
+          className="text-white/60 hover:text-white"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label={t("nav.menu")}
           aria-expanded={menuOpen}
@@ -122,6 +126,7 @@ export function Navbar() {
             )}
           </svg>
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -156,6 +161,38 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </motion.nav>
+  );
+}
+
+/** The site-wide sound switch: ambient sound plus the astronaut's voice. */
+function SoundToggle() {
+  const t = useTranslations("common");
+  const on = useSoundOn();
+  return (
+    <button
+      type="button"
+      onClick={() => setSoundOn(!on)}
+      aria-pressed={on}
+      aria-label={on ? t("nav.soundOn") : t("nav.soundOff")}
+      title={on ? t("nav.soundOn") : t("nav.soundOff")}
+      className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
+        on
+          ? "border-accent-cyan/70 text-accent-cyan"
+          : "border-white/15 text-white/60 hover:text-white hover:border-white/40"
+      }`}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z" />
+        {on ? (
+          <>
+            <path d="M15.5 9a4 4 0 010 6" />
+            <path d="M18 6.5a7.5 7.5 0 010 11" />
+          </>
+        ) : (
+          <path d="M16 9.5l5 5m0-5l-5 5" />
+        )}
+      </svg>
+    </button>
   );
 }
 
