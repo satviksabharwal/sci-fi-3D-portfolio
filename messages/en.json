@@ -209,6 +209,7 @@
     "title": "Work History",
     "subtitle": "Where I've worked and what I've shipped.",
     "currentBadge": "Current",
+    "present": "Present",
     "descriptions": {
       "talonOne": [
         "Joined Talon.One, an Adyen company, as a Full Stack Engineer in Berlin in November 2026."

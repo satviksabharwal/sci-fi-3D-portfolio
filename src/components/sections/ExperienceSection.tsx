@@ -2,16 +2,25 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { EXPERIENCE } from "@/lib/data";
 
-// The flight log reads as a journey, so it runs oldest → newest.
-const WAYPOINTS = [...EXPERIENCE].reverse();
-
+// The flight log runs newest → oldest, the order EXPERIENCE is kept in.
+const WAYPOINTS = EXPERIENCE;
 
 export function ExperienceSection() {
   const t = useTranslations("experience");
+  const locale = useLocale();
+  // "2026-11" → "Nov 2026", in the visitor's language.
+  const month = (value: string) => {
+    const [year, m] = value.split("-").map(Number);
+    return new Intl.DateTimeFormat(locale, { month: "short", year: "numeric" }).format(
+      new Date(year, m - 1, 1),
+    );
+  };
+  const period = (exp: (typeof WAYPOINTS)[number]) =>
+    `${month(exp.start)} — ${exp.end ? month(exp.end) : t("present")}`;
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState<number[]>([]);
   const itemRefs = useRef<(HTMLElement | null)[]>([]);
@@ -63,7 +72,7 @@ export function ExperienceSection() {
                     {current.company}
                   </div>
                   <div className="font-mono text-sm text-white/50 mt-3">
-                    {current.period}
+                    {period(current)}
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -107,7 +116,7 @@ export function ExperienceSection() {
                 }`}
               >
                 <div className="text-[11px] font-mono tracking-[0.22em] uppercase text-accent-cyan mb-4">
-                  {t("waypoint")} 0{i + 1} · {exp.period}
+                  {t("waypoint")} 0{i + 1} · {period(exp)}
                 </div>
                 <div className="flex items-center gap-3 flex-wrap mb-1">
                   <h3 className="font-display font-bold text-white text-2xl md:text-3xl tracking-tight">

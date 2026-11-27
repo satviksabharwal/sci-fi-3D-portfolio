@@ -13,7 +13,10 @@ export interface Experience {
   id: number;
   role: string;
   company: string;
-  period: string;
+  /** First month, as "YYYY-MM". */
+  start: string;
+  /** Last month, as "YYYY-MM"; null while it is the current job. */
+  end: string | null;
   descriptionNamespace: string;
   tech: string[];
   current?: boolean;
