@@ -264,15 +264,15 @@ export function JourneyScene({ greeting, speaking, faceVideo, onReady, onError }
     // Origin: the two moons where he studied.
     planet(1.1, -7.3, -11, -5, ["#3a4266", "#8aa0ff", "#1d2238"], 0x8aa0ff);
     planet(1.7, 1, -18.5, -8, ["#1d4d52", "#5fd9c9", "#0e2a2d"], TEAL);
-    // Flight log: one world per company, oldest first, spread along the
-    // experience stretch of the route (y -30 … -46). Order and count follow
+    // Flight log: one world per company, newest first, spread along the
+    // experience stretch of the route (y -27 … -44). Order and count follow
     // EXPERIENCE in src/lib/data.ts — add a planet here when adding a job.
-    planet(1.2, -10, -27, -5, ["#2b3140", "#8aa0ff", "#161a24"], 0x8aa0ff); // Wipro
-    planet(1.7, -11.5, -31, -12, ["#1f3a4d", "#5faad9", "#0f1f2b"], 0x5faad9); // Brillio
+    planet(2.5, -12.5, -27, -10, ["#4a3413", "#f0b86e", "#231807"], 0xf0b86e); // Talon.One
+    planet(1.5, -9.5, -31, -6, ["#3d2f4d", "#b08cff", "#1b1424"], 0xb08cff); // Codefitters
     const staffbase = planet(3.2, -13, -35.5, -9, ["#12423f", "#5fd9c9", "#082321"], TEAL);
     ring(staffbase, 4.2, 5.9, TEAL, 0.28);
-    planet(1.5, -9.5, -40, -6, ["#3d2f4d", "#b08cff", "#1b1424"], 0xb08cff); // Codefitters
-    planet(2.5, -12.5, -44, -10, ["#4a3413", "#f0b86e", "#231807"], 0xf0b86e); // Talon.One
+    planet(1.7, -11.5, -40, -12, ["#1f3a4d", "#5faad9", "#0f1f2b"], 0x5faad9); // Brillio
+    planet(1.2, -10, -44, -5, ["#2b3140", "#8aa0ff", "#161a24"], 0x8aa0ff); // Wipro
     // Open channel: home.
     const home = planet(7, 0, -90, -12, ["#123a66", "#2f86d6", "#5fd9c9"], 0x7fe3d4);
     ring(home, 8.2, 8.35, TEAL, 0.6);
