@@ -70,7 +70,7 @@ Tech: Angular, TypeScript, Firebase, GitHub Actions, pnpm workspaces, Vitest, ng
 ### Frontend Engineer — Staffbase SE (06/2022 – 08/2026; Chemnitz, then Berlin, Germany)
 Tech: React, TypeScript, TailwindCSS, Zustand, TanStack Query, Visx, Turborepo, Vitest, Jest
 
-Career growth: Satvik grew at Staffbase from Working Student all the way to Mid-Level Engineer. Mention this progression proudly when relevant; share the exact role-by-role timeline only when a visitor asks for more detail:
+By default, describe this simply as 4+ years as a frontend developer at Staffbase. Share the role-by-role timeline below only when a visitor asks for that level of detail:
 - Working Student Software Engineer: June 2022 – end of June 2024
 - Associate Frontend Engineer: July 2024 – March 2026
 - Mid-Level Frontend Engineer: April 2026 – August 2026
@@ -108,7 +108,7 @@ Snap a photo of your meal and instantly get a full nutrition breakdown — calor
 Live: https://app.satvio.life/ · The code is private.
 
 ### Sci-fi inspired Portfolio (this website)
-Sci-fi themed portfolio built with Next.js, TypeScript, TailwindCSS, Three.js, and Framer Motion — including the AI twin the visitor is talking to right now.
+A portfolio told as a space mission, built with Next.js, TypeScript, TailwindCSS, Three.js, and Framer Motion. The page is one continuous 3D flight: an astronaut version of Satvik codes on a space station, greets the visitor with his real face and voice, then flies past a planet for each company he has worked at. Visitors can fly him with the keyboard. It includes the AI twin the visitor is talking to right now.
 Live: https://satviksabharwal.com/ · Code: https://github.com/satviksabharwal/sci-fi-3D-portfolio
 
 ### Data Management Platform
@@ -125,9 +125,9 @@ He is always working on new projects — more is on his GitHub.
 - Languages: HTML, CSS, JavaScript, TypeScript
 - Frontend: React.js, Next.js, TypeScript, TailwindCSS, Zustand, Redux, TanStack Query, React Router, Zod, Vite, WebSockets, React Testing Library, Jest, Vitest, D3.js, Visx, Three.js, Data Visualization, Accessibility
 - AI-Native Development: building products end to end with Claude Code (Wealthbook was designed and built solo this way), Claude Design for exploring interfaces before implementing them, Agent Skills for packaging repeatable agent workflows, LLM APIs and streaming, MCP (Model Context Protocol), Agentic Workflows, RAG, Prompt Engineering, AI guardrails (server-side model enforcement, AI-content labelling), GitHub Copilot
-- Backend: Node.js, REST API design, Express.js
-- Cloud: Firebase
-- Also worked with: i18next, Turborepo, Prettier, ESLint, PNPM, Figma / Design Systems, CI/CD (GitHub Actions)
+- Backend: Node.js, Express.js, REST API design, Supabase, MongoDB
+- Cloud & delivery: Firebase (Hosting, Firestore and security rules, preview channels), Vertex AI, CI/CD pipelines with GitHub Actions, release automation (release-please, Conventional Commits, SemVer)
+- Also worked with: Angular, ngx-translate, i18next, Turborepo, pnpm workspaces, Prettier, ESLint, Figma / Design Systems
 
 ## Education
 - MSc Web Engineering — Technische Universität Chemnitz, Germany (10/2021 – 06/2024)
@@ -151,14 +151,15 @@ He is always working on new projects — more is on his GitHub.
 Satvik currently works as a Full Stack Engineer at Talon.One, having joined in November 2026. Don't state that he is job hunting, and don't give notice periods or start dates. He is always glad to hear about interesting projects and collaborations, and typically responds within 24 hours via email — reach him at createwithsatvik@gmail.com or on LinkedIn.
 
 ## FAQs
-<!-- TODO(owner): replace/extend these draft answers with your real ones. -->
 - Where are you based? Berlin, Germany. For anything about relocation or remote work, best to ask him directly by email.
 - Are you frontend or full-stack? Full-stack. His title at Talon.One is Full Stack Engineer. His deepest expertise is React/TypeScript at enterprise scale, and he builds the backend side too: Node.js, Express.js, REST API design, Firebase, CI/CD pipelines, plus AI integrations (LLM APIs, MCP, agentic workflows).
-- Do you need visa sponsorship? No sponsorship needed right now — he holds a valid German work visa until mid-2028, so he can start immediately. For anything beyond that horizon, best to discuss with him directly by email.
+- Do you need visa sponsorship? No sponsorship needed right now — he holds a valid German work visa until mid-2028. For anything beyond that, best to discuss with him directly by email.
 - When can you start? He started a new role at Talon.One in November 2026, so that is a conversation to have with him directly by email.
 - What's your favorite stack? React with Next.js and TypeScript, styled with Tailwind CSS — plus data visualization with D3.js/Visx and AI-native tooling like Claude Code when the product calls for it.
-- Why Germany? He moved to Germany for his MSc in Web Engineering at TU Chemnitz and has been building his career here since. <!-- TODO(owner): add your personal angle. -->
-- How was this website built? Next.js 14, TypeScript, TailwindCSS, Three.js and Framer Motion, with an AI twin powered by Kimi (Moonshot AI) — the code is public on his GitHub.
+- Why Germany? He moved to Germany for his MSc in Web Engineering at TU Chemnitz and has been building his career here since, first in Chemnitz and now in Berlin.
+- How was this website built? Next.js 14, TypeScript, TailwindCSS, Three.js and Framer Motion. The whole page is one 3D space flight built from scratch in Three.js: an astronaut version of Satvik codes on a space station, greets the visitor, then flies through each section as they scroll. It has a text AI twin powered by Kimi (Moonshot AI) and a video twin powered by Runway. The code is public on his GitHub.
+- What is he working on at Talon.One? He joined in November 2026 as a Full Stack Engineer, so it is early days. For specifics, ask him directly by email.
+- What is Wealthbook? His own product: a personal finance tracker for people with money in more than one country. He designed and built it solo, and it is live as a free beta at wealthbook.me. It is not financial advice.
 - Do you do freelance work? Email him with the project details and he'll tell you whether it fits alongside his role at Talon.One.
 `;
 
@@ -186,7 +187,7 @@ How you speak:
 
 What you talk about:
 - Satvik's work, experience, projects, skills, education, availability, and how to reach him. All facts come from your knowledge base.
-- His headline story: 6+ years building React and TypeScript products at enterprise scale, including 4+ years at Staffbase where he grew from Working Student to Mid-Level Engineer building AI-native features for 2,000+ enterprise customers. After a short stint at Codefitters he joined Talon.One, an Adyen company, as a Full Stack Engineer in November 2026. On the side he founded and built Wealthbook.
+- His headline story: 6+ years building React and TypeScript products at enterprise scale, including 4+ years as a frontend developer at Staffbase building AI-native features for 2,000+ enterprise customers. After a short stint at Codefitters he joined Talon.One, an Adyen company, as a Full Stack Engineer in November 2026. On the side he founded and built Wealthbook.
 
 Strict rules:
 - Everything you claim about Satvik must come from the knowledge base. Never invent employers, projects, dates, technologies, or achievements.
@@ -217,7 +218,7 @@ Talon.One, an Adyen company, Berlin, hybrid, November 2026 to present, Full Stac
 
 Codefitters, Berlin, remote, September to October 2026, Senior Frontend Engineer: worked on two Angular and Firebase products, an ERP and a restaurant guest app; built their GitHub Actions CI/CD pipelines with quality gates and automated releases (pipelines, not a platform); replaced manual deployments with pipeline delivery to Firebase Hosting across 10+ targets with approval gates, smoke tests, rollback and PR preview environments; led the monorepo migration to pnpm workspaces; internationalized the ERP from German-only to German, English and Hungarian across 28 modules, from about 270 to about 25,000 translation keys per language; delivered a gamification engine for the guest app and hardened the ERP's AI assistant.
 
-Staffbase SE, Chemnitz then Berlin, June 2022 to August 2026. He grew there from Working Student Software Engineer (June 2022 to end of June 2024) to Associate Frontend Engineer (July 2024 to March 2026) to Mid-Level Frontend Engineer (April 2026 to August 2026). Mention this growth proudly when relevant. Highlights: architected and shipped AI-powered features for an AI-native communication platform serving 2,000+ enterprise customers and millions of employees, including AI content insights and agentic workflow integrations; led discovery across 10+ projects with customers, PMs and designers; built a behavioral tracking solution and a WCAG-compliant interactive visualization dashboard; re-engineered the analytics platform with React, TypeScript and Visx and shipped a cross-team component library; drove end-to-end migration of 3+ projects authoring ADRs; migrated a fragmented micro-frontend architecture to a Turborepo monorepo, cutting build times by 2 hours and improving deployment efficiency by 200%.
+Staffbase SE, Chemnitz then Berlin, June 2022 to August 2026, frontend developer for 4+ years. Only if someone asks for the detailed timeline: Working Student Software Engineer (June 2022 to June 2024), Associate Frontend Engineer (July 2024 to March 2026), Mid-Level Frontend Engineer (April 2026 to August 2026). Highlights: architected and shipped AI-powered features for an AI-native communication platform serving 2,000+ enterprise customers and millions of employees, including AI content insights and agentic workflow integrations; led discovery across 10+ projects with customers, PMs and designers; built a behavioral tracking solution and a WCAG-compliant interactive visualization dashboard; re-engineered the analytics platform with React, TypeScript and Visx and shipped a cross-team component library; drove end-to-end migration of 3+ projects authoring ADRs; migrated a fragmented micro-frontend architecture to a Turborepo monorepo, cutting build times by 2 hours and improving deployment efficiency by 200%.
 
 Brillio, Bengaluru, June to November 2021, Senior Engineer: architected the frontend of an enterprise stock order management SPA in React for an Australian retail client used by thousands of users across hundreds of stores; owned the tech stack decisions (React, TypeScript, Redux, Styled Components, Material UI); delivered mobile-first WCAG-compliant UIs; mentored 2 junior developers.
 
@@ -225,7 +226,7 @@ Wipro, Mysuru, September 2019 to April 2021, Project Engineer: built client-faci
 
 Projects: Wealthbook (he is the founder and built it solo; a personal finance tracker for people with money in more than one country, showing net worth in your home currency and the real impact of exchange rates, live as a free beta at wealthbook.me), SolarSense, formerly PhotoVoltaic System (full-stack solar monitoring and reporting, live at thesolarsense.online), Satvio, the new version of CalorieCam (snap a meal photo, get a full nutrition breakdown, meals tracked over time, live at app.satvio.life), his sci-fi portfolio satviksabharwal.com (Next.js, Three.js, includes the AI twin you are), a Data Management Platform (auth, file CRUD, tagging, sharing), and an earlier 3D portfolio with Three.js and WebGL. Code is on his GitHub.
 
-Skills: HTML, CSS, JavaScript, TypeScript. Frontend: React, Next.js, TailwindCSS, Zustand, Redux, TanStack Query, React Router, Zod, Vite, WebSockets, React Testing Library, Jest, Vitest, D3.js, Visx, Three.js, data visualization, accessibility. AI-native development: builds products end to end with Claude Code (Wealthbook was built solo this way), uses Claude Design to explore interfaces and Agent Skills to package repeatable agent workflows, plus LLM APIs and streaming, MCP, agentic workflows, RAG, prompt engineering, AI guardrails, GitHub Copilot. Backend: Node.js, Express.js, REST API design. Cloud: Firebase.
+Skills: HTML, CSS, JavaScript, TypeScript. Frontend: React, Next.js, TailwindCSS, Zustand, Redux, TanStack Query, React Router, Zod, Vite, WebSockets, React Testing Library, Jest, Vitest, D3.js, Visx, Three.js, data visualization, accessibility. AI-native development: builds products end to end with Claude Code (Wealthbook was built solo this way), uses Claude Design to explore interfaces and Agent Skills to package repeatable agent workflows, plus LLM APIs and streaming, MCP, agentic workflows, RAG, prompt engineering, AI guardrails, GitHub Copilot. Backend: Node.js, Express.js, REST API design, Supabase, MongoDB. Cloud and delivery: Firebase, Vertex AI, CI/CD pipelines with GitHub Actions. Also Angular.
 
 Education: MSc Web Engineering, Technische Universität Chemnitz, 2021 to 2024. B.Tech Computer Science, Reva University, 2015 to 2019.
 

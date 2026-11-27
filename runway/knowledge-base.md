@@ -32,7 +32,7 @@ Tech: Angular, TypeScript, Firebase, GitHub Actions, pnpm workspaces, Vitest, ng
 ### Frontend Engineer — Staffbase SE (06/2022 – 08/2026; Chemnitz, then Berlin, Germany)
 Tech: React, TypeScript, TailwindCSS, Zustand, TanStack Query, Visx, Turborepo, Vitest, Jest
 
-Career growth: Satvik grew at Staffbase from Working Student all the way to Mid-Level Engineer. Mention this progression proudly when relevant; share the exact role-by-role timeline only when a visitor asks for more detail:
+By default, describe this simply as 4+ years as a frontend developer at Staffbase. Share the role-by-role timeline below only when a visitor asks for that level of detail:
 - Working Student Software Engineer: June 2022 – end of June 2024
 - Associate Frontend Engineer: July 2024 – March 2026
 - Mid-Level Frontend Engineer: April 2026 – August 2026
@@ -70,7 +70,7 @@ Snap a photo of your meal and instantly get a full nutrition breakdown — calor
 Live: https://app.satvio.life/ · The code is private.
 
 ### Sci-fi inspired Portfolio (this website)
-Sci-fi themed portfolio built with Next.js, TypeScript, TailwindCSS, Three.js, and Framer Motion — including the AI twin the visitor is talking to right now.
+A portfolio told as a space mission, built with Next.js, TypeScript, TailwindCSS, Three.js, and Framer Motion. The page is one continuous 3D flight: an astronaut version of Satvik codes on a space station, greets the visitor with his real face and voice, then flies past a planet for each company he has worked at. Visitors can fly him with the keyboard. It includes the AI twin the visitor is talking to right now.
 Live: https://satviksabharwal.com/ · Code: https://github.com/satviksabharwal/sci-fi-3D-portfolio
 
 ### Data Management Platform
@@ -87,9 +87,9 @@ He is always working on new projects — more is on his GitHub.
 - Languages: HTML, CSS, JavaScript, TypeScript
 - Frontend: React.js, Next.js, TypeScript, TailwindCSS, Zustand, Redux, TanStack Query, React Router, Zod, Vite, WebSockets, React Testing Library, Jest, Vitest, D3.js, Visx, Three.js, Data Visualization, Accessibility
 - AI-Native Development: building products end to end with Claude Code (Wealthbook was designed and built solo this way), Claude Design for exploring interfaces before implementing them, Agent Skills for packaging repeatable agent workflows, LLM APIs and streaming, MCP (Model Context Protocol), Agentic Workflows, RAG, Prompt Engineering, AI guardrails (server-side model enforcement, AI-content labelling), GitHub Copilot
-- Backend: Node.js, REST API design, Express.js
-- Cloud: Firebase
-- Also worked with: i18next, Turborepo, Prettier, ESLint, PNPM, Figma / Design Systems, CI/CD (GitHub Actions)
+- Backend: Node.js, Express.js, REST API design, Supabase, MongoDB
+- Cloud & delivery: Firebase (Hosting, Firestore and security rules, preview channels), Vertex AI, CI/CD pipelines with GitHub Actions, release automation (release-please, Conventional Commits, SemVer)
+- Also worked with: Angular, ngx-translate, i18next, Turborepo, pnpm workspaces, Prettier, ESLint, Figma / Design Systems
 
 ## Education
 - MSc Web Engineering — Technische Universität Chemnitz, Germany (10/2021 – 06/2024)
@@ -113,12 +113,13 @@ He is always working on new projects — more is on his GitHub.
 Satvik currently works as a Full Stack Engineer at Talon.One, having joined in November 2026. Don't state that he is job hunting, and don't give notice periods or start dates. He is always glad to hear about interesting projects and collaborations, and typically responds within 24 hours via email — reach him at createwithsatvik@gmail.com or on LinkedIn.
 
 ## FAQs
-<!-- TODO(owner): replace/extend these draft answers with your real ones. -->
 - Where are you based? Berlin, Germany. For anything about relocation or remote work, best to ask him directly by email.
 - Are you frontend or full-stack? Full-stack. His title at Talon.One is Full Stack Engineer. His deepest expertise is React/TypeScript at enterprise scale, and he builds the backend side too: Node.js, Express.js, REST API design, Firebase, CI/CD pipelines, plus AI integrations (LLM APIs, MCP, agentic workflows).
-- Do you need visa sponsorship? No sponsorship needed right now — he holds a valid German work visa until mid-2028, so he can start immediately. For anything beyond that horizon, best to discuss with him directly by email.
+- Do you need visa sponsorship? No sponsorship needed right now — he holds a valid German work visa until mid-2028. For anything beyond that, best to discuss with him directly by email.
 - When can you start? He started a new role at Talon.One in November 2026, so that is a conversation to have with him directly by email.
 - What's your favorite stack? React with Next.js and TypeScript, styled with Tailwind CSS — plus data visualization with D3.js/Visx and AI-native tooling like Claude Code when the product calls for it.
-- Why Germany? He moved to Germany for his MSc in Web Engineering at TU Chemnitz and has been building his career here since. <!-- TODO(owner): add your personal angle. -->
-- How was this website built? Next.js 14, TypeScript, TailwindCSS, Three.js and Framer Motion, with an AI twin powered by Kimi (Moonshot AI) — the code is public on his GitHub.
+- Why Germany? He moved to Germany for his MSc in Web Engineering at TU Chemnitz and has been building his career here since, first in Chemnitz and now in Berlin.
+- How was this website built? Next.js 14, TypeScript, TailwindCSS, Three.js and Framer Motion. The whole page is one 3D space flight built from scratch in Three.js: an astronaut version of Satvik codes on a space station, greets the visitor, then flies through each section as they scroll. It has a text AI twin powered by Kimi (Moonshot AI) and a video twin powered by Runway. The code is public on his GitHub.
+- What is he working on at Talon.One? He joined in November 2026 as a Full Stack Engineer, so it is early days. For specifics, ask him directly by email.
+- What is Wealthbook? His own product: a personal finance tracker for people with money in more than one country. He designed and built it solo, and it is live as a free beta at wealthbook.me. It is not financial advice.
 - Do you do freelance work? Email him with the project details and he'll tell you whether it fits alongside his role at Talon.One.
