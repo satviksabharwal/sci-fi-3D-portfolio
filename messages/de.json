@@ -7,7 +7,9 @@
       "experience": "Erfahrung",
       "contact": "Kontakt",
       "resume": "Lebenslauf",
-      "menu": "Menü"
+      "menu": "Menü",
+      "soundOn": "Ton an",
+      "soundOff": "Ton aus"
     },
     "footer": {
       "builtWith": "Gebaut mit",

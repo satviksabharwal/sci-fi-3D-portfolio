@@ -7,7 +7,9 @@
       "experience": "Experience",
       "contact": "Contact",
       "resume": "Resume",
-      "menu": "Menu"
+      "menu": "Menu",
+      "soundOn": "Sound on",
+      "soundOff": "Sound off"
     },
     "footer": {
       "builtWith": "Built with",

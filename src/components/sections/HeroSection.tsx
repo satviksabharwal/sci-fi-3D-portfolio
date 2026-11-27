@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 import { useLocale, useTranslations } from "next-intl";
 import { PERSONAL } from "@/lib/data";
 import introClips from "@/lib/intro-clips.json";
+import { duckAmbient, setSoundOn, useSoundOn } from "@/lib/sound";
 
 const JourneyScene = dynamic(
   () => import("@/components/3d/JourneyScene").then((m) => m.JourneyScene),
@@ -53,7 +54,8 @@ export function HeroSection() {
   const [speaking, setSpeaking] = useState(false);
   const [caption, setCaption] = useState("");
   const [fullLine, setFullLine] = useState("");
-  const [sound, setSound] = useState(false);
+  // One switch for the whole site: his voice here and the ambient sound.
+  const sound = useSoundOn();
   const [faceVideo, setFaceVideo] = useState<HTMLVideoElement | null>(null);
   const [run, setRun] = useState(0);
   const introducedRef = useRef(false);
@@ -144,6 +146,7 @@ export function HeroSection() {
     const playClip = (audio: HTMLMediaElement) =>
       new Promise<void>((resolve) => {
         playing = audio;
+        if (!audio.muted) duckAmbient(true);
         audio.onended = () => resolve();
         audio.onerror = () => resolve();
         audio.play().catch(() => {
@@ -230,6 +233,7 @@ export function HeroSection() {
       cancelled = true;
       timers.forEach(clearTimeout);
       playing?.pause();
+      duckAmbient(false);
       setFaceVideo(null);
       if ("speechSynthesis" in window) window.speechSynthesis.cancel();
       setSpeaking(false);
@@ -248,7 +252,7 @@ export function HeroSection() {
     introducedRef.current = false;
     // Turning sound on plays the intro again, this time with his voice.
     if (!sound) setGreeting(true);
-    setSound(!sound);
+    setSoundOn(!sound);
   }, [sound]);
 
   return (
