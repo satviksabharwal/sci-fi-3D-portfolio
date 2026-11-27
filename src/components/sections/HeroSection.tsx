@@ -57,6 +57,8 @@ export function HeroSection() {
   const [faceVideo, setFaceVideo] = useState<HTMLVideoElement | null>(null);
   const [run, setRun] = useState(0);
   const introducedRef = useRef(false);
+  const autoFlownRef = useRef(false);
+  const [introduced, setIntroduced] = useState(false);
   // Watch the scene itself, not the whole hero: on phones the hero is taller
   // than the screen and the astronaut sits below the text.
   const { ref: sceneRef, inView } = useInView({ threshold: 0.6 });
@@ -197,6 +199,22 @@ export function HeroSection() {
         await sleep(clip instanceof HTMLVideoElement ? 450 : 1100);
       }
       introducedRef.current = true;
+      setIntroduced(true);
+      // Intro done: after a beat he closes the visor. The first time, the page
+      // then glides down far enough that he lifts off and is flying — he just
+      // said "fly with me", so he does. Only once per visit, only if the
+      // visitor hasn't scrolled themselves, and never under reduced motion;
+      // otherwise (and on every later intro) he turns back to his code.
+      await sleep(1100);
+      if (cancelled) return;
+      setGreeting(false);
+      const about = document.getElementById("about");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!autoFlownRef.current && about && !reducedMotion && window.scrollY < 40) {
+        autoFlownRef.current = true;
+        // 0.62 of the way to the next section is where the flight pose is complete
+        window.scrollTo({ top: about.offsetTop * 0.62, behavior: "smooth" });
+      }
     })();
 
     return () => {
@@ -214,12 +232,15 @@ export function HeroSection() {
   const replay = useCallback(() => {
     introducedRef.current = false;
     setRun((n) => n + 1);
+    setGreeting(true); // he may already be back at work
   }, []);
 
   const toggleSound = useCallback(() => {
     introducedRef.current = false;
-    setSound((on) => !on);
-  }, []);
+    // Turning sound on plays the intro again, this time with his voice.
+    if (!sound) setGreeting(true);
+    setSound(!sound);
+  }, [sound]);
 
   return (
     <section
@@ -367,7 +388,7 @@ export function HeroSection() {
                 {greeting ? t("intro.statusLive") : t("intro.statusCoding")}
               </span>
               <span className="flex items-center gap-2">
-                {greeting && (
+                {(greeting || introduced) && (
                   <button
                     type="button"
                     onClick={replay}

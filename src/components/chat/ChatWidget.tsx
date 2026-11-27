@@ -19,18 +19,11 @@ export function ChatWidget() {
   const t = useTranslations("chat");
   const [open, setOpen] = useState(false);
 
-  // While open: flag the body so CSS can hide the Runway video button on
-  // mobile (its max-z-index host would cover the sheet and catch stray taps),
-  // and lock page scroll behind the near-fullscreen sheet.
+  // While open on a phone, lock page scroll behind the near-fullscreen sheet.
   useEffect(() => {
-    if (!open) return;
-    document.body.classList.add("chat-open");
-    const lockScroll = isMobileViewport();
-    if (lockScroll) document.body.classList.add("overflow-hidden");
-    return () => {
-      document.body.classList.remove("chat-open");
-      if (lockScroll) document.body.classList.remove("overflow-hidden");
-    };
+    if (!open || !isMobileViewport()) return;
+    document.body.classList.add("overflow-hidden");
+    return () => document.body.classList.remove("overflow-hidden");
   }, [open]);
 
   const handleNavigate = useCallback((sectionId: string) => {
@@ -79,7 +72,7 @@ export function ChatWidget() {
               height={56}
               className="w-14 h-14 rounded-full object-cover select-none"
             />
-            {/* Message badge — mirrors the Runway widget's video badge */}
+            {/* Message badge */}
             <span className="absolute -bottom-0.5 -right-0.5 w-6 h-6 rounded-full bg-gradient-to-br from-accent-cyan to-accent-violet border-2 border-bg-primary flex items-center justify-center text-bg-primary">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                 <path
